@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upcoming Events — Retro Wave</title>
+<meta name="description" content="All upcoming Retro Wave events across Uganda, Kenya and Rwanda.">
+<link rel="icon" href="assets/logo.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand"><img src="assets/logo.png" alt="Retro Wave"></a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="events.html" class="active">Events</a>
+      <a href="history.html">History</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="header-right">
+      <div class="country-switch" role="group" aria-label="Filter by country">
+        <button data-country-btn="all" class="active" onclick="setCountry('all')">All</button>
+        <button data-country-btn="ug" onclick="setCountry('ug')">🇺🇬 UG</button>
+        <button data-country-btn="ke" onclick="setCountry('ke')">🇰🇪 KE</button>
+        <button data-country-btn="rw" onclick="setCountry('rw')">🇷🇼 RW</button>
+      </div>
+      <a href="event.html" class="btn btn-primary btn-sm">Get Tickets</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<section style="padding-bottom:0;">
+  <div class="wrap">
+    <span class="eyebrow">On Sale Now</span>
+    <h1 style="font-size:clamp(32px,4.5vw,48px); margin:12px 0 10px;">Upcoming events</h1>
+    <p class="lede">Every Retro Wave date, in one place. Filter by country to see what's on near you.</p>
+
+    <div class="filter-pills" style="margin-top:26px;">
+      <button data-country-btn="all" class="active" onclick="setCountry('all')">All countries</button>
+      <button data-country-btn="ug" onclick="setCountry('ug')">🇺🇬 Uganda</button>
+      <button data-country-btn="ke" onclick="setCountry('ke')">🇰🇪 Kenya</button>
+      <button data-country-btn="rw" onclick="setCountry('rw')">🇷🇼 Rwanda</button>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="event-grid">
+
+      <a href="event.html" class="event-card" data-country-item="ug">
+        <div class="poster-art">
+          <span class="poster-tag">🇺🇬 Kampala</span>
+          <span class="poster-label">Retro Wave: Kampala After Dark</span>
+        </div>
+        <div class="event-card-body">
+          <span class="event-chip">Sat, 30 Aug 2026</span>
+          <h3>Kampala After Dark</h3>
+          <div class="meta">Blu Haze Rooftop · Uganda</div>
+          <div class="remaining-bar"><span style="width:64%"></span></div>
+          <div class="remaining-note">Selling fast</div>
+          <div class="event-card-foot">
+            <span class="price-from">From <b>UGX 30,000</b></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="event.html" class="event-card" data-country-item="ug">
+        <div class="poster-art orange-wash">
+          <span class="poster-tag">🇺🇬 Entebbe</span>
+          <span class="poster-label">The Songs Raised Me — 2000s Edition</span>
+        </div>
+        <div class="event-card-body">
+          <span class="event-chip">Fri, 4 Sep 2026</span>
+          <h3>The Songs Raised Me</h3>
+          <div class="meta">Lake Victoria Serena · Uganda</div>
+          <div class="remaining-bar"><span style="width:30%"></span></div>
+          <div class="remaining-note">Early bird open</div>
+          <div class="event-card-foot">
+            <span class="price-from">From <b>UGX 40,000</b></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="event.html" class="event-card" data-country-item="ug">
+        <div class="poster-art">
+          <span class="poster-tag">🇺🇬 Jinja</span>
+          <span class="poster-label">Retro Wave: Source of the Nile</span>
+        </div>
+        <div class="event-card-body">
+          <span class="event-chip">Sat, 17 Oct 2026</span>
+          <h3>Source of the Nile</h3>
+          <div class="meta">Riverside Gardens · Uganda</div>
+          <div class="remaining-bar"><span style="width:4%"></span></div>
+          <div class="remaining-note">Just announced</div>
+          <div class="event-card-foot">
+            <span class="price-from">From <b>UGX 35,000</b></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="event.html" class="event-card" data-country-item="ke">
+        <div class="poster-art">
+          <span class="poster-tag">🇰🇪 Nairobi</span>
+          <span class="poster-label">Retro Wave Nairobi: First Ever</span>
+        </div>
+        <div class="event-card-body">
+          <span class="event-chip">Sat, 20 Sep 2026</span>
+          <h3>Retro Wave Nairobi</h3>
+          <div class="meta">The Alchemist · Kenya</div>
+          <div class="remaining-bar"><span style="width:12%"></span></div>
+          <div class="remaining-note">Just announced</div>
+          <div class="event-card-foot">
+            <span class="price-from">From <b>KES 1,500</b></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="event.html" class="event-card" data-country-item="rw">
+        <div class="poster-art orange-wash">
+          <span class="poster-tag">🇷🇼 Kigali</span>
+          <span class="poster-label">Retro Wave Kigali Nights</span>
+        </div>
+        <div class="event-card-body">
+          <span class="event-chip">Sat, 11 Oct 2026</span>
+          <h3>Retro Wave Kigali Nights</h3>
+          <div class="meta">Kigali Convention Village · Rwanda</div>
+          <div class="remaining-bar"><span style="width:8%"></span></div>
+          <div class="remaining-note">Just announced</div>
+          <div class="event-card-foot">
+            <span class="price-from">From <b>RWF 8,000</b></span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <p class="notice" style="margin-top:30px;"><b>Note:</b> listings above are example events for layout purposes. Replace with real dates, venues and poster art any time through the Event Manager.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/logo.png" alt="Retro Wave">
+        <p>Retro nightlife events across East Africa — Uganda, Kenya and Rwanda, one ticket platform.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <a href="events.html">Upcoming Events</a>
+        <a href="history.html">History</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer-col">
+        <h5>Countries</h5>
+        <a href="events.html">Uganda</a>
+        <a href="events.html">Kenya</a>
+        <a href="events.html">Rwanda</a>
+      </div>
+      <div class="footer-col">
+        <h5>Support</h5>
+        <span>hello@retrowave.ug</span>
+        <span>WhatsApp support</span>
+        <span>Refunds &amp; transfers</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Retro Wave. All rights reserved.</span>
+      <span>retrowave.ug</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

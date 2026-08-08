@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>History — Retro Wave</title>
+<meta name="description" content="Every Retro Wave event so far, across Uganda, Kenya and Rwanda.">
+<link rel="icon" href="assets/logo.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand"><img src="assets/logo.png" alt="Retro Wave"></a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="history.html" class="active">History</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="header-right">
+      <div class="country-switch" role="group" aria-label="Filter by country">
+        <button data-country-btn="all" class="active" onclick="setCountry('all')">All</button>
+        <button data-country-btn="ug" onclick="setCountry('ug')">🇺🇬 UG</button>
+        <button data-country-btn="ke" onclick="setCountry('ke')">🇰🇪 KE</button>
+        <button data-country-btn="rw" onclick="setCountry('rw')">🇷🇼 RW</button>
+      </div>
+      <a href="events.html" class="btn btn-primary btn-sm">Get Tickets</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<section style="padding-bottom:0;">
+  <div class="wrap">
+    <span class="eyebrow">The Track Record</span>
+    <h1 style="font-size:clamp(32px,4.5vw,48px); margin:12px 0 10px;">Every night so far</h1>
+    <p class="lede">From the first Retro Wave in Kampala to the next date across the region — this is the proof, not the pitch.</p>
+    <p class="notice" style="margin-top:22px; max-width:640px;"><b>Note:</b> the entries below are sample cards showing how History will look. Swap in real posters, dates and attendance once confirmed — nothing here is being presented as an actual past event.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+
+    <div class="filter-pills" style="margin-bottom:8px;">
+      <button data-country-btn="all" class="active" onclick="setCountry('all')">All countries</button>
+      <button data-country-btn="ug" onclick="setCountry('ug')">🇺🇬 Uganda</button>
+      <button data-country-btn="ke" onclick="setCountry('ke')">🇰🇪 Kenya</button>
+      <button data-country-btn="rw" onclick="setCountry('rw')">🇷🇼 Rwanda</button>
+    </div>
+
+    <div class="timeline">
+      <h3 class="timeline-year">2025</h3>
+      <div class="history-grid">
+        <figure class="polaroid" style="--tilt:-2deg;" data-country-item="ug">
+          <div class="poster-art"><span class="poster-tag">Dec 2025</span><span class="poster-label">Kampala</span></div>
+          <span class="sample-tag">Sample</span>
+          <figcaption>Retro Wave Vol. 4<small>Kampala, Uganda · [Attendance TBD]</small></figcaption>
+        </figure>
+        <figure class="polaroid" style="--tilt:1.5deg;" data-country-item="ug">
+          <div class="poster-art orange-wash"><span class="poster-tag">Sep 2025</span><span class="poster-label">Entebbe</span></div>
+          <span class="sample-tag">Sample</span>
+          <figcaption>Lakeside Sessions<small>Entebbe, Uganda · [Attendance TBD]</small></figcaption>
+        </figure>
+        <figure class="polaroid" style="--tilt:-1deg;" data-country-item="ug">
+          <div class="poster-art"><span class="poster-tag">Jun 2025</span><span class="poster-label">Kampala</span></div>
+          <span class="sample-tag">Sample</span>
+          <figcaption>Retro Wave Vol. 3<small>Kampala, Uganda · [Attendance TBD]</small></figcaption>
+        </figure>
+      </div>
+
+      <h3 class="timeline-year">2024</h3>
+      <div class="history-grid">
+        <figure class="polaroid" style="--tilt:2deg;" data-country-item="ug">
+          <div class="poster-art orange-wash"><span class="poster-tag">Nov 2024</span><span class="poster-label">Kampala</span></div>
+          <span class="sample-tag">Sample</span>
+          <figcaption>Retro Wave Vol. 2<small>Kampala, Uganda · [Attendance TBD]</small></figcaption>
+        </figure>
+        <figure class="polaroid" style="--tilt:-1.5deg;" data-country-item="ug">
+          <div class="poster-art"><span class="poster-tag">Jul 2024</span><span class="poster-label">Kampala</span></div>
+          <span class="sample-tag">Sample</span>
+          <figcaption>Retro Wave Vol. 1 — The First Night<small>Kampala, Uganda · [Attendance TBD]</small></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="empty-state" style="margin-top:56px;" data-country-empty="ke">
+      <h4>Kenya history starts soon</h4>
+      <p>Retro Wave Nairobi is the first Kenya date — once it happens, the recap lands right here.</p>
+    </div>
+    <div class="empty-state" style="margin-top:56px;" data-country-empty="rw">
+      <h4>Rwanda history starts soon</h4>
+      <p>Retro Wave Kigali Nights is the first Rwanda date — once it happens, the recap lands right here.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/logo.png" alt="Retro Wave">
+        <p>Retro nightlife events across East Africa — Uganda, Kenya and Rwanda, one ticket platform.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <a href="events.html">Upcoming Events</a>
+        <a href="history.html">History</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer-col">
+        <h5>Countries</h5>
+        <a href="events.html">Uganda</a>
+        <a href="events.html">Kenya</a>
+        <a href="events.html">Rwanda</a>
+      </div>
+      <div class="footer-col">
+        <h5>Support</h5>
+        <span>hello@retrowave.ug</span>
+        <span>WhatsApp support</span>
+        <span>Refunds &amp; transfers</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Retro Wave. All rights reserved.</span>
+      <span>retrowave.ug</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

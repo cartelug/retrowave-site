@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Retro Wave</title>
+<meta name="description" content="Retro Wave started in Kampala as a night built on the songs that raised us. Now expanding across East Africa.">
+<link rel="icon" href="assets/logo.png">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .about-hero { background: linear-gradient(165deg, var(--navy-light), var(--navy-deep)); position:relative; overflow:hidden; padding: 64px 0 72px; }
+  .about-hero::before { content:""; position:absolute; top:-260px; left:50%; transform:translateX(-50%); width:820px; height:820px; border-radius:50%; background-image: repeating-conic-gradient(rgba(226,82,31,0.15) 0deg 9deg, transparent 9deg 18deg); }
+  .about-hero .wrap { position:relative; z-index:2; max-width: 760px; }
+  .about-hero h1 { color: var(--cream-logo); font-size: clamp(32px,4.5vw,50px); margin: 14px 0 14px; }
+  .about-hero p { color: rgba(246,230,195,0.8); font-size: 18px; }
+
+  .story-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items:start; }
+  .value-list { display:flex; flex-direction:column; gap:22px; margin-top:20px; }
+  .value-item { display:flex; gap:16px; }
+  .value-num { font-family: var(--font-display); font-size:20px; color:var(--orange); flex-shrink:0; width:36px; }
+  .value-item h4 { font-size:17px; margin-bottom:4px; }
+  .value-item p { font-size:14.5px; color:var(--ink-soft); margin:0; }
+
+  .tag-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
+  .tag-pill { font-size:12.5px; font-weight:700; color:var(--navy); background:var(--cream-alt); padding:6px 14px; border-radius:999px; }
+
+  @media (max-width: 900px) { .story-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand"><img src="assets/logo.png" alt="Retro Wave"></a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="history.html">History</a>
+      <a href="about.html" class="active">About</a>
+    </nav>
+    <div class="header-right">
+      <div class="country-switch" role="group" aria-label="Filter by country">
+        <button data-country-btn="all" class="active">All</button>
+        <button data-country-btn="ug">🇺🇬 UG</button>
+        <button data-country-btn="ke">🇰🇪 KE</button>
+        <button data-country-btn="rw">🇷🇼 RW</button>
+      </div>
+      <a href="events.html" class="btn btn-primary btn-sm">Get Tickets</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="about-hero">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--peach);">Our Story</span>
+    <h1>The songs raised me. So we built a night around them.</h1>
+    <p>Retro Wave started as a simple idea: play the tracks that actually shaped a generation, in a room full of people who feel the same way about them. What began in Kampala is now becoming a ticketed platform across three countries.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap story-grid">
+    <div>
+      <span class="eyebrow">Where It Started</span>
+      <h2 style="margin-top:10px; font-size:28px;">Kampala After Dark</h2>
+      <p class="lede" style="margin-top:14px;">Retro Wave began as a Kampala nightlife night, built around one question at the door: what's the anthem that made you? Every set since has been a mix of that answer — decade-spanning, unapologetically nostalgic, and loud in all the right places.</p>
+      <p class="lede">Four editions in, the format hasn't changed. What's changed is the reach — Retro Wave is now taking the same night to Nairobi and Kigali, with one platform handling tickets, history and discovery across all three.</p>
+
+      <div class="tag-row">
+        <span class="tag-pill">Est. Kampala</span>
+        <span class="tag-pill">4+ editions</span>
+        <span class="tag-pill">Expanding to Kenya &amp; Rwanda</span>
+      </div>
+    </div>
+
+    <div>
+      <span class="eyebrow">What We're Building</span>
+      <h2 style="margin-top:10px; font-size:28px;">The Songs Raised Me</h2>
+      <div class="value-list">
+        <div class="value-item">
+          <span class="value-num">01</span>
+          <div><h4>One anthem, one story</h4><p>Every Retro Wave night is anchored in the idea that a song is a memory — the lineup is built to earn that reaction, not just fill a set time.</p></div>
+        </div>
+        <div class="value-item">
+          <span class="value-num">02</span>
+          <div><h4>Regional, not just local</h4><p>The same night, the same standard, now landing in Nairobi and Kigali — not a copy-paste tour, a platform built for it from day one.</p></div>
+        </div>
+        <div class="value-item">
+          <span class="value-num">03</span>
+          <div><h4>Built to last</h4><p>The ticketing platform is infrastructure Retro Wave owns outright — built once, used for every event going forward.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta-band">
+      <span class="eyebrow" style="color: var(--peach);">Come Through</span>
+      <h2>See what's on near you</h2>
+      <p>Uganda, Kenya, Rwanda — one link, every date.</p>
+      <a href="events.html" class="btn btn-primary">Browse Events</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/logo.png" alt="Retro Wave">
+        <p>Retro nightlife events across East Africa — Uganda, Kenya and Rwanda, one ticket platform.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <a href="events.html">Upcoming Events</a>
+        <a href="history.html">History</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer-col">
+        <h5>Countries</h5>
+        <a href="events.html">Uganda</a>
+        <a href="events.html">Kenya</a>
+        <a href="events.html">Rwanda</a>
+      </div>
+      <div class="footer-col">
+        <h5>Support</h5>
+        <span>hello@retrowave.ug</span>
+        <span>WhatsApp support</span>
+        <span>Refunds &amp; transfers</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Retro Wave. All rights reserved.</span>
+      <span>retrowave.ug</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

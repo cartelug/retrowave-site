@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retro Wave: Kampala After Dark — Retro Wave</title>
+<meta name="description" content="Buy tickets to Retro Wave: Kampala After Dark. MTN Mobile Money, Airtel Money or card.">
+<link rel="icon" href="assets/logo.png">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .event-hero { position: relative; background: linear-gradient(165deg, var(--navy-light), var(--navy-deep)); padding: 44px 0 0; overflow: hidden; }
+  .event-hero::before { content:""; position:absolute; top:-220px; left:50%; transform:translateX(-50%); width:760px; height:760px; border-radius:50%; background-image: repeating-conic-gradient(rgba(226,82,31,0.15) 0deg 9deg, transparent 9deg 18deg); }
+  .breadcrumb { position:relative; z-index:2; font-size:13px; color: rgba(246,230,195,0.6); margin-bottom: 18px; }
+  .breadcrumb a { color: rgba(246,230,195,0.85); }
+  .event-hero-grid { position:relative; z-index:2; display:grid; grid-template-columns: 0.85fr 1.15fr; gap: 44px; align-items:end; padding-bottom: 40px; }
+  .event-hero .poster-art { aspect-ratio: 4/5; }
+  .event-title-block .event-chip { background: rgba(255,255,255,0.1); color: var(--cream-logo); }
+  .event-title-block h1 { color: var(--cream-logo); font-size: clamp(30px,4vw,44px); margin: 14px 0 10px; }
+  .event-facts { display:flex; gap: 26px; flex-wrap: wrap; margin-top:18px; }
+  .event-fact { color: rgba(246,230,195,0.85); font-size:14.5px; }
+  .event-fact b { display:block; color:#fff; font-family: var(--font-display); font-size:16px; font-weight:600; }
+
+  .detail-grid { display:grid; grid-template-columns: 1.55fr 1fr; gap: 48px; align-items:start; }
+  .lineup-list { display:flex; flex-direction:column; gap:14px; margin-top: 18px; }
+  .lineup-item { display:flex; align-items:center; gap:14px; background: var(--cream-card); border:1.5px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+  .lineup-avatar { width:44px; height:44px; border-radius:50%; background: linear-gradient(135deg, var(--orange), var(--navy)); flex-shrink:0; }
+  .lineup-item b { display:block; font-size:15px; color:var(--navy); }
+  .lineup-item span { font-size:13px; color:var(--ink-soft); }
+
+  .tier-row { display:flex; align-items:center; justify-content:space-between; gap:14px; padding: 16px 4px; }
+  .tier-info b { display:block; font-size:16px; color:var(--navy); }
+  .tier-info span { font-size:13px; color:var(--ink-soft); }
+  .qty-stepper { display:flex; align-items:center; gap:12px; }
+  .qty-stepper button { width:32px; height:32px; border-radius:50%; border:1.5px solid var(--border); background:#fff; font-size:16px; font-weight:700; color:var(--navy); display:flex; align-items:center; justify-content:center; }
+  .qty-stepper button:hover { background: var(--cream-alt); }
+  .qty-stepper [data-qty] { min-width: 20px; text-align:center; font-weight:600; font-family: var(--font-display); }
+
+  .buy-summary { position: sticky; top: 96px; }
+  .cart-total-row { display:flex; align-items:center; justify-content:space-between; padding-top:14px; margin-top: 4px; }
+  .cart-total-row .amt { font-family: var(--font-display); font-size:22px; color:var(--navy); }
+
+  .pay-methods { display:flex; gap:8px; margin-top:14px; flex-wrap:wrap; }
+  .pay-chip { font-size:11.5px; font-weight:700; color:var(--ink-soft); background: var(--cream-alt); padding:5px 10px; border-radius:999px; }
+
+  .sticky-bar { position:fixed; left:0; right:0; bottom:-100px; background: var(--navy); padding: 14px 0; box-shadow: 0 -8px 24px rgba(0,0,0,0.18); z-index:150; transition: bottom 0.25s ease; }
+  .sticky-bar.is-visible { bottom:0; }
+  .sticky-bar .wrap { display:flex; align-items:center; justify-content:space-between; gap: 16px; }
+  .sticky-bar .amt { color: var(--cream-logo); font-family: var(--font-display); font-size:18px; }
+  .sticky-bar .amt small { display:block; font-family: var(--font-body); font-size:11px; color: var(--peach); font-weight:600; }
+
+  @media (max-width: 980px) {
+    .event-hero-grid, .detail-grid { grid-template-columns: 1fr; }
+    .buy-summary { position: static; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand"><img src="assets/logo.png" alt="Retro Wave"></a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="events.html" class="active">Events</a>
+      <a href="history.html">History</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="header-right">
+      <div class="country-switch" role="group" aria-label="Filter by country">
+        <button data-country-btn="all" class="active">All</button>
+        <button data-country-btn="ug">🇺🇬 UG</button>
+        <button data-country-btn="ke">🇰🇪 KE</button>
+        <button data-country-btn="rw">🇷🇼 RW</button>
+      </div>
+      <a href="#tickets" class="btn btn-primary btn-sm">Get Tickets</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="event-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="events.html">Events</a> / Kampala After Dark</div>
+    <div class="event-hero-grid">
+      <div class="poster-art">
+        <span class="poster-tag">🇺🇬 Kampala</span>
+        <span class="poster-label">Retro Wave: Kampala After Dark</span>
+      </div>
+      <div class="event-title-block">
+        <span class="event-chip">On Sale Now</span>
+        <h1>Retro Wave: Kampala After Dark</h1>
+        <p class="lede" style="color:rgba(246,230,195,0.75);">A night built on the tracks that raised us — resident DJs, an all-vinyl warm-up set, and the Retro Wave dancefloor at full tilt.</p>
+        <div class="event-facts">
+          <div class="event-fact"><b>Sat, 30 Aug 2026</b>Doors 8:00 PM</div>
+          <div class="event-fact"><b>Blu Haze Rooftop</b>Kampala, Uganda</div>
+          <div class="event-fact"><b>18+</b>Valid ID required</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap detail-grid">
+    <div>
+      <span class="eyebrow">Lineup</span>
+      <h2 style="margin-top:10px; font-size:26px;">Who's playing</h2>
+      <div class="lineup-list">
+        <div class="lineup-item"><div class="lineup-avatar"></div><div><b>DJ Resident One</b><span>Retro Wave house selector</span></div></div>
+        <div class="lineup-item"><div class="lineup-avatar"></div><div><b>DJ Resident Two</b><span>All-vinyl warm-up set</span></div></div>
+        <div class="lineup-item"><div class="lineup-avatar"></div><div><b>Special Guest — TBA</b><span>Announced closer to the date</span></div></div>
+      </div>
+
+      <span class="eyebrow" style="margin-top:44px; display:inline-flex;">Good To Know</span>
+      <h2 style="margin-top:10px; font-size:26px;">FAQ</h2>
+      <div class="stack" style="margin-top:16px;">
+        <div class="notice"><b>Refunds:</b> tickets are refundable up to 48 hours before doors, minus payment processing fees.</div>
+        <div class="notice"><b>Transfers:</b> reassign your ticket to a friend anytime from your ticket link — no new purchase needed.</div>
+        <div class="notice"><b>Entry:</b> your QR ticket is single-use and tied to your order. Screenshots of someone else's ticket won't scan twice.</div>
+      </div>
+    </div>
+
+    <div id="tickets">
+      <div class="ticket buy-summary" data-currency="UGX">
+        <div class="ticket-top">
+          <span class="eyebrow">Tickets</span>
+          <h3 style="font-size:20px; margin:8px 0 2px;">Choose your tier</h3>
+
+          <div class="tier-row" data-tier data-price="30000" data-max="8">
+            <div class="tier-info"><b>Early Bird</b><span>UGX 30,000 · Limited</span></div>
+            <div class="qty-stepper">
+              <button data-minus aria-label="Decrease">−</button>
+              <span data-qty>0</span>
+              <button data-plus aria-label="Increase">+</button>
+            </div>
+          </div>
+          <div class="tier-row" data-tier data-price="45000" data-max="8" style="border-top:1.5px dashed var(--border);">
+            <div class="tier-info"><b>Regular</b><span>UGX 45,000</span></div>
+            <div class="qty-stepper">
+              <button data-minus aria-label="Decrease">−</button>
+              <span data-qty>0</span>
+              <button data-plus aria-label="Increase">+</button>
+            </div>
+          </div>
+          <div class="tier-row" data-tier data-price="90000" data-max="6" style="border-top:1.5px dashed var(--border);">
+            <div class="tier-info"><b>VIP + Fast Entry</b><span>UGX 90,000</span></div>
+            <div class="qty-stepper">
+              <button data-minus aria-label="Decrease">−</button>
+              <span data-qty>0</span>
+              <button data-plus aria-label="Increase">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="ticket-divider"></div>
+        <div class="ticket-bottom">
+          <div class="cart-total-row">
+            <span style="font-size:14px; color:var(--ink-soft);"><span data-cart-count>0</span> ticket(s)</span>
+            <span class="amt" data-cart-total>UGX 0</span>
+          </div>
+          <button class="btn btn-primary btn-block" style="margin-top:16px;" onclick="showPreviewNotice()">Continue to Checkout</button>
+          <div class="pay-methods">
+            <span class="pay-chip">MTN MoMo</span>
+            <span class="pay-chip">Airtel Money</span>
+            <span class="pay-chip">Visa / Mastercard</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sticky-bar" data-sticky-bar>
+  <div class="wrap">
+    <div class="amt"><span data-cart-count>0</span> ticket(s)<small><span data-cart-total>UGX 0</span></small></div>
+    <button class="btn btn-primary" onclick="showPreviewNotice()">Checkout</button>
+  </div>
+</div>
+
+<div class="preview-modal" data-preview-modal>
+  <div class="preview-modal-card">
+    <div class="preview-modal-icon">i</div>
+    <h4>Checkout preview</h4>
+    <p>This is the first version of the site — the exact flow above is what buyers will see. Live payment via MTN Mobile Money, Airtel Money and card connects in the next phase.</p>
+    <button class="btn btn-outline-navy btn-block" onclick="closePreviewNotice()">Got it</button>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/logo.png" alt="Retro Wave">
+        <p>Retro nightlife events across East Africa — Uganda, Kenya and Rwanda, one ticket platform.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <a href="events.html">Upcoming Events</a>
+        <a href="history.html">History</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer-col">
+        <h5>Countries</h5>
+        <a href="events.html">Uganda</a>
+        <a href="events.html">Kenya</a>
+        <a href="events.html">Rwanda</a>
+      </div>
+      <div class="footer-col">
+        <h5>Support</h5>
+        <span>hello@retrowave.ug</span>
+        <span>WhatsApp support</span>
+        <span>Refunds &amp; transfers</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Retro Wave. All rights reserved.</span>
+      <span>retrowave.ug</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
