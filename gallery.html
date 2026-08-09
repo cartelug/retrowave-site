@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Gallery — Retro Wave</title>
+<meta name="description" content="Photos from Retro Wave nights — the crowd, the stage, the denim and the dancefloor.">
+<meta name="theme-color" content="#0e2038">
+<link rel="icon" href="assets/logo.png">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.className += ' js';</script>
+<noscript><style>
+  .preloader{display:none!important}
+  .main-nav{display:flex!important;flex-wrap:wrap}
+  .nav-toggle{display:none!important}
+</style></noscript>
+</head>
+<body>
+
+<div class="preloader" role="status" aria-live="polite" aria-label="Loading Retro Wave">
+  <div class="pl-inner">
+    <svg class="pl-cassette" viewBox="0 0 320 200" role="img" aria-label="Cassette tape winding">
+      <defs><linearGradient id="plBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a3d6b"/><stop offset="1" stop-color="#0b1a2f"/></linearGradient></defs>
+      <rect x="6" y="6" width="308" height="188" rx="18" fill="url(#plBody)" stroke="#f6e6c3" stroke-width="3"/>
+      <rect x="26" y="22" width="268" height="80" rx="10" fill="#fdf6e8"/>
+      <rect x="26" y="22" width="268" height="13" rx="6" fill="#e2521f"/>
+      <text x="160" y="70" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="27" font-weight="700" fill="#16345c">RETRO WAVE</text>
+      <text x="160" y="90" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" letter-spacing="2.4" fill="#8d8271">SIDE A — THE SONGS RAISED ME</text>
+      <rect class="pl-tape-window" x="72" y="114" width="176" height="60" rx="9" fill="#081527" stroke="rgba(246,230,195,.35)" stroke-width="2"/>
+      <rect x="112" y="138" width="96" height="12" fill="#3b2416"/>
+      <g class="pl-reel"><circle cx="112" cy="144" r="21" fill="#24150c" stroke="#f6e6c3" stroke-width="2"/><g stroke="#f6e6c3" stroke-width="3" stroke-linecap="round"><line x1="112" y1="129" x2="112" y2="159"/><line x1="97" y1="144" x2="127" y2="144"/><line x1="101" y1="133" x2="123" y2="155"/><line x1="123" y1="133" x2="101" y2="155"/></g></g>
+      <g class="pl-reel pl-reel--slow"><circle cx="208" cy="144" r="21" fill="#24150c" stroke="#f6e6c3" stroke-width="2"/><g stroke="#f6e6c3" stroke-width="3" stroke-linecap="round"><line x1="208" y1="129" x2="208" y2="159"/><line x1="193" y1="144" x2="223" y2="144"/><line x1="197" y1="133" x2="219" y2="155"/><line x1="219" y1="133" x2="197" y2="155"/></g></g>
+    </svg>
+    <div class="pl-word" aria-hidden="true">
+      <span style="--i:0">R</span><span style="--i:1">E</span><span style="--i:2">T</span><span style="--i:3">R</span><span style="--i:4">O</span>
+      <span class="pl-gap"></span>
+      <span style="--i:5">W</span><span style="--i:6">A</span><span style="--i:7">V</span><span style="--i:8">E</span>
+    </div>
+    <div class="pl-track"><div class="pl-fill"></div></div>
+    <div class="pl-meta"><span>Rewinding the tape</span><span class="pl-pct">0%</span></div>
+  </div>
+</div>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand" aria-label="Retro Wave home"><img src="assets/logo.png" alt="Retro Wave" width="120" height="38"></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="index.html" style="--i:0">Home</a>
+      <a href="events.html" style="--i:1">Events</a>
+      <a href="gallery.html" class="active" style="--i:2">Gallery</a>
+      <a href="history.html" style="--i:3">History</a>
+      <a href="about.html" style="--i:4">About</a>
+    </nav>
+    <div class="header-right">
+      <div class="country-switch" role="group" aria-label="Filter events by country">
+        <button type="button" data-country-btn="all" class="active" aria-pressed="true">All</button>
+        <button type="button" data-country-btn="ug" aria-pressed="false">🇺🇬 UG</button>
+        <button type="button" data-country-btn="ke" aria-pressed="false">🇰🇪 KE</button>
+        <button type="button" data-country-btn="rw" aria-pressed="false">🇷🇼 RW</button>
+      </div>
+      <a href="events.html" class="btn btn-primary btn-sm">Get Tickets</a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-inner">
+    <nav class="drawer-links" aria-label="Mobile">
+      <a href="index.html" style="--i:0"><span class="d-ico" aria-hidden="true">🏠</span>Home</a>
+      <a href="events.html" style="--i:1"><span class="d-ico" aria-hidden="true">🎫</span>Events</a>
+      <a href="gallery.html" class="active" style="--i:2"><span class="d-ico" aria-hidden="true">📸</span>Gallery</a>
+      <a href="history.html" style="--i:3"><span class="d-ico" aria-hidden="true">📼</span>History</a>
+      <a href="about.html" style="--i:4"><span class="d-ico" aria-hidden="true">💬</span>About</a>
+    </nav>
+    <div class="drawer-foot">
+      <div class="a11y-bar">
+        <span class="a11y-label">Text size</span>
+        <button type="button" class="a11y-btn" data-text-step="md" aria-pressed="true">A</button>
+        <button type="button" class="a11y-btn" data-text-step="lg" aria-pressed="false"><span class="big">A</span></button>
+        <button type="button" class="a11y-btn" data-text-step="xl" aria-pressed="false"><span class="big">A+</span></button>
+      </div>
+      <div class="a11y-bar">
+        <span class="a11y-label">Motion</span>
+        <button type="button" class="a11y-btn" data-motion-toggle aria-pressed="false">Reduce animations</button>
+      </div>
+      <a href="events.html" class="btn btn-primary btn-block btn-lg">Get Tickets</a>
+      <p class="drawer-contact">Need help? <a href="mailto:hello@retrowave.ug">hello@retrowave.ug</a></p>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<section class="hero grain" style="padding:56px 0 64px;">
+  <div class="hero-sun" aria-hidden="true"></div>
+  <div class="wrap" style="position:relative; z-index:2; max-width:760px;">
+    <span class="eyebrow intro-fade" style="--i:0">The Photo Album</span>
+    <h1 style="color:var(--cream-logo); font-size:clamp(2.25rem,5.5vw,3.5rem); margin:14px 0 16px;">
+      <span class="line-mask"><span style="--i:0">Every night,</span></span>
+      <span class="line-mask"><span style="--i:1">on <em style="font-style:normal;color:var(--orange);">film.</em></span></span>
+    </h1>
+    <p class="lede intro-fade" style="--i:1; color:rgba(246,230,195,.8); font-size:1.125rem;">Real photos from Retro Wave. Tap any picture to open it full size — swipe or use the arrow keys to move through the album.</p>
+  </div>
+</section>
+
+<div class="divider divider-marquee" data-lock="true" aria-hidden="true">
+  <div class="mq-track"><span>RETRO WAVE³ <i class="mq-star">✦</i> WE LOVE THE 90s <i class="mq-star">✦</i> RIDE THE WAVE <i class="mq-star">✦</i> THE SONGS RAISED ME <i class="mq-star">✦</i></span></div>
+  <div class="mq-track"><span>RETRO WAVE³ <i class="mq-star">✦</i> WE LOVE THE 90s <i class="mq-star">✦</i> RIDE THE WAVE <i class="mq-star">✦</i> THE SONGS RAISED ME <i class="mq-star">✦</i></span></div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="g-grid">
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/stage-wide-1080.webp" data-caption="The main stage before doors — Retro Wave³ on the LED walls">
+        <picture><source type="image/webp" srcset="assets/photos/stage-wide-480.webp 480w, assets/photos/stage-wide-960.webp 960w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/stage-wide.jpg" alt="The Retro Wave main stage with LED screens and lounge seating before doors open" width="1080" height="720" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Before doors</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/trio-denim-720.webp" data-caption="Denim on denim — the unofficial Retro Wave uniform">
+        <picture><source type="image/webp" srcset="assets/photos/trio-denim-480.webp 480w, assets/photos/trio-denim-720.webp 720w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/trio-denim.jpg" alt="Three friends in denim and sunglasses posing together" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Denim on denim</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/crowd-night-stage-1080.webp" data-caption="Night set — the crowd in front of the cassette backdrop">
+        <picture><source type="image/webp" srcset="assets/photos/crowd-night-stage-480.webp 480w, assets/photos/crowd-night-stage-960.webp 960w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/crowd-night-stage.jpg" alt="A packed night crowd in front of the illuminated Retro Wave stage backdrop" width="1080" height="720" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Night set</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/dj-booth-720.webp" data-caption="The booth — resident selectors running the classics">
+        <picture><source type="image/webp" srcset="assets/photos/dj-booth-480.webp 480w, assets/photos/dj-booth-720.webp 720w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/dj-booth.jpg" alt="A DJ at the decks with the host beside him under stage lighting" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">In the booth</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/golden-hour-720.webp" data-caption="Golden hour on the lawn">
+        <picture><source type="image/webp" srcset="assets/photos/golden-hour-480.webp 480w, assets/photos/golden-hour-720.webp 720w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/golden-hour.jpg" alt="A guest in a white blouse backlit by golden hour sunlight" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Golden hour</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/hands-up-blue-854.webp" data-caption="Hands up the second the right song lands">
+        <picture><source type="image/webp" srcset="assets/photos/hands-up-blue-480.webp 480w, assets/photos/hands-up-blue-854.webp 854w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/hands-up-blue.jpg" alt="A guest with both hands raised dancing under blue stage light" width="854" height="1280" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Hands up</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/melody-no-time-limit-720.webp" data-caption="&ldquo;Retro classics remind us that melody has no time limit&rdquo;">
+        <picture><source type="image/webp" srcset="assets/photos/melody-no-time-limit-480.webp 480w, assets/photos/melody-no-time-limit-720.webp 720w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/melody-no-time-limit.jpg" alt="A guest seated in front of a backdrop reading Retro Classics Remind Us That Melody Has No Time Limit" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">No time limit</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/slow-dance-dusk-720.webp" data-caption="A slow one at dusk">
+        <picture><source type="image/webp" srcset="assets/photos/slow-dance-dusk-480.webp 480w, assets/photos/slow-dance-dusk-720.webp 720w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/slow-dance-dusk.jpg" alt="A couple dancing closely as the sky turns blue at dusk" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Slow one at dusk</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/duo-denim-sunset-720.webp" data-caption="Posing in front of the retro sunset backdrop">
+        <picture><source type="image/webp" srcset="assets/photos/duo-denim-sunset-480.webp 480w, assets/photos/duo-denim-sunset-720.webp 720w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/duo-denim-sunset.jpg" alt="Two guests in denim in front of the retro sunset stage backdrop" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Sunset backdrop</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/dancer-retro-classics-720.webp" data-caption="Wide-leg jeans and a white shirt — the floor fills up">
+        <picture><source type="image/webp" srcset="assets/photos/dancer-retro-classics-480.webp 480w, assets/photos/dancer-retro-classics-720.webp 720w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/dancer-retro-classics.jpg" alt="A guest dancing in wide-leg jeans in front of the Retro Classics backdrop" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">The floor fills up</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/night-crowd-seated-720.webp" data-caption="Tables full, drinks out, eyes on the stage">
+        <picture><source type="image/webp" srcset="assets/photos/night-crowd-seated-480.webp 480w, assets/photos/night-crowd-seated-720.webp 720w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/night-crowd-seated.jpg" alt="Guests seated around tables watching the stage at night" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Eyes on the stage</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/selfie-sunset-mural-854.webp" data-caption="One for the group chat">
+        <picture><source type="image/webp" srcset="assets/photos/selfie-sunset-mural-480.webp 480w, assets/photos/selfie-sunset-mural-854.webp 854w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/selfie-sunset-mural.jpg" alt="A guest taking a photo on her phone in front of the neon sunset mural" width="854" height="1280" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">One for the group chat</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/laughing-pair-720.webp" data-caption="The reunion energy that keeps people coming back">
+        <picture><source type="image/webp" srcset="assets/photos/laughing-pair-480.webp 480w, assets/photos/laughing-pair-720.webp 720w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/laughing-pair.jpg" alt="Two guests laughing with each other at a table" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Reunion energy</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/all-white-group-854.webp" data-caption="All-white on the lawn">
+        <picture><source type="image/webp" srcset="assets/photos/all-white-group-480.webp 480w, assets/photos/all-white-group-854.webp 854w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/all-white-group.jpg" alt="A group in all-white outfits talking together on the lawn" width="854" height="1280" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">All-white on the lawn</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/duo-denim-pose-720.webp" data-caption="Red earrings, blue lipstick, full denim">
+        <picture><source type="image/webp" srcset="assets/photos/duo-denim-pose-480.webp 480w, assets/photos/duo-denim-pose-720.webp 720w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/duo-denim-pose.jpg" alt="Two guests in denim with sunglasses posing for the camera" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Full denim</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/ride-the-wave-neon-720.webp" data-caption="Under the &ldquo;Ride the Wave&rdquo; neon">
+        <picture><source type="image/webp" srcset="assets/photos/ride-the-wave-neon-480.webp 480w, assets/photos/ride-the-wave-neon-720.webp 720w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/ride-the-wave-neon.jpg" alt="Guests standing in front of the Ride the Wave neon sign" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Ride the wave</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/denim-jumpsuit-dance-720.webp" data-caption="Acid-wash jumpsuit, no notes">
+        <picture><source type="image/webp" srcset="assets/photos/denim-jumpsuit-dance-480.webp 480w, assets/photos/denim-jumpsuit-dance-720.webp 720w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/denim-jumpsuit-dance.jpg" alt="A guest dancing in an acid-wash denim jumpsuit and sunglasses" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">No notes</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/table-greeting-854.webp" data-caption="Everyone knows everyone by the second hour">
+        <picture><source type="image/webp" srcset="assets/photos/table-greeting-480.webp 480w, assets/photos/table-greeting-854.webp 854w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/table-greeting.jpg" alt="Guests greeting each other warmly around a table of drinks" width="854" height="1280" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Everyone knows everyone</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/night-lounge-720.webp" data-caption="Late in the night, still going">
+        <picture><source type="image/webp" srcset="assets/photos/night-lounge-480.webp 480w, assets/photos/night-lounge-720.webp 720w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/night-lounge.jpg" alt="Guests talking and dancing in the lounge area late at night" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Still going</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/dancing-white-shirt-720.webp" data-caption="Chain belt, white shirt, main character">
+        <picture><source type="image/webp" srcset="assets/photos/dancing-white-shirt-480.webp 480w, assets/photos/dancing-white-shirt-720.webp 720w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/dancing-white-shirt.jpg" alt="A guest dancing in a white shirt and chain belt" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Main character</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/trio-denim-pose-720.webp" data-caption="Three of a kind">
+        <picture><source type="image/webp" srcset="assets/photos/trio-denim-pose-480.webp 480w, assets/photos/trio-denim-pose-720.webp 720w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/trio-denim-pose.jpg" alt="Three guests in denim posing together for a photo" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Three of a kind</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/duo-sunset-backdrop-720.webp" data-caption="Overalls and acid wash by the sunset wall">
+        <picture><source type="image/webp" srcset="assets/photos/duo-sunset-backdrop-480.webp 480w, assets/photos/duo-sunset-backdrop-720.webp 720w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/duo-sunset-backdrop.jpg" alt="Two guests in denim overalls in front of the sunset backdrop" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">By the sunset wall</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/white-shirts-walk-720.webp" data-caption="Walking in like they own the lawn">
+        <picture><source type="image/webp" srcset="assets/photos/white-shirts-walk-480.webp 480w, assets/photos/white-shirts-walk-720.webp 720w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/white-shirts-walk.jpg" alt="Two guests in white shirts and jeans walking through the venue" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Walking in</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/friends-laughing-720.webp" data-caption="Catching up before the set starts">
+        <picture><source type="image/webp" srcset="assets/photos/friends-laughing-480.webp 480w, assets/photos/friends-laughing-720.webp 720w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/friends-laughing.jpg" alt="Two friends laughing together at a table before the set" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Before the set</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/denim-pair-day-720.webp" data-caption="Daytime, and the shades are already on">
+        <picture><source type="image/webp" srcset="assets/photos/denim-pair-day-480.webp 480w, assets/photos/denim-pair-day-720.webp 720w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/denim-pair-day.jpg" alt="Two guests in denim relaxing in the daytime crowd" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Shades already on</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/smiling-portrait-720.webp" data-caption="Somebody just said the right thing">
+        <picture><source type="image/webp" srcset="assets/photos/smiling-portrait-480.webp 480w, assets/photos/smiling-portrait-720.webp 720w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/smiling-portrait.jpg" alt="A guest smiling towards the camera in the crowd" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">The right thing</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/umbrella-laughs-720.webp" data-caption="Under the umbrellas at the food stalls">
+        <picture><source type="image/webp" srcset="assets/photos/umbrella-laughs-480.webp 480w, assets/photos/umbrella-laughs-720.webp 720w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/umbrella-laughs.jpg" alt="Guests laughing under a parasol at the food stalls" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">At the stalls</span>
+      </button>
+
+      <button type="button" class="g-tile img-holder" data-reveal="up" data-lightbox="assets/photos/food-stall-720.webp" data-caption="Food on site — nobody leaves hungry">
+        <picture><source type="image/webp" srcset="assets/photos/food-stall-480.webp 480w, assets/photos/food-stall-720.webp 720w" sizes="(max-width:460px) 92vw, (max-width:780px) 46vw, 24vw"><img src="assets/photos/food-stall.jpg" alt="A vendor serving a plate of food to a guest at the stall" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Nobody leaves hungry</span>
+      </button>
+
+    </div>
+
+    <p class="notice" style="margin-top:34px;" data-reveal="up"><b>Photo credit:</b> all images on this page were shot at Retro Wave events. If you spot yourself and would like a photo taken down, email <a href="mailto:hello@retrowave.ug" style="color:var(--orange); font-weight:600;">hello@retrowave.ug</a> and we will remove it.</p>
+  </div>
+</section>
+
+<div class="divider divider-burst" aria-hidden="true">
+  <span class="burst-disc"></span>
+  <span class="burst-label">Ride the wave</span>
+</div>
+
+<section style="padding-top:56px;">
+  <div class="wrap">
+    <div class="cta-band" data-reveal="zoom">
+      <span class="eyebrow" style="color:var(--peach);">Be In The Next One</span>
+      <h2 style="margin-top:12px;">The next album starts with your ticket</h2>
+      <p>Uganda, Kenya, Rwanda — one link, every date.</p>
+      <a href="events.html" class="btn btn-primary btn-lg">Browse Events</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/logo.png" alt="Retro Wave" width="115" height="36">
+        <p>Retro nightlife events across East Africa — Uganda, Kenya and Rwanda, one ticket platform.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <a href="events.html">Upcoming Events</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="history.html">History</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer-col">
+        <h5>Countries</h5>
+        <a href="events.html">Uganda</a>
+        <a href="events.html">Kenya</a>
+        <a href="events.html">Rwanda</a>
+      </div>
+      <div class="footer-col">
+        <h5>Support</h5>
+        <a href="mailto:hello@retrowave.ug">hello@retrowave.ug</a>
+        <span>WhatsApp support</span>
+        <span>Refunds &amp; transfers</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Retro Wave. All rights reserved.</span>
+      <span>retrowave.ug</span>
+    </div>
+  </div>
+</footer>
+
+<nav class="mobile-dock" aria-label="Quick links">
+  <ul>
+    <li><a href="index.html"><span class="d-ico" aria-hidden="true">🏠</span>Home</a></li>
+    <li><a href="events.html"><span class="d-ico" aria-hidden="true">🎫</span>Events</a></li>
+    <li><a href="event.html" class="dock-cta"><span class="d-ico" aria-hidden="true">🎟️</span>Tickets</a></li>
+    <li><a href="gallery.html" class="active"><span class="d-ico" aria-hidden="true">📸</span>Photos</a></li>
+    <li><a href="about.html"><span class="d-ico" aria-hidden="true">💬</span>About</a></li>
+  </ul>
+</nav>
+
+<button class="to-top" type="button" aria-label="Back to top">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>

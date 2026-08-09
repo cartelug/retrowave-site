@@ -2,57 +2,142 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Upcoming Events — Retro Wave</title>
 <meta name="description" content="All upcoming Retro Wave events across Uganda, Kenya and Rwanda.">
+<meta name="theme-color" content="#0e2038">
 <link rel="icon" href="assets/logo.png">
 <link rel="stylesheet" href="styles.css">
+<script>document.documentElement.className += ' js';</script>
+<noscript><style>
+  .preloader{display:none!important}
+  .main-nav{display:flex!important;flex-wrap:wrap}
+  .nav-toggle{display:none!important}
+</style></noscript>
 </head>
 <body>
 
+<div class="preloader" role="status" aria-live="polite" aria-label="Loading Retro Wave">
+  <div class="pl-inner">
+    <svg class="pl-cassette" viewBox="0 0 320 200" role="img" aria-label="Cassette tape winding">
+      <defs><linearGradient id="plBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a3d6b"/><stop offset="1" stop-color="#0b1a2f"/></linearGradient></defs>
+      <rect x="6" y="6" width="308" height="188" rx="18" fill="url(#plBody)" stroke="#f6e6c3" stroke-width="3"/>
+      <rect x="26" y="22" width="268" height="80" rx="10" fill="#fdf6e8"/>
+      <rect x="26" y="22" width="268" height="13" rx="6" fill="#e2521f"/>
+      <text x="160" y="70" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="27" font-weight="700" fill="#16345c">RETRO WAVE</text>
+      <text x="160" y="90" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" letter-spacing="2.4" fill="#8d8271">SIDE A — THE SONGS RAISED ME</text>
+      <rect class="pl-tape-window" x="72" y="114" width="176" height="60" rx="9" fill="#081527" stroke="rgba(246,230,195,.35)" stroke-width="2"/>
+      <rect x="112" y="138" width="96" height="12" fill="#3b2416"/>
+      <g class="pl-reel"><circle cx="112" cy="144" r="21" fill="#24150c" stroke="#f6e6c3" stroke-width="2"/><g stroke="#f6e6c3" stroke-width="3" stroke-linecap="round"><line x1="112" y1="129" x2="112" y2="159"/><line x1="97" y1="144" x2="127" y2="144"/><line x1="101" y1="133" x2="123" y2="155"/><line x1="123" y1="133" x2="101" y2="155"/></g></g>
+      <g class="pl-reel pl-reel--slow"><circle cx="208" cy="144" r="21" fill="#24150c" stroke="#f6e6c3" stroke-width="2"/><g stroke="#f6e6c3" stroke-width="3" stroke-linecap="round"><line x1="208" y1="129" x2="208" y2="159"/><line x1="193" y1="144" x2="223" y2="144"/><line x1="197" y1="133" x2="219" y2="155"/><line x1="219" y1="133" x2="197" y2="155"/></g></g>
+    </svg>
+    <div class="pl-word" aria-hidden="true">
+      <span style="--i:0">R</span><span style="--i:1">E</span><span style="--i:2">T</span><span style="--i:3">R</span><span style="--i:4">O</span>
+      <span class="pl-gap"></span>
+      <span style="--i:5">W</span><span style="--i:6">A</span><span style="--i:7">V</span><span style="--i:8">E</span>
+    </div>
+    <div class="pl-track"><div class="pl-fill"></div></div>
+    <div class="pl-meta"><span>Rewinding the tape</span><span class="pl-pct">0%</span></div>
+  </div>
+</div>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
 <header class="site-header">
   <div class="wrap">
-    <a href="index.html" class="brand"><img src="assets/logo.png" alt="Retro Wave"></a>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="events.html" class="active">Events</a>
-      <a href="history.html">History</a>
-      <a href="about.html">About</a>
+    <a href="index.html" class="brand" aria-label="Retro Wave home"><img src="assets/logo.png" alt="Retro Wave" width="120" height="38"></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="index.html" style="--i:0">Home</a>
+      <a href="events.html" class="active" style="--i:1">Events</a>
+      <a href="gallery.html" style="--i:2">Gallery</a>
+      <a href="history.html" style="--i:3">History</a>
+      <a href="about.html" style="--i:4">About</a>
     </nav>
     <div class="header-right">
-      <div class="country-switch" role="group" aria-label="Filter by country">
-        <button data-country-btn="all" class="active" onclick="setCountry('all')">All</button>
-        <button data-country-btn="ug" onclick="setCountry('ug')">🇺🇬 UG</button>
-        <button data-country-btn="ke" onclick="setCountry('ke')">🇰🇪 KE</button>
-        <button data-country-btn="rw" onclick="setCountry('rw')">🇷🇼 RW</button>
+      <div class="country-switch" role="group" aria-label="Filter events by country">
+        <button type="button" data-country-btn="all" class="active" aria-pressed="true">All</button>
+        <button type="button" data-country-btn="ug" aria-pressed="false">🇺🇬 UG</button>
+        <button type="button" data-country-btn="ke" aria-pressed="false">🇰🇪 KE</button>
+        <button type="button" data-country-btn="rw" aria-pressed="false">🇷🇼 RW</button>
       </div>
       <a href="event.html" class="btn btn-primary btn-sm">Get Tickets</a>
-      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><i></i><i></i><i></i></button>
     </div>
   </div>
 </header>
 
-<section style="padding-bottom:0;">
-  <div class="wrap">
-    <span class="eyebrow">On Sale Now</span>
-    <h1 style="font-size:clamp(32px,4.5vw,48px); margin:12px 0 10px;">Upcoming events</h1>
-    <p class="lede">Every Retro Wave date, in one place. Filter by country to see what's on near you.</p>
-
-    <div class="filter-pills" style="margin-top:26px;">
-      <button data-country-btn="all" class="active" onclick="setCountry('all')">All countries</button>
-      <button data-country-btn="ug" onclick="setCountry('ug')">🇺🇬 Uganda</button>
-      <button data-country-btn="ke" onclick="setCountry('ke')">🇰🇪 Kenya</button>
-      <button data-country-btn="rw" onclick="setCountry('rw')">🇷🇼 Rwanda</button>
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-inner">
+    <nav class="drawer-links" aria-label="Mobile">
+      <a href="index.html" style="--i:0"><span class="d-ico" aria-hidden="true">🏠</span>Home</a>
+      <a href="events.html" class="active" style="--i:1"><span class="d-ico" aria-hidden="true">🎫</span>Events</a>
+      <a href="gallery.html" style="--i:2"><span class="d-ico" aria-hidden="true">📸</span>Gallery</a>
+      <a href="history.html" style="--i:3"><span class="d-ico" aria-hidden="true">📼</span>History</a>
+      <a href="about.html" style="--i:4"><span class="d-ico" aria-hidden="true">💬</span>About</a>
+    </nav>
+    <div class="drawer-foot">
+      <div class="a11y-bar">
+        <span class="a11y-label">Text size</span>
+        <button type="button" class="a11y-btn" data-text-step="md" aria-pressed="true">A</button>
+        <button type="button" class="a11y-btn" data-text-step="lg" aria-pressed="false"><span class="big">A</span></button>
+        <button type="button" class="a11y-btn" data-text-step="xl" aria-pressed="false"><span class="big">A+</span></button>
+      </div>
+      <div class="a11y-bar">
+        <span class="a11y-label">Motion</span>
+        <button type="button" class="a11y-btn" data-motion-toggle aria-pressed="false">Reduce animations</button>
+      </div>
+      <div class="country-switch" role="group" aria-label="Filter events by country">
+        <button type="button" data-country-btn="all" class="active" aria-pressed="true">All</button>
+        <button type="button" data-country-btn="ug" aria-pressed="false">🇺🇬</button>
+        <button type="button" data-country-btn="ke" aria-pressed="false">🇰🇪</button>
+        <button type="button" data-country-btn="rw" aria-pressed="false">🇷🇼</button>
+      </div>
+      <a href="events.html" class="btn btn-primary btn-block btn-lg">Get Tickets</a>
+      <p class="drawer-contact">Need help? <a href="mailto:hello@retrowave.ug">hello@retrowave.ug</a></p>
     </div>
+  </div>
+</div>
+
+<main id="main">
+<section class="hero grain" style="padding:54px 0 62px;">
+  <div class="hero-sun" aria-hidden="true"></div>
+  <div class="wrap" style="position:relative; z-index:2; max-width:780px;">
+    <span class="eyebrow intro-fade" style="--i:0">On Sale Now</span>
+    <h1 style="color:var(--cream-logo); font-size:clamp(2.25rem,5.5vw,3.5rem); margin:14px 0 16px;">
+      <span class="line-mask"><span style="--i:0">Every date,</span></span>
+      <span class="line-mask"><span style="--i:1">one <em style="font-style:normal;color:var(--orange);">place.</em></span></span>
+    </h1>
+    <p class="lede intro-fade" style="--i:1; color:rgba(246,230,195,.8); font-size:1.125rem;">Filter by country to see what is on near you. Tickets are the same simple checkout wherever you are buying from.</p>
   </div>
 </section>
 
+<div class="divider divider-marquee" aria-hidden="true">
+  <div class="mq-track"><span>THE SONGS RAISED ME <i class="mq-star">✦</i> RIDE THE WAVE <i class="mq-star">✦</i> WE LOVE THE 90s <i class="mq-star">✦</i> MELODY HAS NO TIME LIMIT <i class="mq-star">✦</i></span></div>
+  <div class="mq-track"><span>THE SONGS RAISED ME <i class="mq-star">✦</i> RIDE THE WAVE <i class="mq-star">✦</i> WE LOVE THE 90s <i class="mq-star">✦</i> MELODY HAS NO TIME LIMIT <i class="mq-star">✦</i></span></div>
+</div>
+
 <section>
   <div class="wrap">
-    <div class="event-grid">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow" data-reveal="up">Filter</span>
+        <h2 data-reveal="up" style="--d:80">What is on near you</h2>
+      </div>
+      <div class="filter-pills" role="group" aria-label="Filter events by country" data-reveal="up" style="--d:150">
+        <button type="button" data-country-btn="all" class="active" aria-pressed="true">All countries</button>
+        <button type="button" data-country-btn="ug" aria-pressed="false">🇺🇬 Uganda</button>
+        <button type="button" data-country-btn="ke" aria-pressed="false">🇰🇪 Kenya</button>
+        <button type="button" data-country-btn="rw" aria-pressed="false">🇷🇼 Rwanda</button>
+      </div>
+    </div>
 
-      <a href="event.html" class="event-card" data-country-item="ug">
-        <div class="poster-art">
+    <p class="sr-only" data-filter-live aria-live="polite"></p>
+
+    <div class="event-grid" data-stagger="100">
+
+      <a href="event.html" class="event-card" data-country-item="ug" data-reveal="up">
+        <div class="poster-art img-holder">
+          <picture><source type="image/webp" srcset="assets/photos/night-crowd-seated-480.webp 480w, assets/photos/night-crowd-seated-720.webp 720w" sizes="(max-width: 780px) 92vw, (max-width: 980px) 46vw, 30vw"><img src="assets/photos/night-crowd-seated.jpg" alt="Guests seated around tables at a Retro Wave night" width="720" height="1080" loading="lazy" decoding="async"></picture>
           <span class="poster-tag">🇺🇬 Kampala</span>
           <span class="poster-label">Retro Wave: Kampala After Dark</span>
         </div>
@@ -60,16 +145,18 @@
           <span class="event-chip">Sat, 30 Aug 2026</span>
           <h3>Kampala After Dark</h3>
           <div class="meta">Blu Haze Rooftop · Uganda</div>
-          <div class="remaining-bar"><span style="width:64%"></span></div>
+          <div class="remaining-bar"><span data-fill="64"></span></div>
           <div class="remaining-note">Selling fast</div>
           <div class="event-card-foot">
             <span class="price-from">From <b>UGX 30,000</b></span>
+            <span class="card-go" aria-hidden="true">→</span>
           </div>
         </div>
       </a>
 
-      <a href="event.html" class="event-card" data-country-item="ug">
-        <div class="poster-art orange-wash">
+      <a href="event.html" class="event-card" data-country-item="ug" data-reveal="up">
+        <div class="poster-art img-holder">
+          <picture><source type="image/webp" srcset="assets/photos/dancer-retro-classics-480.webp 480w, assets/photos/dancer-retro-classics-720.webp 720w" sizes="(max-width: 780px) 92vw, (max-width: 980px) 46vw, 30vw"><img src="assets/photos/dancer-retro-classics.jpg" alt="A guest dancing in front of the Retro Classics stage backdrop" width="720" height="1080" loading="lazy" decoding="async"></picture>
           <span class="poster-tag">🇺🇬 Entebbe</span>
           <span class="poster-label">The Songs Raised Me — 2000s Edition</span>
         </div>
@@ -77,16 +164,18 @@
           <span class="event-chip">Fri, 4 Sep 2026</span>
           <h3>The Songs Raised Me</h3>
           <div class="meta">Lake Victoria Serena · Uganda</div>
-          <div class="remaining-bar"><span style="width:30%"></span></div>
+          <div class="remaining-bar"><span data-fill="30"></span></div>
           <div class="remaining-note">Early bird open</div>
           <div class="event-card-foot">
             <span class="price-from">From <b>UGX 40,000</b></span>
+            <span class="card-go" aria-hidden="true">→</span>
           </div>
         </div>
       </a>
 
-      <a href="event.html" class="event-card" data-country-item="ug">
-        <div class="poster-art">
+      <a href="event.html" class="event-card" data-country-item="ug" data-reveal="up">
+        <div class="poster-art img-holder">
+          <picture><source type="image/webp" srcset="assets/photos/golden-hour-480.webp 480w, assets/photos/golden-hour-720.webp 720w" sizes="(max-width: 780px) 92vw, (max-width: 980px) 46vw, 30vw"><img src="assets/photos/golden-hour.jpg" alt="A guest backlit by golden hour sun on the lawn" width="720" height="1080" loading="lazy" decoding="async"></picture>
           <span class="poster-tag">🇺🇬 Jinja</span>
           <span class="poster-label">Retro Wave: Source of the Nile</span>
         </div>
@@ -94,16 +183,18 @@
           <span class="event-chip">Sat, 17 Oct 2026</span>
           <h3>Source of the Nile</h3>
           <div class="meta">Riverside Gardens · Uganda</div>
-          <div class="remaining-bar"><span style="width:4%"></span></div>
+          <div class="remaining-bar"><span data-fill="4"></span></div>
           <div class="remaining-note">Just announced</div>
           <div class="event-card-foot">
             <span class="price-from">From <b>UGX 35,000</b></span>
+            <span class="card-go" aria-hidden="true">→</span>
           </div>
         </div>
       </a>
 
-      <a href="event.html" class="event-card" data-country-item="ke">
-        <div class="poster-art">
+      <a href="event.html" class="event-card" data-country-item="ke" data-reveal="up">
+        <div class="poster-art img-holder">
+          <picture><source type="image/webp" srcset="assets/photos/dj-booth-480.webp 480w, assets/photos/dj-booth-720.webp 720w" sizes="(max-width: 780px) 92vw, (max-width: 980px) 46vw, 30vw"><img src="assets/photos/dj-booth.jpg" alt="DJ and host behind the decks under stage lighting" width="720" height="1080" loading="lazy" decoding="async"></picture>
           <span class="poster-tag">🇰🇪 Nairobi</span>
           <span class="poster-label">Retro Wave Nairobi: First Ever</span>
         </div>
@@ -111,16 +202,18 @@
           <span class="event-chip">Sat, 20 Sep 2026</span>
           <h3>Retro Wave Nairobi</h3>
           <div class="meta">The Alchemist · Kenya</div>
-          <div class="remaining-bar"><span style="width:12%"></span></div>
+          <div class="remaining-bar"><span data-fill="12"></span></div>
           <div class="remaining-note">Just announced</div>
           <div class="event-card-foot">
             <span class="price-from">From <b>KES 1,500</b></span>
+            <span class="card-go" aria-hidden="true">→</span>
           </div>
         </div>
       </a>
 
-      <a href="event.html" class="event-card" data-country-item="rw">
-        <div class="poster-art orange-wash">
+      <a href="event.html" class="event-card" data-country-item="rw" data-reveal="up">
+        <div class="poster-art img-holder">
+          <picture><source type="image/webp" srcset="assets/photos/selfie-sunset-mural-480.webp 480w, assets/photos/selfie-sunset-mural-854.webp 854w" sizes="(max-width: 780px) 92vw, (max-width: 980px) 46vw, 30vw"><img src="assets/photos/selfie-sunset-mural.jpg" alt="A guest taking a photo in front of the retro sunset mural" width="854" height="1280" loading="lazy" decoding="async"></picture>
           <span class="poster-tag">🇷🇼 Kigali</span>
           <span class="poster-label">Retro Wave Kigali Nights</span>
         </div>
@@ -128,30 +221,94 @@
           <span class="event-chip">Sat, 11 Oct 2026</span>
           <h3>Retro Wave Kigali Nights</h3>
           <div class="meta">Kigali Convention Village · Rwanda</div>
-          <div class="remaining-bar"><span style="width:8%"></span></div>
+          <div class="remaining-bar"><span data-fill="8"></span></div>
           <div class="remaining-note">Just announced</div>
           <div class="event-card-foot">
             <span class="price-from">From <b>RWF 8,000</b></span>
+            <span class="card-go" aria-hidden="true">→</span>
           </div>
         </div>
       </a>
 
     </div>
 
-    <p class="notice" style="margin-top:30px;"><b>Note:</b> listings above are example events for layout purposes. Replace with real dates, venues and poster art any time through the Event Manager.</p>
+    <div class="empty-state" style="margin-top:34px;" data-country-empty="ke">
+      <h4>Nothing listed in Kenya yet</h4>
+      <p>Retro Wave Nairobi is the first Kenya date — join the list and we will tell you the moment it opens.</p>
+      <a href="#notify" class="btn btn-primary">Notify me</a>
+    </div>
+    <div class="empty-state" style="margin-top:34px;" data-country-empty="rw">
+      <h4>Nothing listed in Rwanda yet</h4>
+      <p>Retro Wave Kigali Nights is the first Rwanda date — join the list and we will tell you the moment it opens.</p>
+      <a href="#notify" class="btn btn-primary">Notify me</a>
+    </div>
+
+    <p class="notice" style="margin-top:32px;" data-reveal="up"><b>Note:</b> the listings above are example events for layout purposes — the photography is from real Retro Wave nights. Replace the dates, venues and prices with real ones at any time; the filters and ticket flow already work.</p>
   </div>
 </section>
+
+<div class="divider divider-tape" aria-hidden="true">
+  <svg class="reel" viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" fill="none" stroke="#f6e6c3" stroke-width="2.5"/><circle cx="24" cy="24" r="6" fill="#e2521f"/><g stroke="#f6e6c3" stroke-width="2.5" stroke-linecap="round"><line x1="24" y1="6" x2="24" y2="42"/><line x1="6" y1="24" x2="42" y2="24"/><line x1="11" y1="11" x2="37" y2="37"/><line x1="37" y1="11" x2="11" y2="37"/></g></svg>
+  <span class="tape-band"></span>
+  <svg class="reel" viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" fill="none" stroke="#f6e6c3" stroke-width="2.5"/><circle cx="24" cy="24" r="6" fill="#e2521f"/><g stroke="#f6e6c3" stroke-width="2.5" stroke-linecap="round"><line x1="24" y1="6" x2="24" y2="42"/><line x1="6" y1="24" x2="42" y2="24"/><line x1="11" y1="11" x2="37" y2="37"/><line x1="37" y1="11" x2="11" y2="37"/></g></svg>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow" data-reveal="up">Paying For Tickets</span>
+        <h2 data-reveal="up" style="--d:80">However you already pay</h2>
+      </div>
+    </div>
+    <div class="steps-grid" data-stagger="110">
+      <div class="stat step-card" data-reveal="up">
+        <span class="n">📱</span>
+        <h3>MTN Mobile Money</h3>
+        <p>Approve the prompt on your phone. No card, no bank app, no typing long numbers.</p>
+      </div>
+      <div class="stat step-card" data-reveal="up">
+        <span class="n">📶</span>
+        <h3>Airtel Money</h3>
+        <p>Same flow on Airtel — confirm on your handset and your ticket arrives straight away.</p>
+      </div>
+      <div class="stat step-card" data-reveal="up">
+        <span class="n">💳</span>
+        <h3>Visa &amp; Mastercard</h3>
+        <p>Paying from outside the region or buying for a group? Card checkout works everywhere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="notify"></div>
+<section style="padding-top:56px;">
+  <div class="wrap">
+    <div class="cta-band" data-reveal="zoom">
+      <span class="eyebrow" style="color:var(--peach);">Never Miss A Drop</span>
+      <h2 style="margin-top:12px;">Get notified before tickets go live</h2>
+      <p>One list, three countries — we will tell you the moment Retro Wave announces a date near you.</p>
+      <form class="notify-form" data-notify novalidate>
+        <label class="sr-only" for="notify-email">Your email address</label>
+        <input id="notify-email" type="email" name="email" placeholder="you@email.com" autocomplete="email" required>
+        <button class="btn btn-primary" type="submit">Notify Me</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
 
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <img src="assets/logo.png" alt="Retro Wave">
+        <img src="assets/logo.png" alt="Retro Wave" width="115" height="36">
         <p>Retro nightlife events across East Africa — Uganda, Kenya and Rwanda, one ticket platform.</p>
       </div>
       <div class="footer-col">
         <h5>Explore</h5>
         <a href="events.html">Upcoming Events</a>
+        <a href="gallery.html">Gallery</a>
         <a href="history.html">History</a>
         <a href="about.html">About</a>
       </div>
@@ -163,7 +320,7 @@
       </div>
       <div class="footer-col">
         <h5>Support</h5>
-        <span>hello@retrowave.ug</span>
+        <a href="mailto:hello@retrowave.ug">hello@retrowave.ug</a>
         <span>WhatsApp support</span>
         <span>Refunds &amp; transfers</span>
       </div>
@@ -174,6 +331,18 @@
     </div>
   </div>
 </footer>
+
+<nav class="mobile-dock" aria-label="Quick links">
+  <ul>
+    <li><a href="index.html" class=""><span class="d-ico" aria-hidden="true">🏠</span>Home</a></li>
+    <li><a href="events.html" class="active"><span class="d-ico" aria-hidden="true">🎫</span>Events</a></li>
+    <li><a href="event.html" class="dock-cta"><span class="d-ico" aria-hidden="true">🎟️</span>Tickets</a></li>
+    <li><a href="gallery.html" class=""><span class="d-ico" aria-hidden="true">📸</span>Photos</a></li>
+    <li><a href="about.html" class=""><span class="d-ico" aria-hidden="true">💬</span>About</a></li>
+  </ul>
+</nav>
+
+<button class="to-top" type="button" aria-label="Back to top">↑</button>
 
 <script src="script.js"></script>
 </body>

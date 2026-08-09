@@ -2,162 +2,263 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Retro Wave: Kampala After Dark — Retro Wave</title>
 <meta name="description" content="Buy tickets to Retro Wave: Kampala After Dark. MTN Mobile Money, Airtel Money or card.">
+<meta name="theme-color" content="#0e2038">
 <link rel="icon" href="assets/logo.png">
 <link rel="stylesheet" href="styles.css">
+<script>document.documentElement.className += ' js';</script>
+<noscript><style>
+  .preloader{display:none!important}
+  .main-nav{display:flex!important;flex-wrap:wrap}
+  .nav-toggle{display:none!important}
+</style></noscript>
 <style>
-  .event-hero { position: relative; background: linear-gradient(165deg, var(--navy-light), var(--navy-deep)); padding: 44px 0 0; overflow: hidden; }
-  .event-hero::before { content:""; position:absolute; top:-220px; left:50%; transform:translateX(-50%); width:760px; height:760px; border-radius:50%; background-image: repeating-conic-gradient(rgba(226,82,31,0.15) 0deg 9deg, transparent 9deg 18deg); }
-  .breadcrumb { position:relative; z-index:2; font-size:13px; color: rgba(246,230,195,0.6); margin-bottom: 18px; }
-  .breadcrumb a { color: rgba(246,230,195,0.85); }
-  .event-hero-grid { position:relative; z-index:2; display:grid; grid-template-columns: 0.85fr 1.15fr; gap: 44px; align-items:end; padding-bottom: 40px; }
-  .event-hero .poster-art { aspect-ratio: 4/5; }
-  .event-title-block .event-chip { background: rgba(255,255,255,0.1); color: var(--cream-logo); }
-  .event-title-block h1 { color: var(--cream-logo); font-size: clamp(30px,4vw,44px); margin: 14px 0 10px; }
-  .event-facts { display:flex; gap: 26px; flex-wrap: wrap; margin-top:18px; }
-  .event-fact { color: rgba(246,230,195,0.85); font-size:14.5px; }
-  .event-fact b { display:block; color:#fff; font-family: var(--font-display); font-size:16px; font-weight:600; }
+  .event-hero { position:relative; background: linear-gradient(172deg, var(--navy-light), var(--navy-deep) 70%, var(--navy-ink)); padding: 34px 0 0; overflow:hidden; }
+  .event-hero::before { content:""; position:absolute; top:-240px; left:52%; transform:translateX(-50%); width:780px; height:780px; border-radius:50%; background-image: repeating-conic-gradient(rgba(226,82,31,.15) 0deg 9deg, transparent 9deg 18deg); animation: spinSlow 70s linear infinite; }
+  .breadcrumb { position:relative; z-index:2; font-size:.8125rem; color:rgba(246,230,195,.6); margin-bottom:18px; }
+  .breadcrumb a { color:rgba(246,230,195,.85); }
+  .breadcrumb a:hover { color:var(--cream-logo); text-decoration:underline; }
 
-  .detail-grid { display:grid; grid-template-columns: 1.55fr 1fr; gap: 48px; align-items:start; }
-  .lineup-list { display:flex; flex-direction:column; gap:14px; margin-top: 18px; }
-  .lineup-item { display:flex; align-items:center; gap:14px; background: var(--cream-card); border:1.5px solid var(--border); border-radius: 12px; padding: 14px 16px; }
-  .lineup-avatar { width:44px; height:44px; border-radius:50%; background: linear-gradient(135deg, var(--orange), var(--navy)); flex-shrink:0; }
-  .lineup-item b { display:block; font-size:15px; color:var(--navy); }
-  .lineup-item span { font-size:13px; color:var(--ink-soft); }
+  .event-hero-grid { position:relative; z-index:2; display:grid; grid-template-columns:.8fr 1.2fr; gap:44px; align-items:end; padding-bottom:44px; }
+  .event-hero .poster-art { aspect-ratio:4/5; border:3px solid rgba(246,230,195,.85); box-shadow: var(--shadow-lift); }
+  .event-title-block .event-chip { background:rgba(255,255,255,.12); color:var(--cream-logo); }
+  .event-title-block h1 { color:var(--cream-logo); font-size:clamp(2rem,4.4vw,3rem); margin:14px 0 12px; }
+  .event-facts { display:flex; gap:26px; flex-wrap:wrap; margin-top:20px; }
+  .event-fact { color:rgba(246,230,195,.85); font-size:.9375rem; }
+  .event-fact b { display:block; color:#fff; font-family:var(--font-display); font-size:1.0625rem; font-weight:600; }
 
-  .tier-row { display:flex; align-items:center; justify-content:space-between; gap:14px; padding: 16px 4px; }
-  .tier-info b { display:block; font-size:16px; color:var(--navy); }
-  .tier-info span { font-size:13px; color:var(--ink-soft); }
-  .qty-stepper { display:flex; align-items:center; gap:12px; }
-  .qty-stepper button { width:32px; height:32px; border-radius:50%; border:1.5px solid var(--border); background:#fff; font-size:16px; font-weight:700; color:var(--navy); display:flex; align-items:center; justify-content:center; }
-  .qty-stepper button:hover { background: var(--cream-alt); }
-  .qty-stepper [data-qty] { min-width: 20px; text-align:center; font-weight:600; font-family: var(--font-display); }
+  .detail-grid { display:grid; grid-template-columns:1.5fr 1fr; gap:48px; align-items:start; }
 
-  .buy-summary { position: sticky; top: 96px; }
-  .cart-total-row { display:flex; align-items:center; justify-content:space-between; padding-top:14px; margin-top: 4px; }
-  .cart-total-row .amt { font-family: var(--font-display); font-size:22px; color:var(--navy); }
+  .lineup-list { display:flex; flex-direction:column; gap:14px; margin-top:18px; }
+  .lineup-item { display:flex; align-items:center; gap:14px; background:var(--cream-card); border:1.5px solid var(--border); border-radius:14px; padding:15px 17px; transition: transform .25s var(--ease-out), border-color .25s ease; }
+  .lineup-item:hover { transform: translateX(5px); border-color: var(--orange); }
+  .lineup-avatar { width:46px; height:46px; border-radius:50%; background:linear-gradient(135deg, var(--orange), var(--navy)); flex-shrink:0; display:grid; place-items:center; color:#fff; font-family:var(--font-display); font-size:1rem; }
+  .lineup-item b { display:block; font-size:.9375rem; color:var(--navy); }
+  .lineup-item span { font-size:.8125rem; color:var(--ink-soft); }
+
+  .tier-row { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:16px 4px; transition: background .2s ease; border-radius:10px; }
+  .tier-row.has-qty { background: rgba(226,82,31,.07); }
+  .tier-info b { display:block; font-size:1rem; color:var(--navy); }
+  .tier-info span { font-size:.8125rem; color:var(--ink-soft); }
+  .qty-stepper { display:flex; align-items:center; gap:10px; }
+  .qty-stepper button { width:44px; height:44px; border-radius:50%; border:1.5px solid var(--border); background:#fff; font-size:1.25rem; font-weight:700; color:var(--navy); display:flex; align-items:center; justify-content:center; transition: background .18s ease, border-color .18s ease, transform .18s var(--ease-spring); }
+  .qty-stepper button:hover:not(:disabled) { background:var(--orange); border-color:var(--orange); color:#fff; transform: scale(1.08); }
+  .qty-stepper button:disabled { opacity:.35; cursor:not-allowed; }
+  .qty-stepper [data-qty] { min-width:28px; text-align:center; font-weight:600; font-family:var(--font-display); font-size:1.125rem; font-variant-numeric: tabular-nums; }
+
+  .buy-summary { position:sticky; top:calc(var(--header-h) + 16px); }
+  .cart-total-row { display:flex; align-items:center; justify-content:space-between; padding-top:14px; gap:12px; flex-wrap:wrap; }
+  .cart-total-row .amt { font-family:var(--font-display); font-size:1.375rem; color:var(--navy); }
 
   .pay-methods { display:flex; gap:8px; margin-top:14px; flex-wrap:wrap; }
-  .pay-chip { font-size:11.5px; font-weight:700; color:var(--ink-soft); background: var(--cream-alt); padding:5px 10px; border-radius:999px; }
+  .pay-chip { font-size:.71875rem; font-weight:700; color:var(--ink-soft); background:var(--cream-alt); padding:6px 12px; border-radius:999px; }
 
-  .sticky-bar { position:fixed; left:0; right:0; bottom:-100px; background: var(--navy); padding: 14px 0; box-shadow: 0 -8px 24px rgba(0,0,0,0.18); z-index:150; transition: bottom 0.25s ease; }
-  .sticky-bar.is-visible { bottom:0; }
-  .sticky-bar .wrap { display:flex; align-items:center; justify-content:space-between; gap: 16px; }
-  .sticky-bar .amt { color: var(--cream-logo); font-family: var(--font-display); font-size:18px; }
-  .sticky-bar .amt small { display:block; font-family: var(--font-body); font-size:11px; color: var(--peach); font-weight:600; }
+  .sticky-bar { position:fixed; left:0; right:0; bottom:calc(-120px - var(--dock-h)); background:var(--navy); padding:14px 0 calc(14px + env(safe-area-inset-bottom,0px)); box-shadow:0 -8px 26px rgba(0,0,0,.3); z-index:260; transition: bottom .3s var(--ease-out); }
+  .sticky-bar.is-visible { bottom: var(--dock-h); }
+  .sticky-bar .wrap { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .sticky-bar .amt { color:var(--cream-logo); font-family:var(--font-display); font-size:1.125rem; }
+  .sticky-bar .amt small { display:block; font-family:var(--font-body); font-size:.6875rem; color:var(--peach); font-weight:600; }
 
   @media (max-width: 980px) {
-    .event-hero-grid, .detail-grid { grid-template-columns: 1fr; }
-    .buy-summary { position: static; }
+    .event-hero-grid, .detail-grid { grid-template-columns:1fr; }
+    .event-hero .poster-art { max-width:340px; }
+    .buy-summary { position:static; }
+  }
+  @media (max-width: 780px) {
+    .event-facts { gap:16px 26px; }
   }
 </style>
 </head>
 <body>
 
+<div class="preloader" role="status" aria-live="polite" aria-label="Loading Retro Wave">
+  <div class="pl-inner">
+    <svg class="pl-cassette" viewBox="0 0 320 200" role="img" aria-label="Cassette tape winding">
+      <defs><linearGradient id="plBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a3d6b"/><stop offset="1" stop-color="#0b1a2f"/></linearGradient></defs>
+      <rect x="6" y="6" width="308" height="188" rx="18" fill="url(#plBody)" stroke="#f6e6c3" stroke-width="3"/>
+      <rect x="26" y="22" width="268" height="80" rx="10" fill="#fdf6e8"/>
+      <rect x="26" y="22" width="268" height="13" rx="6" fill="#e2521f"/>
+      <text x="160" y="70" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="27" font-weight="700" fill="#16345c">RETRO WAVE</text>
+      <text x="160" y="90" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" letter-spacing="2.4" fill="#8d8271">SIDE A — THE SONGS RAISED ME</text>
+      <rect class="pl-tape-window" x="72" y="114" width="176" height="60" rx="9" fill="#081527" stroke="rgba(246,230,195,.35)" stroke-width="2"/>
+      <rect x="112" y="138" width="96" height="12" fill="#3b2416"/>
+      <g class="pl-reel"><circle cx="112" cy="144" r="21" fill="#24150c" stroke="#f6e6c3" stroke-width="2"/><g stroke="#f6e6c3" stroke-width="3" stroke-linecap="round"><line x1="112" y1="129" x2="112" y2="159"/><line x1="97" y1="144" x2="127" y2="144"/><line x1="101" y1="133" x2="123" y2="155"/><line x1="123" y1="133" x2="101" y2="155"/></g></g>
+      <g class="pl-reel pl-reel--slow"><circle cx="208" cy="144" r="21" fill="#24150c" stroke="#f6e6c3" stroke-width="2"/><g stroke="#f6e6c3" stroke-width="3" stroke-linecap="round"><line x1="208" y1="129" x2="208" y2="159"/><line x1="193" y1="144" x2="223" y2="144"/><line x1="197" y1="133" x2="219" y2="155"/><line x1="219" y1="133" x2="197" y2="155"/></g></g>
+    </svg>
+    <div class="pl-word" aria-hidden="true">
+      <span style="--i:0">R</span><span style="--i:1">E</span><span style="--i:2">T</span><span style="--i:3">R</span><span style="--i:4">O</span>
+      <span class="pl-gap"></span>
+      <span style="--i:5">W</span><span style="--i:6">A</span><span style="--i:7">V</span><span style="--i:8">E</span>
+    </div>
+    <div class="pl-track"><div class="pl-fill"></div></div>
+    <div class="pl-meta"><span>Rewinding the tape</span><span class="pl-pct">0%</span></div>
+  </div>
+</div>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
 <header class="site-header">
   <div class="wrap">
-    <a href="index.html" class="brand"><img src="assets/logo.png" alt="Retro Wave"></a>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="events.html" class="active">Events</a>
-      <a href="history.html">History</a>
-      <a href="about.html">About</a>
+    <a href="index.html" class="brand" aria-label="Retro Wave home"><img src="assets/logo.png" alt="Retro Wave" width="120" height="38"></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="index.html" style="--i:0">Home</a>
+      <a href="events.html" class="active" style="--i:1">Events</a>
+      <a href="gallery.html" style="--i:2">Gallery</a>
+      <a href="history.html" style="--i:3">History</a>
+      <a href="about.html" style="--i:4">About</a>
     </nav>
     <div class="header-right">
-      <div class="country-switch" role="group" aria-label="Filter by country">
-        <button data-country-btn="all" class="active">All</button>
-        <button data-country-btn="ug">🇺🇬 UG</button>
-        <button data-country-btn="ke">🇰🇪 KE</button>
-        <button data-country-btn="rw">🇷🇼 RW</button>
+      <div class="country-switch" role="group" aria-label="Filter events by country">
+        <button type="button" data-country-btn="all" class="active" aria-pressed="true">All</button>
+        <button type="button" data-country-btn="ug" aria-pressed="false">🇺🇬 UG</button>
+        <button type="button" data-country-btn="ke" aria-pressed="false">🇰🇪 KE</button>
+        <button type="button" data-country-btn="rw" aria-pressed="false">🇷🇼 RW</button>
       </div>
       <a href="#tickets" class="btn btn-primary btn-sm">Get Tickets</a>
-      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><i></i><i></i><i></i></button>
     </div>
   </div>
 </header>
 
-<section class="event-hero">
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-inner">
+    <nav class="drawer-links" aria-label="Mobile">
+      <a href="index.html" style="--i:0"><span class="d-ico" aria-hidden="true">🏠</span>Home</a>
+      <a href="events.html" class="active" style="--i:1"><span class="d-ico" aria-hidden="true">🎫</span>Events</a>
+      <a href="gallery.html" style="--i:2"><span class="d-ico" aria-hidden="true">📸</span>Gallery</a>
+      <a href="history.html" style="--i:3"><span class="d-ico" aria-hidden="true">📼</span>History</a>
+      <a href="about.html" style="--i:4"><span class="d-ico" aria-hidden="true">💬</span>About</a>
+    </nav>
+    <div class="drawer-foot">
+      <div class="a11y-bar">
+        <span class="a11y-label">Text size</span>
+        <button type="button" class="a11y-btn" data-text-step="md" aria-pressed="true">A</button>
+        <button type="button" class="a11y-btn" data-text-step="lg" aria-pressed="false"><span class="big">A</span></button>
+        <button type="button" class="a11y-btn" data-text-step="xl" aria-pressed="false"><span class="big">A+</span></button>
+      </div>
+      <div class="a11y-bar">
+        <span class="a11y-label">Motion</span>
+        <button type="button" class="a11y-btn" data-motion-toggle aria-pressed="false">Reduce animations</button>
+      </div>
+      <div class="country-switch" role="group" aria-label="Filter events by country">
+        <button type="button" data-country-btn="all" class="active" aria-pressed="true">All</button>
+        <button type="button" data-country-btn="ug" aria-pressed="false">🇺🇬</button>
+        <button type="button" data-country-btn="ke" aria-pressed="false">🇰🇪</button>
+        <button type="button" data-country-btn="rw" aria-pressed="false">🇷🇼</button>
+      </div>
+      <a href="events.html" class="btn btn-primary btn-block btn-lg">Get Tickets</a>
+      <p class="drawer-contact">Need help? <a href="mailto:hello@retrowave.ug">hello@retrowave.ug</a></p>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+<section class="event-hero grain">
   <div class="wrap">
-    <div class="breadcrumb"><a href="events.html">Events</a> / Kampala After Dark</div>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> / <a href="events.html">Events</a> / Kampala After Dark</nav>
     <div class="event-hero-grid">
-      <div class="poster-art">
+      <div class="poster-art img-holder intro-fade" style="--i:0">
+        <picture><source type="image/webp" srcset="assets/photos/night-crowd-seated-480.webp 480w, assets/photos/night-crowd-seated-720.webp 720w" sizes="(max-width: 980px) 340px, 30vw"><img src="assets/photos/night-crowd-seated.jpg" alt="Guests seated around tables at a Retro Wave night" width="720" height="1080" fetchpriority="high" decoding="async"></picture>
         <span class="poster-tag">🇺🇬 Kampala</span>
         <span class="poster-label">Retro Wave: Kampala After Dark</span>
       </div>
       <div class="event-title-block">
-        <span class="event-chip">On Sale Now</span>
-        <h1>Retro Wave: Kampala After Dark</h1>
-        <p class="lede" style="color:rgba(246,230,195,0.75);">A night built on the tracks that raised us — resident DJs, an all-vinyl warm-up set, and the Retro Wave dancefloor at full tilt.</p>
-        <div class="event-facts">
+        <span class="event-chip intro-fade" style="--i:0">On Sale Now</span>
+        <h1>
+          <span class="line-mask"><span style="--i:0">Retro Wave:</span></span>
+          <span class="line-mask"><span style="--i:1">Kampala After Dark</span></span>
+        </h1>
+        <p class="lede intro-fade" style="--i:1; color:rgba(246,230,195,.78);">A night built on the tracks that raised us — resident DJs, an all-vinyl warm-up set, and the Retro Wave dancefloor at full tilt.</p>
+        <div class="event-facts intro-fade" style="--i:2">
           <div class="event-fact"><b>Sat, 30 Aug 2026</b>Doors 8:00 PM</div>
           <div class="event-fact"><b>Blu Haze Rooftop</b>Kampala, Uganda</div>
           <div class="event-fact"><b>18+</b>Valid ID required</div>
+        </div>
+        <div class="countdown intro-fade" style="--i:3; max-width:380px;" data-countdown="2026-08-30T20:00:00" data-done-text="Doors are open — see you inside.">
+          <div><span class="num" data-d>00</span><span class="lbl">Days</span></div>
+          <div><span class="num" data-h>00</span><span class="lbl">Hrs</span></div>
+          <div><span class="num" data-m>00</span><span class="lbl">Min</span></div>
+          <div><span class="num" data-s>00</span><span class="lbl">Sec</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<div class="divider divider-marquee" aria-hidden="true">
+  <div class="mq-track"><span>THE SONGS RAISED ME <i class="mq-star">✦</i> RIDE THE WAVE <i class="mq-star">✦</i> WE LOVE THE 90s <i class="mq-star">✦</i> MELODY HAS NO TIME LIMIT <i class="mq-star">✦</i></span></div>
+  <div class="mq-track"><span>THE SONGS RAISED ME <i class="mq-star">✦</i> RIDE THE WAVE <i class="mq-star">✦</i> WE LOVE THE 90s <i class="mq-star">✦</i> MELODY HAS NO TIME LIMIT <i class="mq-star">✦</i></span></div>
+</div>
+
 <section>
   <div class="wrap detail-grid">
     <div>
-      <span class="eyebrow">Lineup</span>
-      <h2 style="margin-top:10px; font-size:26px;">Who's playing</h2>
-      <div class="lineup-list">
-        <div class="lineup-item"><div class="lineup-avatar"></div><div><b>DJ Resident One</b><span>Retro Wave house selector</span></div></div>
-        <div class="lineup-item"><div class="lineup-avatar"></div><div><b>DJ Resident Two</b><span>All-vinyl warm-up set</span></div></div>
-        <div class="lineup-item"><div class="lineup-avatar"></div><div><b>Special Guest — TBA</b><span>Announced closer to the date</span></div></div>
+      <span class="eyebrow" data-reveal="up">Lineup</span>
+      <h2 style="margin-top:10px; font-size:1.625rem; --d:70;" data-reveal="up">Who is playing</h2>
+      <div class="lineup-list" data-stagger="90">
+        <div class="lineup-item" data-reveal="left"><div class="lineup-avatar" aria-hidden="true">01</div><div><b>DJ Resident One</b><span>Retro Wave house selector</span></div></div>
+        <div class="lineup-item" data-reveal="left"><div class="lineup-avatar" aria-hidden="true">02</div><div><b>DJ Resident Two</b><span>All-vinyl warm-up set</span></div></div>
+        <div class="lineup-item" data-reveal="left"><div class="lineup-avatar" aria-hidden="true">03</div><div><b>Special Guest — TBA</b><span>Announced closer to the date</span></div></div>
       </div>
 
-      <span class="eyebrow" style="margin-top:44px; display:inline-flex;">Good To Know</span>
-      <h2 style="margin-top:10px; font-size:26px;">FAQ</h2>
-      <div class="stack" style="margin-top:16px;">
-        <div class="notice"><b>Refunds:</b> tickets are refundable up to 48 hours before doors, minus payment processing fees.</div>
-        <div class="notice"><b>Transfers:</b> reassign your ticket to a friend anytime from your ticket link — no new purchase needed.</div>
-        <div class="notice"><b>Entry:</b> your QR ticket is single-use and tied to your order. Screenshots of someone else's ticket won't scan twice.</div>
+      <span class="eyebrow" style="margin-top:46px; display:inline-flex;" data-reveal="up">What To Expect</span>
+      <h2 style="margin-top:10px; font-size:1.625rem;" data-reveal="up">The shape of the night</h2>
+      <div class="stack" style="margin-top:16px;" data-stagger="80">
+        <div class="notice" data-reveal="up"><b>8:00 PM — Doors.</b> Early arrivals get the good seats and the all-vinyl warm-up set.</div>
+        <div class="notice" data-reveal="up"><b>10:00 PM — Peak.</b> Resident selectors take it through the decades, back to back.</div>
+        <div class="notice" data-reveal="up"><b>Late — Requests.</b> The anthem that made you, if it has not already been played.</div>
+      </div>
+
+      <span class="eyebrow" style="margin-top:46px; display:inline-flex;" data-reveal="up">Good To Know</span>
+      <h2 style="margin-top:10px; font-size:1.625rem;" data-reveal="up">Tickets, refunds and entry</h2>
+      <div class="stack" style="margin-top:16px;" data-stagger="80">
+        <div class="notice" data-reveal="up"><b>Refunds:</b> tickets are refundable up to 48 hours before doors, minus payment processing fees.</div>
+        <div class="notice" data-reveal="up"><b>Transfers:</b> reassign your ticket to a friend any time from your ticket link — no new purchase needed.</div>
+        <div class="notice" data-reveal="up"><b>Entry:</b> your QR ticket is single-use and tied to your order. A screenshot of someone else's ticket will not scan twice.</div>
       </div>
     </div>
 
     <div id="tickets">
-      <div class="ticket buy-summary" data-currency="UGX">
+      <div class="ticket buy-summary" data-currency="UGX" data-reveal="up">
         <div class="ticket-top">
           <span class="eyebrow">Tickets</span>
-          <h3 style="font-size:20px; margin:8px 0 2px;">Choose your tier</h3>
+          <h3 style="font-size:1.25rem; margin:8px 0 4px;">Choose your tier</h3>
+          <p style="font-size:.875rem; color:var(--ink-soft); margin:0 0 6px;">Use the + and − buttons to set how many you want.</p>
 
           <div class="tier-row" data-tier data-price="30000" data-max="8">
             <div class="tier-info"><b>Early Bird</b><span>UGX 30,000 · Limited</span></div>
             <div class="qty-stepper">
-              <button data-minus aria-label="Decrease">−</button>
-              <span data-qty>0</span>
-              <button data-plus aria-label="Increase">+</button>
+              <button type="button" data-minus aria-label="One fewer Early Bird ticket">−</button>
+              <span data-qty aria-live="polite">0</span>
+              <button type="button" data-plus aria-label="One more Early Bird ticket">+</button>
             </div>
           </div>
           <div class="tier-row" data-tier data-price="45000" data-max="8" style="border-top:1.5px dashed var(--border);">
             <div class="tier-info"><b>Regular</b><span>UGX 45,000</span></div>
             <div class="qty-stepper">
-              <button data-minus aria-label="Decrease">−</button>
-              <span data-qty>0</span>
-              <button data-plus aria-label="Increase">+</button>
+              <button type="button" data-minus aria-label="One fewer Regular ticket">−</button>
+              <span data-qty aria-live="polite">0</span>
+              <button type="button" data-plus aria-label="One more Regular ticket">+</button>
             </div>
           </div>
           <div class="tier-row" data-tier data-price="90000" data-max="6" style="border-top:1.5px dashed var(--border);">
             <div class="tier-info"><b>VIP + Fast Entry</b><span>UGX 90,000</span></div>
             <div class="qty-stepper">
-              <button data-minus aria-label="Decrease">−</button>
-              <span data-qty>0</span>
-              <button data-plus aria-label="Increase">+</button>
+              <button type="button" data-minus aria-label="One fewer VIP ticket">−</button>
+              <span data-qty aria-live="polite">0</span>
+              <button type="button" data-plus aria-label="One more VIP ticket">+</button>
             </div>
           </div>
         </div>
         <div class="ticket-divider"></div>
         <div class="ticket-bottom">
           <div class="cart-total-row">
-            <span style="font-size:14px; color:var(--ink-soft);"><span data-cart-count>0</span> ticket(s)</span>
+            <span style="font-size:.9375rem; color:var(--ink-soft);"><span data-cart-count>0</span> ticket(s)</span>
             <span class="amt" data-cart-total>UGX 0</span>
           </div>
-          <button class="btn btn-primary btn-block" style="margin-top:16px;" onclick="showPreviewNotice()">Continue to Checkout</button>
+          <button class="btn btn-primary btn-block btn-lg" type="button" style="margin-top:16px;" onclick="showPreviewNotice()">Continue to Checkout</button>
           <div class="pay-methods">
             <span class="pay-chip">MTN MoMo</span>
             <span class="pay-chip">Airtel Money</span>
@@ -169,32 +270,136 @@
   </div>
 </section>
 
-<div class="sticky-bar" data-sticky-bar>
-  <div class="wrap">
-    <div class="amt"><span data-cart-count>0</span> ticket(s)<small><span data-cart-total>UGX 0</span></small></div>
-    <button class="btn btn-primary" onclick="showPreviewNotice()">Checkout</button>
-  </div>
+<div class="divider divider-wave divider-wave--to-navy" aria-hidden="true">
+  <svg class="w-back" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,64 C240,110 420,10 720,52 C1020,94 1200,20 1440,58 L1440,120 L0,120 Z"/></svg>
+  <svg class="w-front" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,86 C260,40 480,116 760,80 C1040,44 1240,104 1440,72 L1440,120 L0,120 Z"/></svg>
 </div>
 
-<div class="preview-modal" data-preview-modal>
-  <div class="preview-modal-card">
-    <div class="preview-modal-icon">i</div>
-    <h4>Checkout preview</h4>
-    <p>This is the first version of the site — the exact flow above is what buyers will see. Live payment via MTN Mobile Money, Airtel Money and card connects in the next phase.</p>
-    <button class="btn btn-outline-navy btn-block" onclick="closePreviewNotice()">Got it</button>
+<section class="on-navy grain" style="padding-top:52px;">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow" data-reveal="up">The Room</span>
+        <h2 data-reveal="up" style="--d:80">What you are buying into</h2>
+      </div>
+      <a href="gallery.html" class="btn btn-ghost btn-sm" data-reveal="up" style="--d:150">Full gallery</a>
+    </div>
   </div>
+  <div class="gallery-rail" data-reveal-group data-stagger="70">
+    <button type="button" class="g-tile img-holder" data-reveal="zoom" data-lightbox="assets/photos/crowd-night-stage-960.webp" data-caption="The floor at full tilt">
+      <picture><source type="image/webp" srcset="assets/photos/crowd-night-stage-480.webp 480w, assets/photos/crowd-night-stage-960.webp 960w" sizes="(max-width: 780px) 62vw, 280px"><img src="assets/photos/crowd-night-stage.jpg" alt="The night crowd in front of the Retro Wave stage" width="1080" height="720" loading="lazy" decoding="async"></picture>
+      <span class="g-cap">The floor at full tilt</span>
+    </button>
+    <button type="button" class="g-tile img-holder" data-reveal="zoom" data-lightbox="assets/photos/dj-booth-720.webp" data-caption="Resident selectors">
+      <picture><source type="image/webp" srcset="assets/photos/dj-booth-480.webp 480w, assets/photos/dj-booth-720.webp 720w" sizes="(max-width: 780px) 62vw, 280px"><img src="assets/photos/dj-booth.jpg" alt="A DJ at the decks with the host beside him" width="720" height="1080" loading="lazy" decoding="async"></picture>
+      <span class="g-cap">Resident selectors</span>
+    </button>
+    <button type="button" class="g-tile img-holder" data-reveal="zoom" data-lightbox="assets/photos/hands-up-blue-854.webp" data-caption="Hands up">
+      <picture><source type="image/webp" srcset="assets/photos/hands-up-blue-480.webp 480w, assets/photos/hands-up-blue-854.webp 854w" sizes="(max-width: 780px) 62vw, 280px"><img src="assets/photos/hands-up-blue.jpg" alt="A guest with both hands raised under blue light" width="854" height="1280" loading="lazy" decoding="async"></picture>
+      <span class="g-cap">Hands up</span>
+    </button>
+    <button type="button" class="g-tile img-holder" data-reveal="zoom" data-lightbox="assets/photos/night-lounge-720.webp" data-caption="Still going">
+      <picture><source type="image/webp" srcset="assets/photos/night-lounge-480.webp 480w, assets/photos/night-lounge-720.webp 720w" sizes="(max-width: 780px) 62vw, 280px"><img src="assets/photos/night-lounge.jpg" alt="Guests talking and dancing in the lounge late at night" width="720" height="1080" loading="lazy" decoding="async"></picture>
+      <span class="g-cap">Still going</span>
+    </button>
+    <button type="button" class="g-tile img-holder" data-reveal="zoom" data-lightbox="assets/photos/dancer-retro-classics-720.webp" data-caption="The dress code">
+      <picture><source type="image/webp" srcset="assets/photos/dancer-retro-classics-480.webp 480w, assets/photos/dancer-retro-classics-720.webp 720w" sizes="(max-width: 780px) 62vw, 280px"><img src="assets/photos/dancer-retro-classics.jpg" alt="A guest dancing in front of the Retro Classics backdrop" width="720" height="1080" loading="lazy" decoding="async"></picture>
+      <span class="g-cap">The dress code</span>
+    </button>
+    <button type="button" class="g-tile img-holder" data-reveal="zoom" data-lightbox="assets/photos/slow-dance-dusk-720.webp" data-caption="A slow one at dusk">
+      <picture><source type="image/webp" srcset="assets/photos/slow-dance-dusk-480.webp 480w, assets/photos/slow-dance-dusk-720.webp 720w" sizes="(max-width: 780px) 62vw, 280px"><img src="assets/photos/slow-dance-dusk.jpg" alt="A couple dancing closely at dusk" width="720" height="1080" loading="lazy" decoding="async"></picture>
+      <span class="g-cap">A slow one at dusk</span>
+    </button>
+  </div>
+</section>
+
+<div class="divider divider-wave divider-wave--to-cream" aria-hidden="true">
+  <svg class="w-back" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,56 C220,104 460,12 740,54 C1020,96 1230,26 1440,64 L1440,120 L0,120 Z"/></svg>
+  <svg class="w-front" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,90 C280,48 500,110 780,76 C1060,42 1260,98 1440,66 L1440,120 L0,120 Z"/></svg>
 </div>
+
+<section style="padding-top:44px;">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow" data-reveal="up">Other Dates</span>
+        <h2 data-reveal="up" style="--d:80">Cannot make this one?</h2>
+      </div>
+      <a href="events.html" class="btn btn-outline-navy btn-sm" data-reveal="up" style="--d:150">All events</a>
+    </div>
+    <div class="event-grid" data-stagger="110">
+      <a href="event.html" class="event-card" data-country-item="ug" data-reveal="up">
+        <div class="poster-art img-holder">
+          <picture><source type="image/webp" srcset="assets/photos/dancer-retro-classics-480.webp 480w, assets/photos/dancer-retro-classics-720.webp 720w" sizes="(max-width: 780px) 92vw, (max-width: 980px) 46vw, 30vw"><img src="assets/photos/dancer-retro-classics.jpg" alt="A guest dancing in front of the Retro Classics stage backdrop" width="720" height="1080" loading="lazy" decoding="async"></picture>
+          <span class="poster-tag">🇺🇬 Entebbe</span>
+          <span class="poster-label">The Songs Raised Me — 2000s Edition</span>
+        </div>
+        <div class="event-card-body">
+          <span class="event-chip">Fri, 4 Sep 2026</span>
+          <h3>The Songs Raised Me</h3>
+          <div class="meta">Lake Victoria Serena · Uganda</div>
+          <div class="remaining-bar"><span data-fill="30"></span></div>
+          <div class="remaining-note">Early bird open</div>
+          <div class="event-card-foot">
+            <span class="price-from">From <b>UGX 40,000</b></span>
+            <span class="card-go" aria-hidden="true">→</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="event.html" class="event-card" data-country-item="ke" data-reveal="up">
+        <div class="poster-art img-holder">
+          <picture><source type="image/webp" srcset="assets/photos/dj-booth-480.webp 480w, assets/photos/dj-booth-720.webp 720w" sizes="(max-width: 780px) 92vw, (max-width: 980px) 46vw, 30vw"><img src="assets/photos/dj-booth.jpg" alt="DJ and host behind the decks under stage lighting" width="720" height="1080" loading="lazy" decoding="async"></picture>
+          <span class="poster-tag">🇰🇪 Nairobi</span>
+          <span class="poster-label">Retro Wave Nairobi: First Ever</span>
+        </div>
+        <div class="event-card-body">
+          <span class="event-chip">Sat, 20 Sep 2026</span>
+          <h3>Retro Wave Nairobi</h3>
+          <div class="meta">The Alchemist · Kenya</div>
+          <div class="remaining-bar"><span data-fill="12"></span></div>
+          <div class="remaining-note">Just announced</div>
+          <div class="event-card-foot">
+            <span class="price-from">From <b>KES 1,500</b></span>
+            <span class="card-go" aria-hidden="true">→</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="event.html" class="event-card" data-country-item="rw" data-reveal="up">
+        <div class="poster-art img-holder">
+          <picture><source type="image/webp" srcset="assets/photos/selfie-sunset-mural-480.webp 480w, assets/photos/selfie-sunset-mural-854.webp 854w" sizes="(max-width: 780px) 92vw, (max-width: 980px) 46vw, 30vw"><img src="assets/photos/selfie-sunset-mural.jpg" alt="A guest taking a photo in front of the retro sunset mural" width="854" height="1280" loading="lazy" decoding="async"></picture>
+          <span class="poster-tag">🇷🇼 Kigali</span>
+          <span class="poster-label">Retro Wave Kigali Nights</span>
+        </div>
+        <div class="event-card-body">
+          <span class="event-chip">Sat, 11 Oct 2026</span>
+          <h3>Retro Wave Kigali Nights</h3>
+          <div class="meta">Kigali Convention Village · Rwanda</div>
+          <div class="remaining-bar"><span data-fill="8"></span></div>
+          <div class="remaining-note">Just announced</div>
+          <div class="event-card-foot">
+            <span class="price-from">From <b>RWF 8,000</b></span>
+            <span class="card-go" aria-hidden="true">→</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
 
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <img src="assets/logo.png" alt="Retro Wave">
+        <img src="assets/logo.png" alt="Retro Wave" width="115" height="36">
         <p>Retro nightlife events across East Africa — Uganda, Kenya and Rwanda, one ticket platform.</p>
       </div>
       <div class="footer-col">
         <h5>Explore</h5>
         <a href="events.html">Upcoming Events</a>
+        <a href="gallery.html">Gallery</a>
         <a href="history.html">History</a>
         <a href="about.html">About</a>
       </div>
@@ -206,7 +411,7 @@
       </div>
       <div class="footer-col">
         <h5>Support</h5>
-        <span>hello@retrowave.ug</span>
+        <a href="mailto:hello@retrowave.ug">hello@retrowave.ug</a>
         <span>WhatsApp support</span>
         <span>Refunds &amp; transfers</span>
       </div>
@@ -217,6 +422,34 @@
     </div>
   </div>
 </footer>
+
+<nav class="mobile-dock" aria-label="Quick links">
+  <ul>
+    <li><a href="index.html" class=""><span class="d-ico" aria-hidden="true">🏠</span>Home</a></li>
+    <li><a href="events.html" class="active"><span class="d-ico" aria-hidden="true">🎫</span>Events</a></li>
+    <li><a href="event.html" class="dock-cta"><span class="d-ico" aria-hidden="true">🎟️</span>Tickets</a></li>
+    <li><a href="gallery.html" class=""><span class="d-ico" aria-hidden="true">📸</span>Photos</a></li>
+    <li><a href="about.html" class=""><span class="d-ico" aria-hidden="true">💬</span>About</a></li>
+  </ul>
+</nav>
+
+<button class="to-top" type="button" aria-label="Back to top">↑</button>
+
+<div class="sticky-bar" data-sticky-bar>
+  <div class="wrap">
+    <div class="amt"><span data-cart-count>0</span> ticket(s)<small><span data-cart-total>UGX 0</span></small></div>
+    <button class="btn btn-primary" type="button" onclick="showPreviewNotice()">Checkout</button>
+  </div>
+</div>
+
+<div class="preview-modal" data-preview-modal role="dialog" aria-modal="true" aria-labelledby="preview-title">
+  <div class="preview-modal-card">
+    <div class="preview-modal-icon" aria-hidden="true">i</div>
+    <h4 id="preview-title">Checkout preview</h4>
+    <p>This is the first version of the site — the flow above is exactly what buyers will see. Live payment via MTN Mobile Money, Airtel Money and card connects in the next phase.</p>
+    <button class="btn btn-outline-navy btn-block" type="button" onclick="closePreviewNotice()">Got it</button>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>

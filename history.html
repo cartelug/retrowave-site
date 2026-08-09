@@ -2,112 +2,252 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>History — Retro Wave</title>
 <meta name="description" content="Every Retro Wave event so far, across Uganda, Kenya and Rwanda.">
+<meta name="theme-color" content="#0e2038">
 <link rel="icon" href="assets/logo.png">
 <link rel="stylesheet" href="styles.css">
+<script>document.documentElement.className += ' js';</script>
+<noscript><style>
+  .preloader{display:none!important}
+  .main-nav{display:flex!important;flex-wrap:wrap}
+  .nav-toggle{display:none!important}
+</style></noscript>
 </head>
 <body>
 
+<div class="preloader" role="status" aria-live="polite" aria-label="Loading Retro Wave">
+  <div class="pl-inner">
+    <svg class="pl-cassette" viewBox="0 0 320 200" role="img" aria-label="Cassette tape winding">
+      <defs><linearGradient id="plBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a3d6b"/><stop offset="1" stop-color="#0b1a2f"/></linearGradient></defs>
+      <rect x="6" y="6" width="308" height="188" rx="18" fill="url(#plBody)" stroke="#f6e6c3" stroke-width="3"/>
+      <rect x="26" y="22" width="268" height="80" rx="10" fill="#fdf6e8"/>
+      <rect x="26" y="22" width="268" height="13" rx="6" fill="#e2521f"/>
+      <text x="160" y="70" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="27" font-weight="700" fill="#16345c">RETRO WAVE</text>
+      <text x="160" y="90" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" letter-spacing="2.4" fill="#8d8271">SIDE A — THE SONGS RAISED ME</text>
+      <rect class="pl-tape-window" x="72" y="114" width="176" height="60" rx="9" fill="#081527" stroke="rgba(246,230,195,.35)" stroke-width="2"/>
+      <rect x="112" y="138" width="96" height="12" fill="#3b2416"/>
+      <g class="pl-reel"><circle cx="112" cy="144" r="21" fill="#24150c" stroke="#f6e6c3" stroke-width="2"/><g stroke="#f6e6c3" stroke-width="3" stroke-linecap="round"><line x1="112" y1="129" x2="112" y2="159"/><line x1="97" y1="144" x2="127" y2="144"/><line x1="101" y1="133" x2="123" y2="155"/><line x1="123" y1="133" x2="101" y2="155"/></g></g>
+      <g class="pl-reel pl-reel--slow"><circle cx="208" cy="144" r="21" fill="#24150c" stroke="#f6e6c3" stroke-width="2"/><g stroke="#f6e6c3" stroke-width="3" stroke-linecap="round"><line x1="208" y1="129" x2="208" y2="159"/><line x1="193" y1="144" x2="223" y2="144"/><line x1="197" y1="133" x2="219" y2="155"/><line x1="219" y1="133" x2="197" y2="155"/></g></g>
+    </svg>
+    <div class="pl-word" aria-hidden="true">
+      <span style="--i:0">R</span><span style="--i:1">E</span><span style="--i:2">T</span><span style="--i:3">R</span><span style="--i:4">O</span>
+      <span class="pl-gap"></span>
+      <span style="--i:5">W</span><span style="--i:6">A</span><span style="--i:7">V</span><span style="--i:8">E</span>
+    </div>
+    <div class="pl-track"><div class="pl-fill"></div></div>
+    <div class="pl-meta"><span>Rewinding the tape</span><span class="pl-pct">0%</span></div>
+  </div>
+</div>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
 <header class="site-header">
   <div class="wrap">
-    <a href="index.html" class="brand"><img src="assets/logo.png" alt="Retro Wave"></a>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="events.html">Events</a>
-      <a href="history.html" class="active">History</a>
-      <a href="about.html">About</a>
+    <a href="index.html" class="brand" aria-label="Retro Wave home"><img src="assets/logo.png" alt="Retro Wave" width="120" height="38"></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="index.html" style="--i:0">Home</a>
+      <a href="events.html" style="--i:1">Events</a>
+      <a href="gallery.html" style="--i:2">Gallery</a>
+      <a href="history.html" class="active" style="--i:3">History</a>
+      <a href="about.html" style="--i:4">About</a>
     </nav>
     <div class="header-right">
-      <div class="country-switch" role="group" aria-label="Filter by country">
-        <button data-country-btn="all" class="active" onclick="setCountry('all')">All</button>
-        <button data-country-btn="ug" onclick="setCountry('ug')">🇺🇬 UG</button>
-        <button data-country-btn="ke" onclick="setCountry('ke')">🇰🇪 KE</button>
-        <button data-country-btn="rw" onclick="setCountry('rw')">🇷🇼 RW</button>
+      <div class="country-switch" role="group" aria-label="Filter events by country">
+        <button type="button" data-country-btn="all" class="active" aria-pressed="true">All</button>
+        <button type="button" data-country-btn="ug" aria-pressed="false">🇺🇬 UG</button>
+        <button type="button" data-country-btn="ke" aria-pressed="false">🇰🇪 KE</button>
+        <button type="button" data-country-btn="rw" aria-pressed="false">🇷🇼 RW</button>
       </div>
       <a href="events.html" class="btn btn-primary btn-sm">Get Tickets</a>
-      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><i></i><i></i><i></i></button>
     </div>
   </div>
 </header>
 
-<section style="padding-bottom:0;">
-  <div class="wrap">
-    <span class="eyebrow">The Track Record</span>
-    <h1 style="font-size:clamp(32px,4.5vw,48px); margin:12px 0 10px;">Every night so far</h1>
-    <p class="lede">From the first Retro Wave in Kampala to the next date across the region — this is the proof, not the pitch.</p>
-    <p class="notice" style="margin-top:22px; max-width:640px;"><b>Note:</b> the entries below are sample cards showing how History will look. Swap in real posters, dates and attendance once confirmed — nothing here is being presented as an actual past event.</p>
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-inner">
+    <nav class="drawer-links" aria-label="Mobile">
+      <a href="index.html" style="--i:0"><span class="d-ico" aria-hidden="true">🏠</span>Home</a>
+      <a href="events.html" style="--i:1"><span class="d-ico" aria-hidden="true">🎫</span>Events</a>
+      <a href="gallery.html" style="--i:2"><span class="d-ico" aria-hidden="true">📸</span>Gallery</a>
+      <a href="history.html" class="active" style="--i:3"><span class="d-ico" aria-hidden="true">📼</span>History</a>
+      <a href="about.html" style="--i:4"><span class="d-ico" aria-hidden="true">💬</span>About</a>
+    </nav>
+    <div class="drawer-foot">
+      <div class="a11y-bar">
+        <span class="a11y-label">Text size</span>
+        <button type="button" class="a11y-btn" data-text-step="md" aria-pressed="true">A</button>
+        <button type="button" class="a11y-btn" data-text-step="lg" aria-pressed="false"><span class="big">A</span></button>
+        <button type="button" class="a11y-btn" data-text-step="xl" aria-pressed="false"><span class="big">A+</span></button>
+      </div>
+      <div class="a11y-bar">
+        <span class="a11y-label">Motion</span>
+        <button type="button" class="a11y-btn" data-motion-toggle aria-pressed="false">Reduce animations</button>
+      </div>
+      <div class="country-switch" role="group" aria-label="Filter events by country">
+        <button type="button" data-country-btn="all" class="active" aria-pressed="true">All</button>
+        <button type="button" data-country-btn="ug" aria-pressed="false">🇺🇬</button>
+        <button type="button" data-country-btn="ke" aria-pressed="false">🇰🇪</button>
+        <button type="button" data-country-btn="rw" aria-pressed="false">🇷🇼</button>
+      </div>
+      <a href="events.html" class="btn btn-primary btn-block btn-lg">Get Tickets</a>
+      <p class="drawer-contact">Need help? <a href="mailto:hello@retrowave.ug">hello@retrowave.ug</a></p>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+<section class="hero grain" style="padding:54px 0 62px;">
+  <div class="hero-sun" aria-hidden="true"></div>
+  <div class="wrap" style="position:relative; z-index:2; max-width:780px;">
+    <span class="eyebrow intro-fade" style="--i:0">The Track Record</span>
+    <h1 style="color:var(--cream-logo); font-size:clamp(2.25rem,5.5vw,3.5rem); margin:14px 0 16px;">
+      <span class="line-mask"><span style="--i:0">Every night</span></span>
+      <span class="line-mask"><span style="--i:1">so <em style="font-style:normal;color:var(--orange);">far.</em></span></span>
+    </h1>
+    <p class="lede intro-fade" style="--i:1; color:rgba(246,230,195,.8); font-size:1.125rem;">From the first Retro Wave in Kampala to the next date across the region — this is the proof, not the pitch.</p>
   </div>
 </section>
+
+<div class="divider divider-marquee" aria-hidden="true">
+  <div class="mq-track"><span>THE SONGS RAISED ME <i class="mq-star">✦</i> RIDE THE WAVE <i class="mq-star">✦</i> WE LOVE THE 90s <i class="mq-star">✦</i> MELODY HAS NO TIME LIMIT <i class="mq-star">✦</i></span></div>
+  <div class="mq-track"><span>THE SONGS RAISED ME <i class="mq-star">✦</i> RIDE THE WAVE <i class="mq-star">✦</i> WE LOVE THE 90s <i class="mq-star">✦</i> MELODY HAS NO TIME LIMIT <i class="mq-star">✦</i></span></div>
+</div>
 
 <section>
   <div class="wrap">
+    <p class="notice" style="max-width:680px;" data-reveal="up"><b>Note:</b> the photographs below are from real Retro Wave events. Dates and attendance figures are still being confirmed and are marked where they are not final yet.</p>
 
-    <div class="filter-pills" style="margin-bottom:8px;">
-      <button data-country-btn="all" class="active" onclick="setCountry('all')">All countries</button>
-      <button data-country-btn="ug" onclick="setCountry('ug')">🇺🇬 Uganda</button>
-      <button data-country-btn="ke" onclick="setCountry('ke')">🇰🇪 Kenya</button>
-      <button data-country-btn="rw" onclick="setCountry('rw')">🇷🇼 Rwanda</button>
+    <div class="filter-pills" style="margin-top:26px;" role="group" aria-label="Filter by country" data-reveal="up">
+      <button type="button" data-country-btn="all" class="active" aria-pressed="true">All countries</button>
+      <button type="button" data-country-btn="ug" aria-pressed="false">🇺🇬 Uganda</button>
+      <button type="button" data-country-btn="ke" aria-pressed="false">🇰🇪 Kenya</button>
+      <button type="button" data-country-btn="rw" aria-pressed="false">🇷🇼 Rwanda</button>
     </div>
+    <p class="sr-only" data-filter-live aria-live="polite"></p>
 
-    <div class="timeline">
-      <h3 class="timeline-year">2025</h3>
-      <div class="history-grid">
-        <figure class="polaroid" style="--tilt:-2deg;" data-country-item="ug">
-          <div class="poster-art"><span class="poster-tag">Dec 2025</span><span class="poster-label">Kampala</span></div>
-          <span class="sample-tag">Sample</span>
-          <figcaption>Retro Wave Vol. 4<small>Kampala, Uganda · [Attendance TBD]</small></figcaption>
+    <div class="timeline" style="margin-top:34px;">
+
+      <h3 class="timeline-year" data-reveal="up">Retro Wave³ — the most recent edition</h3>
+      <div class="history-grid" data-stagger="120">
+        <figure class="polaroid" style="--tilt:-2deg;" data-country-item="ug" data-reveal="tilt">
+          <div class="poster-art img-holder">
+            <picture><source type="image/webp" srcset="assets/photos/stage-wide-480.webp 480w, assets/photos/stage-wide-960.webp 960w" sizes="(max-width:780px) 92vw, 30vw"><img src="assets/photos/stage-wide.jpg" alt="The Retro Wave main stage with LED screens reading Retro Wave 3" width="1080" height="720" loading="lazy" decoding="async"></picture>
+            <span class="poster-tag">Main stage</span>
+          </div>
+          <figcaption>Retro Wave³<small>Kampala, Uganda · [Date TBC]</small></figcaption>
         </figure>
-        <figure class="polaroid" style="--tilt:1.5deg;" data-country-item="ug">
-          <div class="poster-art orange-wash"><span class="poster-tag">Sep 2025</span><span class="poster-label">Entebbe</span></div>
-          <span class="sample-tag">Sample</span>
-          <figcaption>Lakeside Sessions<small>Entebbe, Uganda · [Attendance TBD]</small></figcaption>
+        <figure class="polaroid" style="--tilt:1.5deg;" data-country-item="ug" data-reveal="tilt">
+          <div class="poster-art img-holder">
+            <picture><source type="image/webp" srcset="assets/photos/crowd-night-stage-480.webp 480w, assets/photos/crowd-night-stage-960.webp 960w" sizes="(max-width:780px) 92vw, 30vw"><img src="assets/photos/crowd-night-stage.jpg" alt="Night crowd in front of the illuminated Retro Wave stage backdrop" width="1080" height="720" loading="lazy" decoding="async"></picture>
+            <span class="poster-tag">Night set</span>
+          </div>
+          <figcaption>The floor at full tilt<small>Kampala, Uganda · [Attendance TBC]</small></figcaption>
         </figure>
-        <figure class="polaroid" style="--tilt:-1deg;" data-country-item="ug">
-          <div class="poster-art"><span class="poster-tag">Jun 2025</span><span class="poster-label">Kampala</span></div>
-          <span class="sample-tag">Sample</span>
-          <figcaption>Retro Wave Vol. 3<small>Kampala, Uganda · [Attendance TBD]</small></figcaption>
+        <figure class="polaroid" style="--tilt:-1deg;" data-country-item="ug" data-reveal="tilt">
+          <div class="poster-art img-holder">
+            <picture><source type="image/webp" srcset="assets/photos/dj-booth-480.webp 480w, assets/photos/dj-booth-720.webp 720w" sizes="(max-width:780px) 92vw, 30vw"><img src="assets/photos/dj-booth.jpg" alt="A DJ at the decks with the host beside him" width="720" height="1080" loading="lazy" decoding="async"></picture>
+            <span class="poster-tag">The booth</span>
+          </div>
+          <figcaption>Resident selectors<small>Kampala, Uganda</small></figcaption>
         </figure>
       </div>
 
-      <h3 class="timeline-year">2024</h3>
-      <div class="history-grid">
-        <figure class="polaroid" style="--tilt:2deg;" data-country-item="ug">
-          <div class="poster-art orange-wash"><span class="poster-tag">Nov 2024</span><span class="poster-label">Kampala</span></div>
-          <span class="sample-tag">Sample</span>
-          <figcaption>Retro Wave Vol. 2<small>Kampala, Uganda · [Attendance TBD]</small></figcaption>
+      <h3 class="timeline-year" data-reveal="up">The lawn sessions — day into night</h3>
+      <div class="history-grid" data-stagger="120">
+        <figure class="polaroid" style="--tilt:2deg;" data-country-item="ug" data-reveal="tilt">
+          <div class="poster-art img-holder">
+            <picture><source type="image/webp" srcset="assets/photos/all-white-group-480.webp 480w, assets/photos/all-white-group-854.webp 854w" sizes="(max-width:780px) 92vw, 30vw"><img src="assets/photos/all-white-group.jpg" alt="Guests in all-white outfits talking on the lawn" width="854" height="1280" loading="lazy" decoding="async"></picture>
+            <span class="poster-tag">Daytime</span>
+          </div>
+          <figcaption>All-white on the lawn<small>Kampala, Uganda</small></figcaption>
         </figure>
-        <figure class="polaroid" style="--tilt:-1.5deg;" data-country-item="ug">
-          <div class="poster-art"><span class="poster-tag">Jul 2024</span><span class="poster-label">Kampala</span></div>
-          <span class="sample-tag">Sample</span>
-          <figcaption>Retro Wave Vol. 1 — The First Night<small>Kampala, Uganda · [Attendance TBD]</small></figcaption>
+        <figure class="polaroid" style="--tilt:-1.5deg;" data-country-item="ug" data-reveal="tilt">
+          <div class="poster-art img-holder">
+            <picture><source type="image/webp" srcset="assets/photos/golden-hour-480.webp 480w, assets/photos/golden-hour-720.webp 720w" sizes="(max-width:780px) 92vw, 30vw"><img src="assets/photos/golden-hour.jpg" alt="A guest backlit by golden hour sun" width="720" height="1080" loading="lazy" decoding="async"></picture>
+            <span class="poster-tag">Golden hour</span>
+          </div>
+          <figcaption>The light before the night set<small>Kampala, Uganda</small></figcaption>
+        </figure>
+        <figure class="polaroid" style="--tilt:1deg;" data-country-item="ug" data-reveal="tilt">
+          <div class="poster-art img-holder">
+            <picture><source type="image/webp" srcset="assets/photos/food-stall-480.webp 480w, assets/photos/food-stall-720.webp 720w" sizes="(max-width:780px) 92vw, 30vw"><img src="assets/photos/food-stall.jpg" alt="A vendor serving a plate of food at the stall" width="720" height="1080" loading="lazy" decoding="async"></picture>
+            <span class="poster-tag">Food stalls</span>
+          </div>
+          <figcaption>Nobody leaves hungry<small>Kampala, Uganda</small></figcaption>
         </figure>
       </div>
+
+      <h3 class="timeline-year" data-reveal="up">Earlier editions</h3>
+      <div class="history-grid" data-stagger="120">
+        <figure class="polaroid" style="--tilt:-1.5deg;" data-country-item="ug" data-reveal="tilt">
+          <div class="poster-art img-holder">
+            <picture><source type="image/webp" srcset="assets/photos/melody-no-time-limit-480.webp 480w, assets/photos/melody-no-time-limit-720.webp 720w" sizes="(max-width:780px) 92vw, 30vw"><img src="assets/photos/melody-no-time-limit.jpg" alt="A guest in front of a backdrop reading Retro Classics Remind Us That Melody Has No Time Limit" width="720" height="1080" loading="lazy" decoding="async"></picture>
+            <span class="poster-tag">Backdrop</span>
+          </div>
+          <figcaption>Melody has no time limit<small>Kampala, Uganda · [Date TBC]</small></figcaption>
+        </figure>
+        <figure class="polaroid" style="--tilt:2deg;" data-country-item="ug" data-reveal="tilt">
+          <div class="poster-art img-holder">
+            <picture><source type="image/webp" srcset="assets/photos/ride-the-wave-neon-480.webp 480w, assets/photos/ride-the-wave-neon-720.webp 720w" sizes="(max-width:780px) 92vw, 30vw"><img src="assets/photos/ride-the-wave-neon.jpg" alt="Guests in front of the Ride the Wave neon sign" width="720" height="1080" loading="lazy" decoding="async"></picture>
+            <span class="poster-tag">Neon</span>
+          </div>
+          <figcaption>Ride the wave<small>Kampala, Uganda · [Date TBC]</small></figcaption>
+        </figure>
+        <figure class="polaroid" style="--tilt:-1deg;" data-country-item="ug" data-reveal="tilt">
+          <div class="poster-art img-holder">
+            <picture><source type="image/webp" srcset="assets/photos/trio-denim-480.webp 480w, assets/photos/trio-denim-720.webp 720w" sizes="(max-width:780px) 92vw, 30vw"><img src="assets/photos/trio-denim.jpg" alt="Three friends in denim posing together" width="720" height="1080" loading="lazy" decoding="async"></picture>
+            <span class="poster-tag">The crowd</span>
+          </div>
+          <figcaption>The dress code writes itself<small>Kampala, Uganda</small></figcaption>
+        </figure>
+      </div>
+
     </div>
 
-    <div class="empty-state" style="margin-top:56px;" data-country-empty="ke">
+    <div class="empty-state" style="margin-top:52px;" data-country-empty="ke">
       <h4>Kenya history starts soon</h4>
       <p>Retro Wave Nairobi is the first Kenya date — once it happens, the recap lands right here.</p>
+      <a href="events.html" class="btn btn-primary">See the date</a>
     </div>
-    <div class="empty-state" style="margin-top:56px;" data-country-empty="rw">
+    <div class="empty-state" style="margin-top:52px;" data-country-empty="rw">
       <h4>Rwanda history starts soon</h4>
       <p>Retro Wave Kigali Nights is the first Rwanda date — once it happens, the recap lands right here.</p>
+      <a href="events.html" class="btn btn-primary">See the date</a>
     </div>
-
   </div>
 </section>
+
+<div class="divider divider-burst" aria-hidden="true">
+  <span class="burst-disc"></span>
+  <span class="burst-label">Ride the wave</span>
+</div>
+
+<section style="padding-top:56px;">
+  <div class="wrap">
+    <div class="cta-band" data-reveal="zoom">
+      <span class="eyebrow" style="color:var(--peach);">The Next Chapter</span>
+      <h2 style="margin-top:12px;">Be in the next set of photos</h2>
+      <p>Every edition adds to this page. The next one is already on sale.</p>
+      <a href="events.html" class="btn btn-primary btn-lg">Browse Events</a>
+    </div>
+  </div>
+</section>
+</main>
 
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <img src="assets/logo.png" alt="Retro Wave">
+        <img src="assets/logo.png" alt="Retro Wave" width="115" height="36">
         <p>Retro nightlife events across East Africa — Uganda, Kenya and Rwanda, one ticket platform.</p>
       </div>
       <div class="footer-col">
         <h5>Explore</h5>
         <a href="events.html">Upcoming Events</a>
+        <a href="gallery.html">Gallery</a>
         <a href="history.html">History</a>
         <a href="about.html">About</a>
       </div>
@@ -119,7 +259,7 @@
       </div>
       <div class="footer-col">
         <h5>Support</h5>
-        <span>hello@retrowave.ug</span>
+        <a href="mailto:hello@retrowave.ug">hello@retrowave.ug</a>
         <span>WhatsApp support</span>
         <span>Refunds &amp; transfers</span>
       </div>
@@ -130,6 +270,18 @@
     </div>
   </div>
 </footer>
+
+<nav class="mobile-dock" aria-label="Quick links">
+  <ul>
+    <li><a href="index.html" class=""><span class="d-ico" aria-hidden="true">🏠</span>Home</a></li>
+    <li><a href="events.html" class=""><span class="d-ico" aria-hidden="true">🎫</span>Events</a></li>
+    <li><a href="event.html" class="dock-cta"><span class="d-ico" aria-hidden="true">🎟️</span>Tickets</a></li>
+    <li><a href="gallery.html" class=""><span class="d-ico" aria-hidden="true">📸</span>Photos</a></li>
+    <li><a href="about.html" class=""><span class="d-ico" aria-hidden="true">💬</span>About</a></li>
+  </ul>
+</nav>
+
+<button class="to-top" type="button" aria-label="Back to top">↑</button>
 
 <script src="script.js"></script>
 </body>
