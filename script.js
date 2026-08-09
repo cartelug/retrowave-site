@@ -15,6 +15,19 @@
   function $$(sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); }
   function on(el, ev, fn, opts) { if (el) el.addEventListener(ev, fn, opts); }
 
+  /* Scroll lock is counted, not a boolean. The preloader releases its lock on a
+     timer, and that timer can land after the drawer or lightbox has taken its
+     own lock — a plain class toggle would unlock the page underneath them. */
+  var scrollLocks = 0;
+  function lockScroll() {
+    scrollLocks++;
+    document.body.classList.add('is-locked');
+  }
+  function unlockScroll() {
+    scrollLocks = Math.max(0, scrollLocks - 1);
+    if (scrollLocks === 0) document.body.classList.remove('is-locked');
+  }
+
   function prefersReducedMotion() {
     if (root.getAttribute('data-motion') === 'calm') return true;
     if (root.getAttribute('data-motion') === 'full') return false;
@@ -80,7 +93,7 @@
         var size = btn.dataset.textStep;
         applyTextSize(size);
         writePref('rw-text', size);
-        toast(size === 'md' ? 'Standard text size' : size === 'lg' ? 'Bigger text on' : 'Largest text on', '🔤');
+        toast(size === 'md' ? 'Standard text size' : size === 'lg' ? 'Bigger text on' : 'Largest text on', 'check');
       });
     });
 
@@ -89,7 +102,7 @@
         var next = root.getAttribute('data-motion') === 'calm' ? 'system' : 'calm';
         applyMotion(next);
         writePref('rw-motion', next);
-        toast(next === 'calm' ? 'Animations reduced' : 'Animations on', next === 'calm' ? '🌙' : '✨');
+        toast(next === 'calm' ? 'Animations reduced' : 'Animations on', next === 'calm' ? 'moon' : 'sparkle');
       });
     });
   }
@@ -98,8 +111,18 @@
   /* ============================================================
      2. TOASTS
      ============================================================ */
+  /* Same 24px grid as the inlined page icons, kept minimal since toasts
+     build their markup here rather than in the HTML. */
+  var TOAST_ICONS = {
+    check:   '<path d="m5 12.6 4.6 4.6L19 8"/>',
+    warning: '<path d="M12 4.2 21.4 19.8H2.6Z"/><path d="M12 10.2v3.8"/><circle cx="12" cy="17" r=".95" fill="currentColor" stroke="none"/>',
+    moon:    '<path d="M20.4 14.6A8.7 8.7 0 0 1 9.4 3.6a8.8 8.8 0 1 0 11 11Z"/>',
+    sparkle: '<path d="m12 3.2 1.9 5.9 5.9 1.9-5.9 1.9L12 18.8l-1.9-5.9L4.2 11l5.9-1.9Z"/>',
+    ticket:  '<path d="M4.6 6.2h14.8a2 2 0 0 1 2 2v1.5a2.3 2.3 0 0 0 0 4.6v1.5a2 2 0 0 1-2 2H4.6a2 2 0 0 1-2-2v-1.5a2.3 2.3 0 0 0 0-4.6V8.2a2 2 0 0 1 2-2Z"/><path d="M14.6 6.6v10.8" stroke-dasharray="1.5 2.1"/>'
+  };
+
   var toastWrap;
-  function toast(msg, icon) {
+  function toast(msg, iconName) {
     if (!toastWrap) {
       toastWrap = document.createElement('div');
       toastWrap.className = 'toast-wrap';
@@ -107,9 +130,12 @@
       toastWrap.setAttribute('aria-live', 'polite');
       body.appendChild(toastWrap);
     }
+    var glyph = TOAST_ICONS[iconName] || TOAST_ICONS.sparkle;
     var t = document.createElement('div');
     t.className = 'toast';
-    t.innerHTML = '<span class="t-ico" aria-hidden="true">' + (icon || '🎵') + '</span><span></span>';
+    t.innerHTML =
+      '<svg class="ico t-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" ' +
+      'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + glyph + '</svg><span></span>';
     t.lastChild.textContent = msg;
     toastWrap.appendChild(t);
     window.setTimeout(function () {
@@ -120,13 +146,13 @@
 
 
   /* ============================================================
-     3. PRELOADER — cassette boot, then curtain reveal
+     3. PRELOADER — logo on cream, rising sea as the progress meter
      ============================================================ */
   function initPreloader() {
     var pl = $('.preloader');
     if (!pl) { startIntro(); return; }
 
-    var fill = $('.pl-fill', pl);
+    var sea = $('.pl-sea', pl);
     var pct = $('.pl-pct', pl);
 
     // Repeat visits in the same tab get a short version — nobody wants
@@ -141,7 +167,7 @@
     var settled = false;
 
     // Only lock scrolling now that we know JS is alive to unlock it again.
-    body.classList.add('is-locked');
+    lockScroll();
 
     // Track real image loading so the bar means something
     var imgs = $$('img');
@@ -156,7 +182,8 @@
 
     function paint(v) {
       progress = v;
-      if (fill) fill.style.width = v + '%';
+      // --p (0..1) drives how high the sea has risen — that IS the progress bar
+      if (sea) sea.style.setProperty('--p', (v / 100).toFixed(3));
       if (pct) pct.textContent = Math.round(v) + '%';
     }
 
@@ -185,10 +212,11 @@
       pl.classList.add('is-done');
       startIntro();
 
+      // exit choreography: stage fades, sea surges to full, loader lifts away
       window.setTimeout(function () {
         pl.hidden = true;
-        body.classList.remove('is-locked');
-      }, calm ? 60 : 900);
+        unlockScroll();
+      }, calm ? 60 : 1250);
     }
 
     if (document.readyState === 'complete') {
@@ -240,7 +268,7 @@
       drawer.classList.add('is-open');
       drawer.removeAttribute('aria-hidden');
       toggle.setAttribute('aria-expanded', 'true');
-      body.classList.add('is-locked');
+      lockScroll();
       if (header) header.classList.remove('is-hidden');
       var first = $(focusables, drawer);
       if (first) window.setTimeout(function () { first.focus(); }, 380);
@@ -249,7 +277,7 @@
       drawer.classList.remove('is-open');
       drawer.setAttribute('aria-hidden', 'true');
       toggle.setAttribute('aria-expanded', 'false');
-      body.classList.remove('is-locked');
+      unlockScroll();
       if (returnFocus !== false) toggle.focus();
     }
 
@@ -621,7 +649,7 @@
 
       on($('[data-plus]', row), 'click', function () {
         var val = parseInt(qtyEl.textContent, 10) || 0;
-        if (val >= max) { toast('Maximum ' + max + ' per order for this tier', '🎟️'); return; }
+        if (val >= max) { toast('Maximum ' + max + ' per order for this tier', 'ticket'); return; }
         qtyEl.textContent = val + 1;
         recalc();
       });
@@ -675,12 +703,12 @@
       lastFocus = document.activeElement;
       show(i);
       lb.classList.add('is-open');
-      body.classList.add('is-locked');
+      lockScroll();
       $('.lb-close', lb).focus();
     }
     function close() {
       lb.classList.remove('is-open');
-      body.classList.remove('is-locked');
+      unlockScroll();
       if (lastFocus && lastFocus.focus) lastFocus.focus();
     }
 
@@ -757,12 +785,12 @@
         if (!input) return;
         var val = input.value.trim();
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val)) {
-          toast('That email address does not look right — please check it', '⚠️');
+          toast('That email address does not look right — please check it', 'warning');
           input.focus();
           return;
         }
         input.value = '';
-        toast('You are on the list. We will email you before tickets go live.', '✅');
+        toast('You are on the list. We will email you before tickets go live.', 'check');
       });
     });
   }
@@ -782,6 +810,141 @@
         if (b.dataset.lock === 'true') return;
         b.dataset.dir = dir;
       });
+    });
+  }
+
+
+  /* ============================================================
+     17b. ICON MOTION
+     The icons animate continuously, but only the ones actually on
+     screen — and nothing at all while the tab is in the background.
+     Reduced motion is already handled in CSS.
+     ============================================================ */
+  function initIconMotion() {
+    var icons = $$('.ico');
+    if (!icons.length) return;
+
+    if (prefersReducedMotion()) return;      // CSS keeps them paused
+
+    if (!('IntersectionObserver' in window)) {
+      icons.forEach(function (el) { el.classList.add('is-live'); });
+    } else {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          entry.target.classList.toggle('is-live', entry.isIntersecting);
+        });
+      }, { rootMargin: '120px 0px' });
+      icons.forEach(function (el) { io.observe(el); });
+    }
+
+    on(document, 'visibilitychange', function () {
+      root.classList.toggle('tab-hidden', document.hidden);
+    });
+  }
+
+
+  /* ============================================================
+     17c. SWIPE RAILS
+     A horizontal rail is only obvious if it *looks* scrollable, so
+     each one gets edge fades, dots, desktop arrows, drag-to-scroll
+     and a hint that retires itself after the first swipe.
+     ============================================================ */
+  function initRails() {
+    $$('.rail-shell').forEach(function (shell) {
+      var rail = $('.gallery-rail', shell);
+      if (!rail) return;
+
+      var prev = $('.rail-prev', shell);
+      var next = $('.rail-next', shell);
+      var dotWrap = $('.rail-dots', shell);
+      var tiles = $$('.g-tile', rail);
+      var dots = [];
+
+      if (dotWrap && tiles.length) {
+        tiles.forEach(function (tile, i) {
+          var b = document.createElement('button');
+          b.type = 'button';
+          b.setAttribute('aria-label', 'Go to photo ' + (i + 1));
+          on(b, 'click', function () {
+            rail.scrollTo({ left: tile.offsetLeft - rail.offsetLeft, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+            markSwiped();
+          });
+          dotWrap.appendChild(b);
+          dots.push(b);
+        });
+      }
+
+      function step() {
+        var t = tiles[0];
+        var gap = parseFloat(window.getComputedStyle(rail).columnGap || '16') || 16;
+        return t ? t.offsetWidth + gap : rail.clientWidth * 0.8;
+      }
+
+      function sync() {
+        var max = rail.scrollWidth - rail.clientWidth;
+        var x = rail.scrollLeft;
+        shell.classList.toggle('can-prev', x > 4);
+        shell.classList.toggle('can-next', x < max - 4);
+        if (prev) prev.disabled = x <= 4;
+        if (next) next.disabled = x >= max - 4;
+
+        if (dots.length) {
+          // whichever tile sits nearest the rail's left edge is "current"
+          var best = 0, bestD = Infinity;
+          tiles.forEach(function (t, i) {
+            var d = Math.abs((t.offsetLeft - rail.offsetLeft) - x);
+            if (d < bestD) { bestD = d; best = i; }
+          });
+          dots.forEach(function (d, i) { d.classList.toggle('is-on', i === best); });
+        }
+      }
+
+      function markSwiped() { shell.classList.add('has-swiped'); }
+
+      on(prev, 'click', function () {
+        rail.scrollBy({ left: -step(), behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+        markSwiped();
+      });
+      on(next, 'click', function () {
+        rail.scrollBy({ left: step(), behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+        markSwiped();
+      });
+
+      var scrollRaf = null;
+      on(rail, 'scroll', function () {
+        if (rail.scrollLeft > 8) markSwiped();
+        if (scrollRaf) return;
+        scrollRaf = window.requestAnimationFrame(function () { scrollRaf = null; sync(); });
+      }, { passive: true });
+
+      // pointer drag on desktop (touch already scrolls natively)
+      var down = false, startX = 0, startScroll = 0, moved = 0;
+      on(rail, 'pointerdown', function (e) {
+        if (e.pointerType === 'touch') return;
+        down = true; moved = 0;
+        startX = e.clientX; startScroll = rail.scrollLeft;
+      });
+      on(rail, 'pointermove', function (e) {
+        if (!down) return;
+        var dx = e.clientX - startX;
+        if (Math.abs(dx) > 4) {
+          if (!rail.classList.contains('is-dragging')) rail.classList.add('is-dragging');
+          moved = Math.abs(dx);
+          rail.scrollLeft = startScroll - dx;
+        }
+      });
+      ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (ev) {
+        on(rail, ev, function () {
+          if (!down) return;
+          down = false;
+          // let the click through only if this was a tap, not a drag
+          if (moved > 4) window.setTimeout(function () { rail.classList.remove('is-dragging'); }, 0);
+          else rail.classList.remove('is-dragging');
+        });
+      });
+
+      on(window, 'resize', sync);
+      sync();
     });
   }
 
@@ -827,6 +990,8 @@
     initToTop();
     initNotify();
     initMarquee();
+    initIconMotion();
+    initRails();
     initAnchors();
     initPreloader();
     runScroll();
@@ -845,7 +1010,7 @@
     var m = $('[data-preview-modal]');
     if (!m) return;
     m.classList.add('is-open');
-    body.classList.add('is-locked');
+    lockScroll();
     var btn = $('button', m);
     if (btn) btn.focus();
   };
@@ -853,7 +1018,7 @@
     var m = $('[data-preview-modal]');
     if (!m) return;
     m.classList.remove('is-open');
-    body.classList.remove('is-locked');
+    unlockScroll();
   };
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;

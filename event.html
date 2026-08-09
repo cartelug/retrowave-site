@@ -3,10 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Retro Wave: Kampala After Dark — Retro Wave</title>
-<meta name="description" content="Buy tickets to Retro Wave: Kampala After Dark. MTN Mobile Money, Airtel Money or card.">
-<meta name="theme-color" content="#0e2038">
+<title>Retro Wave 4 — Retro Wave</title>
+<meta name="description" content="Retro Wave 4 at Ark Gardens, Akright City, Entebbe. Tickets via MTN Mobile Money, Airtel Money or card.">
+<meta name="theme-color" content="#fbf3df">
 <link rel="icon" href="assets/logo.png">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/fredoka-600.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/poppins-500.woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 <script>document.documentElement.className += ' js';</script>
 <noscript><style>
@@ -15,26 +17,26 @@
   .nav-toggle{display:none!important}
 </style></noscript>
 <style>
-  .event-hero { position:relative; background: linear-gradient(172deg, var(--navy-light), var(--navy-deep) 70%, var(--navy-ink)); padding: 34px 0 0; overflow:hidden; }
-  .event-hero::before { content:""; position:absolute; top:-240px; left:52%; transform:translateX(-50%); width:780px; height:780px; border-radius:50%; background-image: repeating-conic-gradient(rgba(226,82,31,.15) 0deg 9deg, transparent 9deg 18deg); animation: spinSlow 70s linear infinite; }
-  .breadcrumb { position:relative; z-index:2; font-size:.8125rem; color:rgba(246,230,195,.6); margin-bottom:18px; }
-  .breadcrumb a { color:rgba(246,230,195,.85); }
-  .breadcrumb a:hover { color:var(--cream-logo); text-decoration:underline; }
+  .event-hero { position:relative; background: linear-gradient(180deg, #fffdf7 0%, var(--cream) 62%); padding: 30px 0 0; overflow:hidden; }
+  .breadcrumb { position:relative; z-index:2; font-size:.8125rem; color:var(--ink-faint); margin-bottom:18px; }
+  .breadcrumb a { color:var(--ink-soft); font-weight:500; }
+  .breadcrumb a:hover { color:var(--orange); text-decoration:underline; }
 
-  .event-hero-grid { position:relative; z-index:2; display:grid; grid-template-columns:.8fr 1.2fr; gap:44px; align-items:end; padding-bottom:44px; }
-  .event-hero .poster-art { aspect-ratio:4/5; border:3px solid rgba(246,230,195,.85); box-shadow: var(--shadow-lift); }
-  .event-title-block .event-chip { background:rgba(255,255,255,.12); color:var(--cream-logo); }
-  .event-title-block h1 { color:var(--cream-logo); font-size:clamp(2rem,4.4vw,3rem); margin:14px 0 12px; }
-  .event-facts { display:flex; gap:26px; flex-wrap:wrap; margin-top:20px; }
-  .event-fact { color:rgba(246,230,195,.85); font-size:.9375rem; }
-  .event-fact b { display:block; color:#fff; font-family:var(--font-display); font-size:1.0625rem; font-weight:600; }
+  .event-hero-grid { position:relative; z-index:2; display:grid; grid-template-columns:.82fr 1.18fr; gap:44px; align-items:center; padding-bottom:46px; }
+  .event-hero .poster-art { aspect-ratio:4/5; border-radius:var(--radius-lg); box-shadow: var(--shadow-lift); }
+  .event-title-block h1 { color:var(--navy); font-size:clamp(2rem,4.6vw,3.1rem); margin:14px 0 12px; letter-spacing:-.02em; }
+  .event-facts { display:flex; gap:26px; flex-wrap:wrap; margin-top:22px; }
+  .event-fact { color:var(--ink-soft); font-size:.9375rem; display:flex; gap:10px; align-items:flex-start; }
+  .event-fact .ico { color:var(--orange); margin-top:2px; }
+  .event-fact b { display:block; color:var(--navy); font-family:var(--font-display); font-size:1.0625rem; font-weight:600; }
 
   .detail-grid { display:grid; grid-template-columns:1.5fr 1fr; gap:48px; align-items:start; }
 
   .lineup-list { display:flex; flex-direction:column; gap:14px; margin-top:18px; }
   .lineup-item { display:flex; align-items:center; gap:14px; background:var(--cream-card); border:1.5px solid var(--border); border-radius:14px; padding:15px 17px; transition: transform .25s var(--ease-out), border-color .25s ease; }
   .lineup-item:hover { transform: translateX(5px); border-color: var(--orange); }
-  .lineup-avatar { width:46px; height:46px; border-radius:50%; background:linear-gradient(135deg, var(--orange), var(--navy)); flex-shrink:0; display:grid; place-items:center; color:#fff; font-family:var(--font-display); font-size:1rem; }
+  .lineup-avatar { width:46px; height:46px; border-radius:50%; background:linear-gradient(135deg, var(--orange), var(--navy)); flex-shrink:0; display:grid; place-items:center; color:#fff; }
+  .lineup-avatar .ico { width:22px; height:22px; }
   .lineup-item b { display:block; font-size:.9375rem; color:var(--navy); }
   .lineup-item span { font-size:.8125rem; color:var(--ink-soft); }
 
@@ -43,7 +45,8 @@
   .tier-info b { display:block; font-size:1rem; color:var(--navy); }
   .tier-info span { font-size:.8125rem; color:var(--ink-soft); }
   .qty-stepper { display:flex; align-items:center; gap:10px; }
-  .qty-stepper button { width:44px; height:44px; border-radius:50%; border:1.5px solid var(--border); background:#fff; font-size:1.25rem; font-weight:700; color:var(--navy); display:flex; align-items:center; justify-content:center; transition: background .18s ease, border-color .18s ease, transform .18s var(--ease-spring); }
+  .qty-stepper button { width:44px; height:44px; border-radius:50%; border:1.5px solid var(--border); background:#fff; color:var(--navy); display:flex; align-items:center; justify-content:center; transition: background .18s ease, border-color .18s ease, transform .18s var(--ease-spring); }
+  .qty-stepper button .ico { width:18px; height:18px; }
   .qty-stepper button:hover:not(:disabled) { background:var(--orange); border-color:var(--orange); color:#fff; transform: scale(1.08); }
   .qty-stepper button:disabled { opacity:.35; cursor:not-allowed; }
   .qty-stepper [data-qty] { min-width:28px; text-align:center; font-weight:600; font-family:var(--font-display); font-size:1.125rem; font-variant-numeric: tabular-nums; }
@@ -53,9 +56,9 @@
   .cart-total-row .amt { font-family:var(--font-display); font-size:1.375rem; color:var(--navy); }
 
   .pay-methods { display:flex; gap:8px; margin-top:14px; flex-wrap:wrap; }
-  .pay-chip { font-size:.71875rem; font-weight:700; color:var(--ink-soft); background:var(--cream-alt); padding:6px 12px; border-radius:999px; }
+  .pay-chip { font-size:.71875rem; font-weight:700; color:var(--ink-soft); background:var(--cream-alt); padding:6px 12px; border-radius:999px; display:inline-flex; align-items:center; gap:6px; }
 
-  .sticky-bar { position:fixed; left:0; right:0; bottom:calc(-120px - var(--dock-h)); background:var(--navy); padding:14px 0 calc(14px + env(safe-area-inset-bottom,0px)); box-shadow:0 -8px 26px rgba(0,0,0,.3); z-index:260; transition: bottom .3s var(--ease-out); }
+  .sticky-bar { position:fixed; left:0; right:0; bottom:calc(-140px - var(--dock-h)); background:var(--navy); padding:14px 0 calc(14px + env(safe-area-inset-bottom,0px)); box-shadow:0 -8px 26px rgba(0,0,0,.3); z-index:260; transition: bottom .3s var(--ease-out); }
   .sticky-bar.is-visible { bottom: var(--dock-h); }
   .sticky-bar .wrap { display:flex; align-items:center; justify-content:space-between; gap:16px; }
   .sticky-bar .amt { color:var(--cream-logo); font-family:var(--font-display); font-size:1.125rem; }
@@ -66,34 +69,27 @@
     .event-hero .poster-art { max-width:340px; }
     .buy-summary { position:static; }
   }
-  @media (max-width: 780px) {
-    .event-facts { gap:16px 26px; }
-  }
+  @media (max-width: 780px) { .event-facts { gap:16px 26px; } }
 </style>
 </head>
 <body>
 
 <div class="preloader" role="status" aria-live="polite" aria-label="Loading Retro Wave">
-  <div class="pl-inner">
-    <svg class="pl-cassette" viewBox="0 0 320 200" role="img" aria-label="Cassette tape winding">
-      <defs><linearGradient id="plBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a3d6b"/><stop offset="1" stop-color="#0b1a2f"/></linearGradient></defs>
-      <rect x="6" y="6" width="308" height="188" rx="18" fill="url(#plBody)" stroke="#f6e6c3" stroke-width="3"/>
-      <rect x="26" y="22" width="268" height="80" rx="10" fill="#fdf6e8"/>
-      <rect x="26" y="22" width="268" height="13" rx="6" fill="#e2521f"/>
-      <text x="160" y="70" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="27" font-weight="700" fill="#16345c">RETRO WAVE</text>
-      <text x="160" y="90" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" letter-spacing="2.4" fill="#8d8271">SIDE A — THE SONGS RAISED ME</text>
-      <rect class="pl-tape-window" x="72" y="114" width="176" height="60" rx="9" fill="#081527" stroke="rgba(246,230,195,.35)" stroke-width="2"/>
-      <rect x="112" y="138" width="96" height="12" fill="#3b2416"/>
-      <g class="pl-reel"><circle cx="112" cy="144" r="21" fill="#24150c" stroke="#f6e6c3" stroke-width="2"/><g stroke="#f6e6c3" stroke-width="3" stroke-linecap="round"><line x1="112" y1="129" x2="112" y2="159"/><line x1="97" y1="144" x2="127" y2="144"/><line x1="101" y1="133" x2="123" y2="155"/><line x1="123" y1="133" x2="101" y2="155"/></g></g>
-      <g class="pl-reel pl-reel--slow"><circle cx="208" cy="144" r="21" fill="#24150c" stroke="#f6e6c3" stroke-width="2"/><g stroke="#f6e6c3" stroke-width="3" stroke-linecap="round"><line x1="208" y1="129" x2="208" y2="159"/><line x1="193" y1="144" x2="223" y2="144"/><line x1="197" y1="133" x2="219" y2="155"/><line x1="219" y1="133" x2="197" y2="155"/></g></g>
+  <div class="pl-stage">
+    <img class="pl-logo" src="assets/logo.png" alt="Retro Wave" width="1190" height="531">
+    <p class="pl-tag">The wave is <em>calling</em></p>
+    <div class="pl-meta"><span>Rolling in</span><span class="pl-pct">0%</span></div>
+  </div>
+  <div class="pl-sea" aria-hidden="true">
+    <div class="pl-sea-body"></div>
+    <svg viewBox="0 0 2880 64" preserveAspectRatio="none">
+      <path class="s-back" d="M0,30 C180,2 360,58 720,30 C1080,2 1260,58 1440,30
+                              C1620,2 1800,58 2160,30 C2520,2 2700,58 2880,30 L2880,64 L0,64 Z"/>
+      <path class="s-front" d="M0,42 C240,14 420,70 720,42 C1020,14 1200,70 1440,42
+                               C1680,14 1860,70 2160,42 C2460,14 2640,70 2880,42 L2880,64 L0,64 Z"/>
+      <path class="s-crest" d="M0,42 C240,14 420,70 720,42 C1020,14 1200,70 1440,42
+                               C1680,14 1860,70 2160,42 C2460,14 2640,70 2880,42"/>
     </svg>
-    <div class="pl-word" aria-hidden="true">
-      <span style="--i:0">R</span><span style="--i:1">E</span><span style="--i:2">T</span><span style="--i:3">R</span><span style="--i:4">O</span>
-      <span class="pl-gap"></span>
-      <span style="--i:5">W</span><span style="--i:6">A</span><span style="--i:7">V</span><span style="--i:8">E</span>
-    </div>
-    <div class="pl-track"><div class="pl-fill"></div></div>
-    <div class="pl-meta"><span>Rewinding the tape</span><span class="pl-pct">0%</span></div>
   </div>
 </div>
 
@@ -101,7 +97,7 @@
 
 <header class="site-header">
   <div class="wrap">
-    <a href="index.html" class="brand" aria-label="Retro Wave home"><img src="assets/logo.png" alt="Retro Wave" width="120" height="38"></a>
+    <a href="index.html" class="brand" aria-label="Retro Wave home"><img src="assets/logo.png" alt="Retro Wave" width="1190" height="531"></a>
     <nav class="main-nav" aria-label="Main">
       <a href="index.html" style="--i:0">Home</a>
       <a href="events.html" class="active" style="--i:1">Events</a>
@@ -112,9 +108,25 @@
     <div class="header-right">
       <div class="country-switch" role="group" aria-label="Filter events by country">
         <button type="button" data-country-btn="all" class="active" aria-pressed="true">All</button>
-        <button type="button" data-country-btn="ug" aria-pressed="false">🇺🇬 UG</button>
-        <button type="button" data-country-btn="ke" aria-pressed="false">🇰🇪 KE</button>
-        <button type="button" data-country-btn="rw" aria-pressed="false">🇷🇼 RW</button>
+        <button type="button" data-country-btn="ug" aria-pressed="false"><svg class="flag flag--ug" viewBox="0 0 21 15" width="21" height="15" aria-hidden="true"><rect width="21" height="15" rx="2" fill="#111"/>
+      <path fill="#FCDC04" d="M0 2.5h21V5H0z"/><path fill="#D90000" d="M0 5h21v2.5H0z"/>
+      <path fill="#111" d="M0 7.5h21V10H0z"/><path fill="#FCDC04" d="M0 10h21v2.5H0z"/>
+      <path fill="#D90000" d="M0 12.5h21V15H0z"/>
+      <circle cx="10.5" cy="7.5" r="3" fill="#fff"/>
+      <circle cx="10.5" cy="7.5" r="1.35" fill="#D90000"/></svg> UG</button>
+        <button type="button" data-country-btn="ke" aria-pressed="false"><svg class="flag flag--ke" viewBox="0 0 21 15" width="21" height="15" aria-hidden="true"><rect width="21" height="15" rx="2" fill="#fff"/>
+      <path fill="#111" d="M0 2h21v3.6H0z"/><path fill="#B60000" d="M0 6.3h21v2.4H0z"/>
+      <path fill="#006600" d="M0 9.4h21v3.6H0z"/>
+      <ellipse cx="10.5" cy="7.5" rx="2.1" ry="4.1" fill="#B60000" stroke="#fff" stroke-width="0.7"/>
+      <ellipse cx="10.5" cy="7.5" rx="0.62" ry="2.2" fill="#fff"/></svg> KE</button>
+        <button type="button" data-country-btn="rw" aria-pressed="false"><svg class="flag flag--rw" viewBox="0 0 21 15" width="21" height="15" aria-hidden="true"><rect width="21" height="15" rx="2" fill="#20AA46"/>
+      <path fill="#00A1DE" d="M0 2a2 2 0 0 1 2-2h17a2 2 0 0 1 2 2v5.2H0z"/>
+      <path fill="#FAD201" d="M0 7.2h21v3.7H0z"/>
+      <circle cx="15.9" cy="3.8" r="1.5" fill="#FAD201"/>
+      <g stroke="#FAD201" stroke-width=".62" stroke-linecap="round">
+        <path d="M15.9 1.1v.75M15.9 5.75v.75M13.2 3.8h.75M17.85 3.8h.75"/>
+        <path d="m14 1.9.53.53M17.27 5.17l.53.53M14 5.7l.53-.53M17.27 2.43l.53-.53"/>
+      </g></svg> RW</button>
       </div>
       <a href="#tickets" class="btn btn-primary btn-sm">Get Tickets</a>
       <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><i></i><i></i><i></i></button>
@@ -125,11 +137,23 @@
 <div class="drawer" id="drawer" aria-hidden="true">
   <div class="drawer-inner">
     <nav class="drawer-links" aria-label="Mobile">
-      <a href="index.html" style="--i:0"><span class="d-ico" aria-hidden="true">🏠</span>Home</a>
-      <a href="events.html" class="active" style="--i:1"><span class="d-ico" aria-hidden="true">🎫</span>Events</a>
-      <a href="gallery.html" style="--i:2"><span class="d-ico" aria-hidden="true">📸</span>Gallery</a>
-      <a href="history.html" style="--i:3"><span class="d-ico" aria-hidden="true">📼</span>History</a>
-      <a href="about.html" style="--i:4"><span class="d-ico" aria-hidden="true">💬</span>About</a>
+      <a href="index.html" style="--i:0"><span class="d-ico"><svg class="ico ico--home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.4 10.6 12 3.6l8.6 7"/>
+      <path d="M5.7 9.2v10.2a1 1 0 0 0 1 1h10.6a1 1 0 0 0 1-1V9.2"/>
+      <path class="ic-door" d="M9.8 20.4v-5.1a2.2 2.2 0 0 1 4.4 0v5.1"/></svg></span>Home</a>
+      <a href="events.html" class="active" style="--i:1"><span class="d-ico"><svg class="ico ico--ticket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.6 6.2h14.8a2 2 0 0 1 2 2v1.5a2.3 2.3 0 0 0 0 4.6v1.5a2 2 0 0 1-2 2H4.6a2 2 0 0 1-2-2v-1.5a2.3 2.3 0 0 0 0-4.6V8.2a2 2 0 0 1 2-2Z"/>
+      <path class="ic-perf" d="M14.6 6.6v10.8" stroke-dasharray="1.5 2.1"/></svg></span>Events</a>
+      <a href="gallery.html" style="--i:2"><span class="d-ico"><svg class="ico ico--camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 9.4a2 2 0 0 1 2-2h1.9l1.5-2.3h8l1.5 2.3h1.9a2 2 0 0 1 2 2v8.4a2 2 0 0 1-2 2H4.6a2 2 0 0 1-2-2Z"/>
+      <circle class="ic-lens" cx="12" cy="13.4" r="3.7" stroke-dasharray="4.6 2.4"/>
+      <circle class="ic-flash" cx="18.4" cy="10.7" r=".85" fill="currentColor" stroke="none"/></svg></span>Gallery</a>
+      <a href="history.html" style="--i:3"><span class="d-ico"><svg class="ico ico--cassette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="5" width="18.8" height="14" rx="2.3"/>
+      <rect x="5.6" y="7.5" width="12.8" height="3.6" rx="1"/>
+      <path d="M10.4 14.8h3.2"/>
+      <g class="ic-reel"><circle cx="8.4" cy="14.8" r="2.1"/><path d="M8.4 12.7v4.2M6.3 14.8h4.2"/></g>
+      <g class="ic-reel ic-reel--b"><circle cx="15.6" cy="14.8" r="2.1"/><path d="M15.6 12.7v4.2M13.5 14.8h4.2"/></g></svg></span>History</a>
+      <a href="about.html" style="--i:4"><span class="d-ico"><svg class="ico ico--chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.2 5.6h15.6a1.9 1.9 0 0 1 1.9 1.9v7.4a1.9 1.9 0 0 1-1.9 1.9h-6.6l-4.4 3.3v-3.3H4.2a1.9 1.9 0 0 1-1.9-1.9V7.5a1.9 1.9 0 0 1 1.9-1.9Z"/>
+      <circle class="ic-dot" cx="8.4" cy="11.2" r=".95" fill="currentColor" stroke="none"/>
+      <circle class="ic-dot ic-dot--2" cx="12" cy="11.2" r=".95" fill="currentColor" stroke="none"/>
+      <circle class="ic-dot ic-dot--3" cx="15.6" cy="11.2" r=".95" fill="currentColor" stroke="none"/></svg></span>About</a>
     </nav>
     <div class="drawer-foot">
       <div class="a11y-bar">
@@ -140,15 +164,32 @@
       </div>
       <div class="a11y-bar">
         <span class="a11y-label">Motion</span>
-        <button type="button" class="a11y-btn" data-motion-toggle aria-pressed="false">Reduce animations</button>
+        <button type="button" class="a11y-btn" data-motion-toggle aria-pressed="false"><svg class="ico ico--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.4 14.6A8.7 8.7 0 0 1 9.4 3.6a8.8 8.8 0 1 0 11 11Z"/></svg> Reduce animations</button>
       </div>
       <div class="country-switch" role="group" aria-label="Filter events by country">
         <button type="button" data-country-btn="all" class="active" aria-pressed="true">All</button>
-        <button type="button" data-country-btn="ug" aria-pressed="false">🇺🇬</button>
-        <button type="button" data-country-btn="ke" aria-pressed="false">🇰🇪</button>
-        <button type="button" data-country-btn="rw" aria-pressed="false">🇷🇼</button>
+        <button type="button" data-country-btn="ug" aria-pressed="false"><svg class="flag flag--ug" viewBox="0 0 21 15" width="21" height="15" role="img" aria-label="Uganda"><rect width="21" height="15" rx="2" fill="#111"/>
+      <path fill="#FCDC04" d="M0 2.5h21V5H0z"/><path fill="#D90000" d="M0 5h21v2.5H0z"/>
+      <path fill="#111" d="M0 7.5h21V10H0z"/><path fill="#FCDC04" d="M0 10h21v2.5H0z"/>
+      <path fill="#D90000" d="M0 12.5h21V15H0z"/>
+      <circle cx="10.5" cy="7.5" r="3" fill="#fff"/>
+      <circle cx="10.5" cy="7.5" r="1.35" fill="#D90000"/></svg></button>
+        <button type="button" data-country-btn="ke" aria-pressed="false"><svg class="flag flag--ke" viewBox="0 0 21 15" width="21" height="15" role="img" aria-label="Kenya"><rect width="21" height="15" rx="2" fill="#fff"/>
+      <path fill="#111" d="M0 2h21v3.6H0z"/><path fill="#B60000" d="M0 6.3h21v2.4H0z"/>
+      <path fill="#006600" d="M0 9.4h21v3.6H0z"/>
+      <ellipse cx="10.5" cy="7.5" rx="2.1" ry="4.1" fill="#B60000" stroke="#fff" stroke-width="0.7"/>
+      <ellipse cx="10.5" cy="7.5" rx="0.62" ry="2.2" fill="#fff"/></svg></button>
+        <button type="button" data-country-btn="rw" aria-pressed="false"><svg class="flag flag--rw" viewBox="0 0 21 15" width="21" height="15" role="img" aria-label="Rwanda"><rect width="21" height="15" rx="2" fill="#20AA46"/>
+      <path fill="#00A1DE" d="M0 2a2 2 0 0 1 2-2h17a2 2 0 0 1 2 2v5.2H0z"/>
+      <path fill="#FAD201" d="M0 7.2h21v3.7H0z"/>
+      <circle cx="15.9" cy="3.8" r="1.5" fill="#FAD201"/>
+      <g stroke="#FAD201" stroke-width=".62" stroke-linecap="round">
+        <path d="M15.9 1.1v.75M15.9 5.75v.75M13.2 3.8h.75M17.85 3.8h.75"/>
+        <path d="m14 1.9.53.53M17.27 5.17l.53.53M14 5.7l.53-.53M17.27 2.43l.53-.53"/>
+      </g></svg></button>
       </div>
-      <a href="events.html" class="btn btn-primary btn-block btn-lg">Get Tickets</a>
+      <a href="events.html" class="btn btn-primary btn-block btn-lg"><svg class="ico ico--ticket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.6 6.2h14.8a2 2 0 0 1 2 2v1.5a2.3 2.3 0 0 0 0 4.6v1.5a2 2 0 0 1-2 2H4.6a2 2 0 0 1-2-2v-1.5a2.3 2.3 0 0 0 0-4.6V8.2a2 2 0 0 1 2-2Z"/>
+      <path class="ic-perf" d="M14.6 6.6v10.8" stroke-dasharray="1.5 2.1"/></svg> Get Tickets</a>
       <p class="drawer-contact">Need help? <a href="mailto:hello@retrowave.ug">hello@retrowave.ug</a></p>
     </div>
   </div>
@@ -157,30 +198,41 @@
 <main id="main">
 <section class="event-hero grain">
   <div class="wrap">
-    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> / <a href="events.html">Events</a> / Kampala After Dark</nav>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> / <a href="events.html">Events</a> / Retro Wave 4</nav>
     <div class="event-hero-grid">
       <div class="poster-art img-holder intro-fade" style="--i:0">
-        <picture><source type="image/webp" srcset="assets/photos/night-crowd-seated-480.webp 480w, assets/photos/night-crowd-seated-720.webp 720w" sizes="(max-width: 980px) 340px, 30vw"><img src="assets/photos/night-crowd-seated.jpg" alt="Guests seated around tables at a Retro Wave night" width="720" height="1080" fetchpriority="high" decoding="async"></picture>
-        <span class="poster-tag">🇺🇬 Kampala</span>
-        <span class="poster-label">Retro Wave: Kampala After Dark</span>
+        <picture><source type="image/webp" srcset="assets/photos/stage-wide-480.webp 480w, assets/photos/stage-wide-960.webp 960w, assets/photos/stage-wide-1080.webp 1080w" sizes="(max-width: 980px) 340px, 30vw"><img src="assets/photos/stage-wide.jpg" alt="The Retro Wave stage at Ark Gardens with Retro Wave 3 on the LED walls" width="1080" height="720" fetchpriority="high" decoding="async"></picture>
+        <span class="poster-tag"><svg class="flag flag--ug" viewBox="0 0 21 15" width="21" height="15" aria-hidden="true"><rect width="21" height="15" rx="2" fill="#111"/>
+      <path fill="#FCDC04" d="M0 2.5h21V5H0z"/><path fill="#D90000" d="M0 5h21v2.5H0z"/>
+      <path fill="#111" d="M0 7.5h21V10H0z"/><path fill="#FCDC04" d="M0 10h21v2.5H0z"/>
+      <path fill="#D90000" d="M0 12.5h21V15H0z"/>
+      <circle cx="10.5" cy="7.5" r="3" fill="#fff"/>
+      <circle cx="10.5" cy="7.5" r="1.35" fill="#D90000"/></svg> Entebbe</span>
+        <span class="poster-label">Retro Wave 4</span>
       </div>
       <div class="event-title-block">
-        <span class="event-chip intro-fade" style="--i:0">On Sale Now</span>
+        <span class="event-chip intro-fade" style="--i:0"><svg class="ico ico--calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.2" width="18" height="15.4" rx="2.2"/>
+      <path d="M3 10.2h18M8 3v4.2M16 3v4.2"/>
+      <circle class="ic-flash" cx="8.6" cy="14.6" r="1.05" fill="currentColor" stroke="none"/></svg> Announcing soon</span>
         <h1>
-          <span class="line-mask"><span style="--i:0">Retro Wave:</span></span>
-          <span class="line-mask"><span style="--i:1">Kampala After Dark</span></span>
+          <span class="line-mask"><span style="--i:0">Retro Wave 4</span></span>
         </h1>
-        <p class="lede intro-fade" style="--i:1; color:rgba(246,230,195,.78);">A night built on the tracks that raised us — resident DJs, an all-vinyl warm-up set, and the Retro Wave dancefloor at full tilt.</p>
+        <p class="lede intro-fade" style="--i:1">The fourth edition, back at the venue that has hosted every one so far. Resident selectors, the classics, and the room that already knows the words.</p>
         <div class="event-facts intro-fade" style="--i:2">
-          <div class="event-fact"><b>Sat, 30 Aug 2026</b>Doors 8:00 PM</div>
-          <div class="event-fact"><b>Blu Haze Rooftop</b>Kampala, Uganda</div>
-          <div class="event-fact"><b>18+</b>Valid ID required</div>
+          <div class="event-fact"><svg class="ico ico--calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.2" width="18" height="15.4" rx="2.2"/>
+      <path d="M3 10.2h18M8 3v4.2M16 3v4.2"/>
+      <circle class="ic-flash" cx="8.6" cy="14.6" r="1.05" fill="currentColor" stroke="none"/></svg><span><b>Date to be announced</b>Join the list to hear first</span></div>
+          <div class="event-fact"><svg class="ico ico--pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="ic-bob"><path d="M12 21.4s6.9-6.2 6.9-11.2a6.9 6.9 0 1 0-13.8 0c0 5 6.9 11.2 6.9 11.2Z"/>
+      <circle cx="12" cy="10" r="2.5"/></g></svg><span><b>Ark Gardens, Akright City</b>Entebbe, Uganda</span></div>
+          <div class="event-fact"><svg class="ico ico--shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2.8 7.4 3v5.4c0 4.6-3.1 8.5-7.4 10-4.3-1.5-7.4-5.4-7.4-10V5.8Z"/>
+      <path class="ic-draw" d="m8.8 11.9 2.3 2.3 4.1-4.5" stroke-dasharray="11"/></svg><span><b>18+</b>Valid ID required</span></div>
         </div>
-        <div class="countdown intro-fade" style="--i:3; max-width:380px;" data-countdown="2026-08-30T20:00:00" data-done-text="Doors are open — see you inside.">
-          <div><span class="num" data-d>00</span><span class="lbl">Days</span></div>
-          <div><span class="num" data-h>00</span><span class="lbl">Hrs</span></div>
-          <div><span class="num" data-m>00</span><span class="lbl">Min</span></div>
-          <div><span class="num" data-s>00</span><span class="lbl">Sec</span></div>
+        <div class="hero-ctas intro-fade" style="--i:3; margin-top:26px;">
+          <a href="#tickets" class="btn btn-primary"><svg class="ico ico--ticket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.6 6.2h14.8a2 2 0 0 1 2 2v1.5a2.3 2.3 0 0 0 0 4.6v1.5a2 2 0 0 1-2 2H4.6a2 2 0 0 1-2-2v-1.5a2.3 2.3 0 0 0 0-4.6V8.2a2 2 0 0 1 2-2Z"/>
+      <path class="ic-perf" d="M14.6 6.6v10.8" stroke-dasharray="1.5 2.1"/></svg> See ticket tiers</a>
+          <a href="gallery.html" class="btn btn-outline-navy"><svg class="ico ico--camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 9.4a2 2 0 0 1 2-2h1.9l1.5-2.3h8l1.5 2.3h1.9a2 2 0 0 1 2 2v8.4a2 2 0 0 1-2 2H4.6a2 2 0 0 1-2-2Z"/>
+      <circle class="ic-lens" cx="12" cy="13.4" r="3.7" stroke-dasharray="4.6 2.4"/>
+      <circle class="ic-flash" cx="18.4" cy="10.7" r=".85" fill="currentColor" stroke="none"/></svg> See last time</a>
         </div>
       </div>
     </div>
@@ -188,35 +240,57 @@
 </section>
 
 <div class="divider divider-marquee" aria-hidden="true">
-  <div class="mq-track"><span>THE SONGS RAISED ME <i class="mq-star">✦</i> RIDE THE WAVE <i class="mq-star">✦</i> WE LOVE THE 90s <i class="mq-star">✦</i> MELODY HAS NO TIME LIMIT <i class="mq-star">✦</i></span></div>
-  <div class="mq-track"><span>THE SONGS RAISED ME <i class="mq-star">✦</i> RIDE THE WAVE <i class="mq-star">✦</i> WE LOVE THE 90s <i class="mq-star">✦</i> MELODY HAS NO TIME LIMIT <i class="mq-star">✦</i></span></div>
+  <div class="mq-track"><span>THE WAVE IS CALLING <i class="mq-star">✦</i> RIDE THE WAVE <i class="mq-star">✦</i> WE LOVE THE 90s <i class="mq-star">✦</i> MELODY HAS NO TIME LIMIT <i class="mq-star">✦</i></span></div>
+  <div class="mq-track"><span>THE WAVE IS CALLING <i class="mq-star">✦</i> RIDE THE WAVE <i class="mq-star">✦</i> WE LOVE THE 90s <i class="mq-star">✦</i> MELODY HAS NO TIME LIMIT <i class="mq-star">✦</i></span></div>
 </div>
 
 <section>
   <div class="wrap detail-grid">
     <div>
-      <span class="eyebrow" data-reveal="up">Lineup</span>
-      <h2 style="margin-top:10px; font-size:1.625rem; --d:70;" data-reveal="up">Who is playing</h2>
+      <p class="notice" data-reveal="up"><svg class="ico ico--warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4.2 21.4 19.8H2.6Z"/>
+      <path class="ic-blink" d="M12 10.2v3.8"/>
+      <circle class="ic-blink" cx="12" cy="17" r=".95" fill="currentColor" stroke="none"/></svg> <b>Heads up:</b> the tiers and prices on this page are indicative placeholders while Retro Wave 4 is being planned. Nothing is on sale and no payment will be taken.</p>
+
+      <span class="eyebrow" style="margin-top:40px; display:inline-flex;" data-reveal="up">Lineup</span>
+      <h2 style="margin-top:10px; font-size:1.625rem;" data-reveal="up">Who is playing</h2>
       <div class="lineup-list" data-stagger="90">
-        <div class="lineup-item" data-reveal="left"><div class="lineup-avatar" aria-hidden="true">01</div><div><b>DJ Resident One</b><span>Retro Wave house selector</span></div></div>
-        <div class="lineup-item" data-reveal="left"><div class="lineup-avatar" aria-hidden="true">02</div><div><b>DJ Resident Two</b><span>All-vinyl warm-up set</span></div></div>
-        <div class="lineup-item" data-reveal="left"><div class="lineup-avatar" aria-hidden="true">03</div><div><b>Special Guest — TBA</b><span>Announced closer to the date</span></div></div>
+        <div class="lineup-item" data-reveal="left"><div class="lineup-avatar"><svg class="ico ico--music" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 17.6V6.2l10-2v11.4"/>
+      <circle class="ic-note" cx="6.6" cy="17.6" r="2.4"/>
+      <circle class="ic-note ic-note--2" cx="16.6" cy="15.6" r="2.4"/></svg></div><div><b>Resident selectors</b><span>The Retro Wave house sound</span></div></div>
+        <div class="lineup-item" data-reveal="left"><div class="lineup-avatar"><svg class="ico ico--cassette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="5" width="18.8" height="14" rx="2.3"/>
+      <rect x="5.6" y="7.5" width="12.8" height="3.6" rx="1"/>
+      <path d="M10.4 14.8h3.2"/>
+      <g class="ic-reel"><circle cx="8.4" cy="14.8" r="2.1"/><path d="M8.4 12.7v4.2M6.3 14.8h4.2"/></g>
+      <g class="ic-reel ic-reel--b"><circle cx="15.6" cy="14.8" r="2.1"/><path d="M15.6 12.7v4.2M13.5 14.8h4.2"/></g></svg></div><div><b>All-vinyl warm-up</b><span>Early doors, before the floor fills</span></div></div>
+        <div class="lineup-item" data-reveal="left"><div class="lineup-avatar"><svg class="ico ico--sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="ic-twinkle" d="m12 3.2 1.9 5.9 5.9 1.9-5.9 1.9L12 18.8l-1.9-5.9L4.2 11l5.9-1.9Z"/>
+      <path class="ic-twinkle ic-twinkle--2" d="m19 16.4.75 2.1 2.1.75-2.1.75L19 22.1l-.75-2.1-2.1-.75 2.1-.75Z"/></svg></div><div><b>Special guest — TBA</b><span>Announced closer to the date</span></div></div>
       </div>
 
       <span class="eyebrow" style="margin-top:46px; display:inline-flex;" data-reveal="up">What To Expect</span>
       <h2 style="margin-top:10px; font-size:1.625rem;" data-reveal="up">The shape of the night</h2>
       <div class="stack" style="margin-top:16px;" data-stagger="80">
-        <div class="notice" data-reveal="up"><b>8:00 PM — Doors.</b> Early arrivals get the good seats and the all-vinyl warm-up set.</div>
-        <div class="notice" data-reveal="up"><b>10:00 PM — Peak.</b> Resident selectors take it through the decades, back to back.</div>
-        <div class="notice" data-reveal="up"><b>Late — Requests.</b> The anthem that made you, if it has not already been played.</div>
+        <div class="notice" data-reveal="up"><svg class="ico ico--clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.7"/>
+      <path class="ic-hand" d="M12 7.2V12l3.2 2"/></svg> <b>Doors.</b> Early arrivals get the good seats and the all-vinyl warm-up set.</div>
+        <div class="notice" data-reveal="up"><svg class="ico ico--music" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 17.6V6.2l10-2v11.4"/>
+      <circle class="ic-note" cx="6.6" cy="17.6" r="2.4"/>
+      <circle class="ic-note ic-note--2" cx="16.6" cy="15.6" r="2.4"/></svg> <b>Peak.</b> Resident selectors take it through the decades, back to back.</div>
+        <div class="notice" data-reveal="up"><svg class="ico ico--chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.2 5.6h15.6a1.9 1.9 0 0 1 1.9 1.9v7.4a1.9 1.9 0 0 1-1.9 1.9h-6.6l-4.4 3.3v-3.3H4.2a1.9 1.9 0 0 1-1.9-1.9V7.5a1.9 1.9 0 0 1 1.9-1.9Z"/>
+      <circle class="ic-dot" cx="8.4" cy="11.2" r=".95" fill="currentColor" stroke="none"/>
+      <circle class="ic-dot ic-dot--2" cx="12" cy="11.2" r=".95" fill="currentColor" stroke="none"/>
+      <circle class="ic-dot ic-dot--3" cx="15.6" cy="11.2" r=".95" fill="currentColor" stroke="none"/></svg> <b>Requests.</b> The song that made you, if it has not already been played.</div>
       </div>
 
       <span class="eyebrow" style="margin-top:46px; display:inline-flex;" data-reveal="up">Good To Know</span>
       <h2 style="margin-top:10px; font-size:1.625rem;" data-reveal="up">Tickets, refunds and entry</h2>
       <div class="stack" style="margin-top:16px;" data-stagger="80">
-        <div class="notice" data-reveal="up"><b>Refunds:</b> tickets are refundable up to 48 hours before doors, minus payment processing fees.</div>
-        <div class="notice" data-reveal="up"><b>Transfers:</b> reassign your ticket to a friend any time from your ticket link — no new purchase needed.</div>
-        <div class="notice" data-reveal="up"><b>Entry:</b> your QR ticket is single-use and tied to your order. A screenshot of someone else's ticket will not scan twice.</div>
+        <div class="notice" data-reveal="up"><svg class="ico ico--card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.4" y="5.4" width="19.2" height="13.2" rx="2.3"/>
+      <path d="M2.4 10h19.2"/>
+      <path class="ic-perf" d="M6.2 14.8h4.2" stroke-dasharray="1.4 1.8"/>
+      <path class="ic-perf ic-perf--2" d="M13.4 14.8h4.4" stroke-dasharray="1.4 1.8"/></svg> <b>Refunds:</b> tickets are refundable up to 48 hours before doors, minus payment processing fees.</div>
+        <div class="notice" data-reveal="up"><svg class="ico ico--ticket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.6 6.2h14.8a2 2 0 0 1 2 2v1.5a2.3 2.3 0 0 0 0 4.6v1.5a2 2 0 0 1-2 2H4.6a2 2 0 0 1-2-2v-1.5a2.3 2.3 0 0 0 0-4.6V8.2a2 2 0 0 1 2-2Z"/>
+      <path class="ic-perf" d="M14.6 6.6v10.8" stroke-dasharray="1.5 2.1"/></svg> <b>Transfers:</b> reassign your ticket to a friend any time from your ticket link — no new purchase needed.</div>
+        <div class="notice" data-reveal="up"><svg class="ico ico--shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2.8 7.4 3v5.4c0 4.6-3.1 8.5-7.4 10-4.3-1.5-7.4-5.4-7.4-10V5.8Z"/>
+      <path class="ic-draw" d="m8.8 11.9 2.3 2.3 4.1-4.5" stroke-dasharray="11"/></svg> <b>Entry:</b> your QR ticket is single-use and tied to your order. A screenshot of someone else's ticket will not scan twice.</div>
       </div>
     </div>
 
@@ -228,27 +302,27 @@
           <p style="font-size:.875rem; color:var(--ink-soft); margin:0 0 6px;">Use the + and − buttons to set how many you want.</p>
 
           <div class="tier-row" data-tier data-price="30000" data-max="8">
-            <div class="tier-info"><b>Early Bird</b><span>UGX 30,000 · Limited</span></div>
+            <div class="tier-info"><b>Early Bird</b><span>UGX 30,000 · indicative</span></div>
             <div class="qty-stepper">
-              <button type="button" data-minus aria-label="One fewer Early Bird ticket">−</button>
+              <button type="button" data-minus aria-label="One fewer Early Bird ticket"><svg class="ico ico--minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.4 12h13.2"/></svg></button>
               <span data-qty aria-live="polite">0</span>
-              <button type="button" data-plus aria-label="One more Early Bird ticket">+</button>
+              <button type="button" data-plus aria-label="One more Early Bird ticket"><svg class="ico ico--plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.4v13.2M5.4 12h13.2"/></svg></button>
             </div>
           </div>
-          <div class="tier-row" data-tier data-price="45000" data-max="8" style="border-top:1.5px dashed var(--border);">
-            <div class="tier-info"><b>Regular</b><span>UGX 45,000</span></div>
+          <div class="tier-row" data-tier data-price="45000" data-max="8">
+            <div class="tier-info"><b>Regular</b><span>UGX 45,000 · indicative</span></div>
             <div class="qty-stepper">
-              <button type="button" data-minus aria-label="One fewer Regular ticket">−</button>
+              <button type="button" data-minus aria-label="One fewer Regular ticket"><svg class="ico ico--minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.4 12h13.2"/></svg></button>
               <span data-qty aria-live="polite">0</span>
-              <button type="button" data-plus aria-label="One more Regular ticket">+</button>
+              <button type="button" data-plus aria-label="One more Regular ticket"><svg class="ico ico--plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.4v13.2M5.4 12h13.2"/></svg></button>
             </div>
           </div>
-          <div class="tier-row" data-tier data-price="90000" data-max="6" style="border-top:1.5px dashed var(--border);">
-            <div class="tier-info"><b>VIP + Fast Entry</b><span>UGX 90,000</span></div>
+          <div class="tier-row" data-tier data-price="90000" data-max="6">
+            <div class="tier-info"><b>VIP + Fast Entry</b><span>UGX 90,000 · indicative</span></div>
             <div class="qty-stepper">
-              <button type="button" data-minus aria-label="One fewer VIP ticket">−</button>
+              <button type="button" data-minus aria-label="One fewer VIP + Fast Entry ticket"><svg class="ico ico--minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.4 12h13.2"/></svg></button>
               <span data-qty aria-live="polite">0</span>
-              <button type="button" data-plus aria-label="One more VIP ticket">+</button>
+              <button type="button" data-plus aria-label="One more VIP + Fast Entry ticket"><svg class="ico ico--plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.4v13.2M5.4 12h13.2"/></svg></button>
             </div>
           </div>
         </div>
@@ -258,11 +332,21 @@
             <span style="font-size:.9375rem; color:var(--ink-soft);"><span data-cart-count>0</span> ticket(s)</span>
             <span class="amt" data-cart-total>UGX 0</span>
           </div>
-          <button class="btn btn-primary btn-block btn-lg" type="button" style="margin-top:16px;" onclick="showPreviewNotice()">Continue to Checkout</button>
+          <button class="btn btn-primary btn-block btn-lg" type="button" style="margin-top:16px;" onclick="showPreviewNotice()"><svg class="ico ico--arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.6 12h13.6"/><path d="m12.8 6.4 5.6 5.6-5.6 5.6"/></svg> Continue to Checkout</button>
           <div class="pay-methods">
-            <span class="pay-chip">MTN MoMo</span>
-            <span class="pay-chip">Airtel Money</span>
-            <span class="pay-chip">Visa / Mastercard</span>
+            <span class="pay-chip"><svg class="ico ico--momo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.4" y="2.6" width="9.6" height="18.8" rx="2.2"/>
+      <path d="M7.2 5.6h4"/>
+      <circle cx="9.2" cy="18.4" r=".85" fill="currentColor" stroke="none"/>
+      <path class="ic-arc" d="M16.8 9.2a3.7 3.7 0 0 1 0 5.6"/>
+      <path class="ic-arc ic-arc--2" d="M19.2 7a6.8 6.8 0 0 1 0 10"/></svg> MTN MoMo</span>
+            <span class="pay-chip"><svg class="ico ico--signal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="ic-bar" d="M4.6 19.6v-3.2"/>
+      <path class="ic-bar ic-bar--2" d="M9.5 19.6v-6.4"/>
+      <path class="ic-bar ic-bar--3" d="M14.5 19.6v-9.6"/>
+      <path class="ic-bar ic-bar--4" d="M19.4 19.6v-12.8"/></svg> Airtel Money</span>
+            <span class="pay-chip"><svg class="ico ico--card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.4" y="5.4" width="19.2" height="13.2" rx="2.3"/>
+      <path d="M2.4 10h19.2"/>
+      <path class="ic-perf" d="M6.2 14.8h4.2" stroke-dasharray="1.4 1.8"/>
+      <path class="ic-perf ic-perf--2" d="M13.4 14.8h4.4" stroke-dasharray="1.4 1.8"/></svg> Visa / Mastercard</span>
           </div>
         </div>
       </div>
@@ -275,41 +359,57 @@
   <svg class="w-front" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,86 C260,40 480,116 760,80 C1040,44 1240,104 1440,72 L1440,120 L0,120 Z"/></svg>
 </div>
 
-<section class="on-navy grain" style="padding-top:52px;">
+<section class="on-navy grain section--tight" style="padding-top:52px; padding-bottom:56px;">
   <div class="wrap">
     <div class="section-head">
       <div>
         <span class="eyebrow" data-reveal="up">The Room</span>
         <h2 data-reveal="up" style="--d:80">What you are buying into</h2>
       </div>
-      <a href="gallery.html" class="btn btn-ghost btn-sm" data-reveal="up" style="--d:150">Full gallery</a>
+      <a href="gallery.html" class="btn btn-ghost btn-sm" data-reveal="up" style="--d:150"><svg class="ico ico--camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 9.4a2 2 0 0 1 2-2h1.9l1.5-2.3h8l1.5 2.3h1.9a2 2 0 0 1 2 2v8.4a2 2 0 0 1-2 2H4.6a2 2 0 0 1-2-2Z"/>
+      <circle class="ic-lens" cx="12" cy="13.4" r="3.7" stroke-dasharray="4.6 2.4"/>
+      <circle class="ic-flash" cx="18.4" cy="10.7" r=".85" fill="currentColor" stroke="none"/></svg> Full gallery</a>
     </div>
   </div>
-  <div class="gallery-rail" data-reveal-group data-stagger="70">
-    <button type="button" class="g-tile img-holder" data-reveal="zoom" data-lightbox="assets/photos/crowd-night-stage-960.webp" data-caption="The floor at full tilt">
-      <picture><source type="image/webp" srcset="assets/photos/crowd-night-stage-480.webp 480w, assets/photos/crowd-night-stage-960.webp 960w" sizes="(max-width: 780px) 62vw, 280px"><img src="assets/photos/crowd-night-stage.jpg" alt="The night crowd in front of the Retro Wave stage" width="1080" height="720" loading="lazy" decoding="async"></picture>
-      <span class="g-cap">The floor at full tilt</span>
-    </button>
-    <button type="button" class="g-tile img-holder" data-reveal="zoom" data-lightbox="assets/photos/dj-booth-720.webp" data-caption="Resident selectors">
-      <picture><source type="image/webp" srcset="assets/photos/dj-booth-480.webp 480w, assets/photos/dj-booth-720.webp 720w" sizes="(max-width: 780px) 62vw, 280px"><img src="assets/photos/dj-booth.jpg" alt="A DJ at the decks with the host beside him" width="720" height="1080" loading="lazy" decoding="async"></picture>
-      <span class="g-cap">Resident selectors</span>
-    </button>
-    <button type="button" class="g-tile img-holder" data-reveal="zoom" data-lightbox="assets/photos/hands-up-blue-854.webp" data-caption="Hands up">
-      <picture><source type="image/webp" srcset="assets/photos/hands-up-blue-480.webp 480w, assets/photos/hands-up-blue-854.webp 854w" sizes="(max-width: 780px) 62vw, 280px"><img src="assets/photos/hands-up-blue.jpg" alt="A guest with both hands raised under blue light" width="854" height="1280" loading="lazy" decoding="async"></picture>
-      <span class="g-cap">Hands up</span>
-    </button>
-    <button type="button" class="g-tile img-holder" data-reveal="zoom" data-lightbox="assets/photos/night-lounge-720.webp" data-caption="Still going">
-      <picture><source type="image/webp" srcset="assets/photos/night-lounge-480.webp 480w, assets/photos/night-lounge-720.webp 720w" sizes="(max-width: 780px) 62vw, 280px"><img src="assets/photos/night-lounge.jpg" alt="Guests talking and dancing in the lounge late at night" width="720" height="1080" loading="lazy" decoding="async"></picture>
-      <span class="g-cap">Still going</span>
-    </button>
-    <button type="button" class="g-tile img-holder" data-reveal="zoom" data-lightbox="assets/photos/dancer-retro-classics-720.webp" data-caption="The dress code">
-      <picture><source type="image/webp" srcset="assets/photos/dancer-retro-classics-480.webp 480w, assets/photos/dancer-retro-classics-720.webp 720w" sizes="(max-width: 780px) 62vw, 280px"><img src="assets/photos/dancer-retro-classics.jpg" alt="A guest dancing in front of the Retro Classics backdrop" width="720" height="1080" loading="lazy" decoding="async"></picture>
-      <span class="g-cap">The dress code</span>
-    </button>
-    <button type="button" class="g-tile img-holder" data-reveal="zoom" data-lightbox="assets/photos/slow-dance-dusk-720.webp" data-caption="A slow one at dusk">
-      <picture><source type="image/webp" srcset="assets/photos/slow-dance-dusk-480.webp 480w, assets/photos/slow-dance-dusk-720.webp 720w" sizes="(max-width: 780px) 62vw, 280px"><img src="assets/photos/slow-dance-dusk.jpg" alt="A couple dancing closely at dusk" width="720" height="1080" loading="lazy" decoding="async"></picture>
-      <span class="g-cap">A slow one at dusk</span>
-    </button>
+  <div class="rail-shell" data-reveal-group>
+    <div class="rail-view">
+      <button type="button" class="rail-arrow rail-prev" aria-label="Previous photos"><svg class="ico ico--chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5.6 8.4 12 15 18.4"/></svg></button>
+      <div class="gallery-rail" data-stagger="70">
+      <button type="button" class="g-tile img-holder" data-reveal="zoom"
+              data-lightbox="assets/photos/crowd-night-stage-1080.webp" data-caption="The floor at full tilt">
+        <picture><source type="image/webp" srcset="assets/photos/crowd-night-stage-480.webp 480w, assets/photos/crowd-night-stage-960.webp 960w, assets/photos/crowd-night-stage-1080.webp 1080w" sizes="(max-width: 780px) 74vw, 280px"><img src="assets/photos/crowd-night-stage.jpg" alt="The night crowd in front of the Retro Wave stage" width="1080" height="720" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">The floor at full tilt</span>
+      </button>
+      <button type="button" class="g-tile img-holder" data-reveal="zoom"
+              data-lightbox="assets/photos/dj-booth-720.webp" data-caption="Resident selectors">
+        <picture><source type="image/webp" srcset="assets/photos/dj-booth-480.webp 480w, assets/photos/dj-booth-720.webp 720w" sizes="(max-width: 780px) 74vw, 280px"><img src="assets/photos/dj-booth.jpg" alt="A DJ at the decks with the host beside him" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Resident selectors</span>
+      </button>
+      <button type="button" class="g-tile img-holder" data-reveal="zoom"
+              data-lightbox="assets/photos/hands-up-blue-854.webp" data-caption="Hands up">
+        <picture><source type="image/webp" srcset="assets/photos/hands-up-blue-480.webp 480w, assets/photos/hands-up-blue-854.webp 854w" sizes="(max-width: 780px) 74vw, 280px"><img src="assets/photos/hands-up-blue.jpg" alt="A guest with both hands raised under blue light" width="854" height="1280" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Hands up</span>
+      </button>
+      <button type="button" class="g-tile img-holder" data-reveal="zoom"
+              data-lightbox="assets/photos/night-lounge-720.webp" data-caption="Still going">
+        <picture><source type="image/webp" srcset="assets/photos/night-lounge-480.webp 480w, assets/photos/night-lounge-720.webp 720w" sizes="(max-width: 780px) 74vw, 280px"><img src="assets/photos/night-lounge.jpg" alt="Guests talking and dancing in the lounge late at night" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Still going</span>
+      </button>
+      <button type="button" class="g-tile img-holder" data-reveal="zoom"
+              data-lightbox="assets/photos/dancer-retro-classics-720.webp" data-caption="The dress code">
+        <picture><source type="image/webp" srcset="assets/photos/dancer-retro-classics-480.webp 480w, assets/photos/dancer-retro-classics-720.webp 720w" sizes="(max-width: 780px) 74vw, 280px"><img src="assets/photos/dancer-retro-classics.jpg" alt="A guest dancing in front of the Retro Classics backdrop" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">The dress code</span>
+      </button>
+      <button type="button" class="g-tile img-holder" data-reveal="zoom"
+              data-lightbox="assets/photos/slow-dance-dusk-720.webp" data-caption="A slow one at dusk">
+        <picture><source type="image/webp" srcset="assets/photos/slow-dance-dusk-480.webp 480w, assets/photos/slow-dance-dusk-720.webp 720w" sizes="(max-width: 780px) 74vw, 280px"><img src="assets/photos/slow-dance-dusk.jpg" alt="A couple dancing closely at dusk" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">A slow one at dusk</span>
+      </button>
+      </div>
+      <button type="button" class="rail-arrow rail-next" aria-label="More photos"><svg class="ico ico--chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.6 15.6 12 9 18.4"/></svg></button>
+    </div>
+    <div class="rail-dots" role="group" aria-label="Photo position"></div>
+    <p class="rail-hint"><svg class="ico ico--chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5.6 8.4 12 15 18.4"/></svg> Swipe to see more <svg class="ico ico--chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.6 15.6 12 9 18.4"/></svg></p>
   </div>
 </section>
 
@@ -318,72 +418,18 @@
   <svg class="w-front" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,90 C280,48 500,110 780,76 C1060,42 1260,98 1440,66 L1440,120 L0,120 Z"/></svg>
 </div>
 
-<section style="padding-top:44px;">
+<section style="padding-top:56px;">
   <div class="wrap">
-    <div class="section-head">
-      <div>
-        <span class="eyebrow" data-reveal="up">Other Dates</span>
-        <h2 data-reveal="up" style="--d:80">Cannot make this one?</h2>
-      </div>
-      <a href="events.html" class="btn btn-outline-navy btn-sm" data-reveal="up" style="--d:150">All events</a>
-    </div>
-    <div class="event-grid" data-stagger="110">
-      <a href="event.html" class="event-card" data-country-item="ug" data-reveal="up">
-        <div class="poster-art img-holder">
-          <picture><source type="image/webp" srcset="assets/photos/dancer-retro-classics-480.webp 480w, assets/photos/dancer-retro-classics-720.webp 720w" sizes="(max-width: 780px) 92vw, (max-width: 980px) 46vw, 30vw"><img src="assets/photos/dancer-retro-classics.jpg" alt="A guest dancing in front of the Retro Classics stage backdrop" width="720" height="1080" loading="lazy" decoding="async"></picture>
-          <span class="poster-tag">🇺🇬 Entebbe</span>
-          <span class="poster-label">The Songs Raised Me — 2000s Edition</span>
-        </div>
-        <div class="event-card-body">
-          <span class="event-chip">Fri, 4 Sep 2026</span>
-          <h3>The Songs Raised Me</h3>
-          <div class="meta">Lake Victoria Serena · Uganda</div>
-          <div class="remaining-bar"><span data-fill="30"></span></div>
-          <div class="remaining-note">Early bird open</div>
-          <div class="event-card-foot">
-            <span class="price-from">From <b>UGX 40,000</b></span>
-            <span class="card-go" aria-hidden="true">→</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="event.html" class="event-card" data-country-item="ke" data-reveal="up">
-        <div class="poster-art img-holder">
-          <picture><source type="image/webp" srcset="assets/photos/dj-booth-480.webp 480w, assets/photos/dj-booth-720.webp 720w" sizes="(max-width: 780px) 92vw, (max-width: 980px) 46vw, 30vw"><img src="assets/photos/dj-booth.jpg" alt="DJ and host behind the decks under stage lighting" width="720" height="1080" loading="lazy" decoding="async"></picture>
-          <span class="poster-tag">🇰🇪 Nairobi</span>
-          <span class="poster-label">Retro Wave Nairobi: First Ever</span>
-        </div>
-        <div class="event-card-body">
-          <span class="event-chip">Sat, 20 Sep 2026</span>
-          <h3>Retro Wave Nairobi</h3>
-          <div class="meta">The Alchemist · Kenya</div>
-          <div class="remaining-bar"><span data-fill="12"></span></div>
-          <div class="remaining-note">Just announced</div>
-          <div class="event-card-foot">
-            <span class="price-from">From <b>KES 1,500</b></span>
-            <span class="card-go" aria-hidden="true">→</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="event.html" class="event-card" data-country-item="rw" data-reveal="up">
-        <div class="poster-art img-holder">
-          <picture><source type="image/webp" srcset="assets/photos/selfie-sunset-mural-480.webp 480w, assets/photos/selfie-sunset-mural-854.webp 854w" sizes="(max-width: 780px) 92vw, (max-width: 980px) 46vw, 30vw"><img src="assets/photos/selfie-sunset-mural.jpg" alt="A guest taking a photo in front of the retro sunset mural" width="854" height="1280" loading="lazy" decoding="async"></picture>
-          <span class="poster-tag">🇷🇼 Kigali</span>
-          <span class="poster-label">Retro Wave Kigali Nights</span>
-        </div>
-        <div class="event-card-body">
-          <span class="event-chip">Sat, 11 Oct 2026</span>
-          <h3>Retro Wave Kigali Nights</h3>
-          <div class="meta">Kigali Convention Village · Rwanda</div>
-          <div class="remaining-bar"><span data-fill="8"></span></div>
-          <div class="remaining-note">Just announced</div>
-          <div class="event-card-foot">
-            <span class="price-from">From <b>RWF 8,000</b></span>
-            <span class="card-go" aria-hidden="true">→</span>
-          </div>
-        </div>
-      </a>
+    <div class="cta-band" data-reveal="zoom">
+      <span class="eyebrow" style="color:var(--peach);">Never Miss A Drop</span>
+      <h2 style="margin-top:12px;">Get notified before tickets go live</h2>
+      <p>One list, three countries — we will tell you the moment Retro Wave announces a date near you.</p>
+      <form class="notify-form" data-notify novalidate>
+        <label class="sr-only" for="notify-email">Your email address</label>
+        <input id="notify-email" type="email" name="email" placeholder="you@email.com" autocomplete="email" required>
+        <button class="btn btn-primary" type="submit"><svg class="ico ico--mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="5" width="18.8" height="14" rx="2.3"/>
+      <path class="ic-draw" d="m2.6 8.2 9.4 6 9.4-6" stroke-dasharray="24"/></svg> Notify Me</button>
+      </form>
     </div>
   </div>
 </section>
@@ -393,8 +439,8 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <img src="assets/logo.png" alt="Retro Wave" width="115" height="36">
-        <p>Retro nightlife events across East Africa — Uganda, Kenya and Rwanda, one ticket platform.</p>
+        <img src="assets/logo.png" alt="Retro Wave" width="1190" height="531">
+        <p>Retro nightlife events across East Africa — born at Ark Gardens, Akright City, Entebbe, now selling throughout the region.</p>
       </div>
       <div class="footer-col">
         <h5>Explore</h5>
@@ -425,28 +471,39 @@
 
 <nav class="mobile-dock" aria-label="Quick links">
   <ul>
-    <li><a href="index.html" class=""><span class="d-ico" aria-hidden="true">🏠</span>Home</a></li>
-    <li><a href="events.html" class="active"><span class="d-ico" aria-hidden="true">🎫</span>Events</a></li>
-    <li><a href="event.html" class="dock-cta"><span class="d-ico" aria-hidden="true">🎟️</span>Tickets</a></li>
-    <li><a href="gallery.html" class=""><span class="d-ico" aria-hidden="true">📸</span>Photos</a></li>
-    <li><a href="about.html" class=""><span class="d-ico" aria-hidden="true">💬</span>About</a></li>
+    <li><a href="index.html" class=""><span class="d-ico"><svg class="ico ico--home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.4 10.6 12 3.6l8.6 7"/>
+      <path d="M5.7 9.2v10.2a1 1 0 0 0 1 1h10.6a1 1 0 0 0 1-1V9.2"/>
+      <path class="ic-door" d="M9.8 20.4v-5.1a2.2 2.2 0 0 1 4.4 0v5.1"/></svg></span>Home</a></li>
+    <li><a href="events.html" class="active"><span class="d-ico"><svg class="ico ico--ticket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.6 6.2h14.8a2 2 0 0 1 2 2v1.5a2.3 2.3 0 0 0 0 4.6v1.5a2 2 0 0 1-2 2H4.6a2 2 0 0 1-2-2v-1.5a2.3 2.3 0 0 0 0-4.6V8.2a2 2 0 0 1 2-2Z"/>
+      <path class="ic-perf" d="M14.6 6.6v10.8" stroke-dasharray="1.5 2.1"/></svg></span>Events</a></li>
+    <li><a href="event.html" class="dock-cta"><span class="d-ico"><svg class="ico ico--ticket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.6 6.2h14.8a2 2 0 0 1 2 2v1.5a2.3 2.3 0 0 0 0 4.6v1.5a2 2 0 0 1-2 2H4.6a2 2 0 0 1-2-2v-1.5a2.3 2.3 0 0 0 0-4.6V8.2a2 2 0 0 1 2-2Z"/>
+      <path class="ic-perf" d="M14.6 6.6v10.8" stroke-dasharray="1.5 2.1"/></svg></span>Tickets</a></li>
+    <li><a href="gallery.html" class=""><span class="d-ico"><svg class="ico ico--camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 9.4a2 2 0 0 1 2-2h1.9l1.5-2.3h8l1.5 2.3h1.9a2 2 0 0 1 2 2v8.4a2 2 0 0 1-2 2H4.6a2 2 0 0 1-2-2Z"/>
+      <circle class="ic-lens" cx="12" cy="13.4" r="3.7" stroke-dasharray="4.6 2.4"/>
+      <circle class="ic-flash" cx="18.4" cy="10.7" r=".85" fill="currentColor" stroke="none"/></svg></span>Photos</a></li>
+    <li><a href="about.html" class=""><span class="d-ico"><svg class="ico ico--chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.2 5.6h15.6a1.9 1.9 0 0 1 1.9 1.9v7.4a1.9 1.9 0 0 1-1.9 1.9h-6.6l-4.4 3.3v-3.3H4.2a1.9 1.9 0 0 1-1.9-1.9V7.5a1.9 1.9 0 0 1 1.9-1.9Z"/>
+      <circle class="ic-dot" cx="8.4" cy="11.2" r=".95" fill="currentColor" stroke="none"/>
+      <circle class="ic-dot ic-dot--2" cx="12" cy="11.2" r=".95" fill="currentColor" stroke="none"/>
+      <circle class="ic-dot ic-dot--3" cx="15.6" cy="11.2" r=".95" fill="currentColor" stroke="none"/></svg></span>About</a></li>
   </ul>
 </nav>
 
-<button class="to-top" type="button" aria-label="Back to top">↑</button>
+<button class="to-top" type="button" aria-label="Back to top"><svg class="ico ico--arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19.4V5.2"/><path d="M6.4 10.8 12 5.2l5.6 5.6"/></svg></button>
 
 <div class="sticky-bar" data-sticky-bar>
   <div class="wrap">
     <div class="amt"><span data-cart-count>0</span> ticket(s)<small><span data-cart-total>UGX 0</span></small></div>
-    <button class="btn btn-primary" type="button" onclick="showPreviewNotice()">Checkout</button>
+    <button class="btn btn-primary" type="button" onclick="showPreviewNotice()"><svg class="ico ico--arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.6 12h13.6"/><path d="m12.8 6.4 5.6 5.6-5.6 5.6"/></svg> Checkout</button>
   </div>
 </div>
 
 <div class="preview-modal" data-preview-modal role="dialog" aria-modal="true" aria-labelledby="preview-title">
   <div class="preview-modal-card">
-    <div class="preview-modal-icon" aria-hidden="true">i</div>
-    <h4 id="preview-title">Checkout preview</h4>
-    <p>This is the first version of the site — the flow above is exactly what buyers will see. Live payment via MTN Mobile Money, Airtel Money and card connects in the next phase.</p>
+    <div class="preview-modal-icon" aria-hidden="true"><svg class="ico ico--warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4.2 21.4 19.8H2.6Z"/>
+      <path class="ic-blink" d="M12 10.2v3.8"/>
+      <circle class="ic-blink" cx="12" cy="17" r=".95" fill="currentColor" stroke="none"/></svg></div>
+    <h4 id="preview-title">Not on sale yet</h4>
+    <p>Retro Wave 4 has no public date, so nothing can be bought today. The flow above is exactly what buyers will see, and live payment via MTN Mobile Money, Airtel Money and card connects the moment a date is announced.</p>
     <button class="btn btn-outline-navy btn-block" type="button" onclick="closePreviewNotice()">Got it</button>
   </div>
 </div>

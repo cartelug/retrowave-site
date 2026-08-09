@@ -4,9 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>About — Retro Wave</title>
-<meta name="description" content="Retro Wave started in Kampala as a night built on the songs that raised us. Now expanding across East Africa.">
-<meta name="theme-color" content="#0e2038">
+<meta name="description" content="Retro Wave started at Ark Gardens, Akright City in Entebbe. Three editions in, and heading across East Africa.">
+<meta name="theme-color" content="#fbf3df">
 <link rel="icon" href="assets/logo.png">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/fredoka-600.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/poppins-500.woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 <script>document.documentElement.className += ' js';</script>
 <noscript><style>
@@ -18,26 +20,21 @@
 <body>
 
 <div class="preloader" role="status" aria-live="polite" aria-label="Loading Retro Wave">
-  <div class="pl-inner">
-    <svg class="pl-cassette" viewBox="0 0 320 200" role="img" aria-label="Cassette tape winding">
-      <defs><linearGradient id="plBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a3d6b"/><stop offset="1" stop-color="#0b1a2f"/></linearGradient></defs>
-      <rect x="6" y="6" width="308" height="188" rx="18" fill="url(#plBody)" stroke="#f6e6c3" stroke-width="3"/>
-      <rect x="26" y="22" width="268" height="80" rx="10" fill="#fdf6e8"/>
-      <rect x="26" y="22" width="268" height="13" rx="6" fill="#e2521f"/>
-      <text x="160" y="70" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="27" font-weight="700" fill="#16345c">RETRO WAVE</text>
-      <text x="160" y="90" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" letter-spacing="2.4" fill="#8d8271">SIDE A — THE SONGS RAISED ME</text>
-      <rect class="pl-tape-window" x="72" y="114" width="176" height="60" rx="9" fill="#081527" stroke="rgba(246,230,195,.35)" stroke-width="2"/>
-      <rect x="112" y="138" width="96" height="12" fill="#3b2416"/>
-      <g class="pl-reel"><circle cx="112" cy="144" r="21" fill="#24150c" stroke="#f6e6c3" stroke-width="2"/><g stroke="#f6e6c3" stroke-width="3" stroke-linecap="round"><line x1="112" y1="129" x2="112" y2="159"/><line x1="97" y1="144" x2="127" y2="144"/><line x1="101" y1="133" x2="123" y2="155"/><line x1="123" y1="133" x2="101" y2="155"/></g></g>
-      <g class="pl-reel pl-reel--slow"><circle cx="208" cy="144" r="21" fill="#24150c" stroke="#f6e6c3" stroke-width="2"/><g stroke="#f6e6c3" stroke-width="3" stroke-linecap="round"><line x1="208" y1="129" x2="208" y2="159"/><line x1="193" y1="144" x2="223" y2="144"/><line x1="197" y1="133" x2="219" y2="155"/><line x1="219" y1="133" x2="197" y2="155"/></g></g>
+  <div class="pl-stage">
+    <img class="pl-logo" src="assets/logo.png" alt="Retro Wave" width="1190" height="531">
+    <p class="pl-tag">The wave is <em>calling</em></p>
+    <div class="pl-meta"><span>Rolling in</span><span class="pl-pct">0%</span></div>
+  </div>
+  <div class="pl-sea" aria-hidden="true">
+    <div class="pl-sea-body"></div>
+    <svg viewBox="0 0 2880 64" preserveAspectRatio="none">
+      <path class="s-back" d="M0,30 C180,2 360,58 720,30 C1080,2 1260,58 1440,30
+                              C1620,2 1800,58 2160,30 C2520,2 2700,58 2880,30 L2880,64 L0,64 Z"/>
+      <path class="s-front" d="M0,42 C240,14 420,70 720,42 C1020,14 1200,70 1440,42
+                               C1680,14 1860,70 2160,42 C2460,14 2640,70 2880,42 L2880,64 L0,64 Z"/>
+      <path class="s-crest" d="M0,42 C240,14 420,70 720,42 C1020,14 1200,70 1440,42
+                               C1680,14 1860,70 2160,42 C2460,14 2640,70 2880,42"/>
     </svg>
-    <div class="pl-word" aria-hidden="true">
-      <span style="--i:0">R</span><span style="--i:1">E</span><span style="--i:2">T</span><span style="--i:3">R</span><span style="--i:4">O</span>
-      <span class="pl-gap"></span>
-      <span style="--i:5">W</span><span style="--i:6">A</span><span style="--i:7">V</span><span style="--i:8">E</span>
-    </div>
-    <div class="pl-track"><div class="pl-fill"></div></div>
-    <div class="pl-meta"><span>Rewinding the tape</span><span class="pl-pct">0%</span></div>
   </div>
 </div>
 
@@ -45,7 +42,7 @@
 
 <header class="site-header">
   <div class="wrap">
-    <a href="index.html" class="brand" aria-label="Retro Wave home"><img src="assets/logo.png" alt="Retro Wave" width="120" height="38"></a>
+    <a href="index.html" class="brand" aria-label="Retro Wave home"><img src="assets/logo.png" alt="Retro Wave" width="1190" height="531"></a>
     <nav class="main-nav" aria-label="Main">
       <a href="index.html" style="--i:0">Home</a>
       <a href="events.html" style="--i:1">Events</a>
@@ -56,9 +53,25 @@
     <div class="header-right">
       <div class="country-switch" role="group" aria-label="Filter events by country">
         <button type="button" data-country-btn="all" class="active" aria-pressed="true">All</button>
-        <button type="button" data-country-btn="ug" aria-pressed="false">🇺🇬 UG</button>
-        <button type="button" data-country-btn="ke" aria-pressed="false">🇰🇪 KE</button>
-        <button type="button" data-country-btn="rw" aria-pressed="false">🇷🇼 RW</button>
+        <button type="button" data-country-btn="ug" aria-pressed="false"><svg class="flag flag--ug" viewBox="0 0 21 15" width="21" height="15" aria-hidden="true"><rect width="21" height="15" rx="2" fill="#111"/>
+      <path fill="#FCDC04" d="M0 2.5h21V5H0z"/><path fill="#D90000" d="M0 5h21v2.5H0z"/>
+      <path fill="#111" d="M0 7.5h21V10H0z"/><path fill="#FCDC04" d="M0 10h21v2.5H0z"/>
+      <path fill="#D90000" d="M0 12.5h21V15H0z"/>
+      <circle cx="10.5" cy="7.5" r="3" fill="#fff"/>
+      <circle cx="10.5" cy="7.5" r="1.35" fill="#D90000"/></svg> UG</button>
+        <button type="button" data-country-btn="ke" aria-pressed="false"><svg class="flag flag--ke" viewBox="0 0 21 15" width="21" height="15" aria-hidden="true"><rect width="21" height="15" rx="2" fill="#fff"/>
+      <path fill="#111" d="M0 2h21v3.6H0z"/><path fill="#B60000" d="M0 6.3h21v2.4H0z"/>
+      <path fill="#006600" d="M0 9.4h21v3.6H0z"/>
+      <ellipse cx="10.5" cy="7.5" rx="2.1" ry="4.1" fill="#B60000" stroke="#fff" stroke-width="0.7"/>
+      <ellipse cx="10.5" cy="7.5" rx="0.62" ry="2.2" fill="#fff"/></svg> KE</button>
+        <button type="button" data-country-btn="rw" aria-pressed="false"><svg class="flag flag--rw" viewBox="0 0 21 15" width="21" height="15" aria-hidden="true"><rect width="21" height="15" rx="2" fill="#20AA46"/>
+      <path fill="#00A1DE" d="M0 2a2 2 0 0 1 2-2h17a2 2 0 0 1 2 2v5.2H0z"/>
+      <path fill="#FAD201" d="M0 7.2h21v3.7H0z"/>
+      <circle cx="15.9" cy="3.8" r="1.5" fill="#FAD201"/>
+      <g stroke="#FAD201" stroke-width=".62" stroke-linecap="round">
+        <path d="M15.9 1.1v.75M15.9 5.75v.75M13.2 3.8h.75M17.85 3.8h.75"/>
+        <path d="m14 1.9.53.53M17.27 5.17l.53.53M14 5.7l.53-.53M17.27 2.43l.53-.53"/>
+      </g></svg> RW</button>
       </div>
       <a href="events.html" class="btn btn-primary btn-sm">Get Tickets</a>
       <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><i></i><i></i><i></i></button>
@@ -69,11 +82,23 @@
 <div class="drawer" id="drawer" aria-hidden="true">
   <div class="drawer-inner">
     <nav class="drawer-links" aria-label="Mobile">
-      <a href="index.html" style="--i:0"><span class="d-ico" aria-hidden="true">🏠</span>Home</a>
-      <a href="events.html" style="--i:1"><span class="d-ico" aria-hidden="true">🎫</span>Events</a>
-      <a href="gallery.html" style="--i:2"><span class="d-ico" aria-hidden="true">📸</span>Gallery</a>
-      <a href="history.html" style="--i:3"><span class="d-ico" aria-hidden="true">📼</span>History</a>
-      <a href="about.html" class="active" style="--i:4"><span class="d-ico" aria-hidden="true">💬</span>About</a>
+      <a href="index.html" style="--i:0"><span class="d-ico"><svg class="ico ico--home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.4 10.6 12 3.6l8.6 7"/>
+      <path d="M5.7 9.2v10.2a1 1 0 0 0 1 1h10.6a1 1 0 0 0 1-1V9.2"/>
+      <path class="ic-door" d="M9.8 20.4v-5.1a2.2 2.2 0 0 1 4.4 0v5.1"/></svg></span>Home</a>
+      <a href="events.html" style="--i:1"><span class="d-ico"><svg class="ico ico--ticket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.6 6.2h14.8a2 2 0 0 1 2 2v1.5a2.3 2.3 0 0 0 0 4.6v1.5a2 2 0 0 1-2 2H4.6a2 2 0 0 1-2-2v-1.5a2.3 2.3 0 0 0 0-4.6V8.2a2 2 0 0 1 2-2Z"/>
+      <path class="ic-perf" d="M14.6 6.6v10.8" stroke-dasharray="1.5 2.1"/></svg></span>Events</a>
+      <a href="gallery.html" style="--i:2"><span class="d-ico"><svg class="ico ico--camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 9.4a2 2 0 0 1 2-2h1.9l1.5-2.3h8l1.5 2.3h1.9a2 2 0 0 1 2 2v8.4a2 2 0 0 1-2 2H4.6a2 2 0 0 1-2-2Z"/>
+      <circle class="ic-lens" cx="12" cy="13.4" r="3.7" stroke-dasharray="4.6 2.4"/>
+      <circle class="ic-flash" cx="18.4" cy="10.7" r=".85" fill="currentColor" stroke="none"/></svg></span>Gallery</a>
+      <a href="history.html" style="--i:3"><span class="d-ico"><svg class="ico ico--cassette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="5" width="18.8" height="14" rx="2.3"/>
+      <rect x="5.6" y="7.5" width="12.8" height="3.6" rx="1"/>
+      <path d="M10.4 14.8h3.2"/>
+      <g class="ic-reel"><circle cx="8.4" cy="14.8" r="2.1"/><path d="M8.4 12.7v4.2M6.3 14.8h4.2"/></g>
+      <g class="ic-reel ic-reel--b"><circle cx="15.6" cy="14.8" r="2.1"/><path d="M15.6 12.7v4.2M13.5 14.8h4.2"/></g></svg></span>History</a>
+      <a href="about.html" class="active" style="--i:4"><span class="d-ico"><svg class="ico ico--chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.2 5.6h15.6a1.9 1.9 0 0 1 1.9 1.9v7.4a1.9 1.9 0 0 1-1.9 1.9h-6.6l-4.4 3.3v-3.3H4.2a1.9 1.9 0 0 1-1.9-1.9V7.5a1.9 1.9 0 0 1 1.9-1.9Z"/>
+      <circle class="ic-dot" cx="8.4" cy="11.2" r=".95" fill="currentColor" stroke="none"/>
+      <circle class="ic-dot ic-dot--2" cx="12" cy="11.2" r=".95" fill="currentColor" stroke="none"/>
+      <circle class="ic-dot ic-dot--3" cx="15.6" cy="11.2" r=".95" fill="currentColor" stroke="none"/></svg></span>About</a>
     </nav>
     <div class="drawer-foot">
       <div class="a11y-bar">
@@ -84,36 +109,52 @@
       </div>
       <div class="a11y-bar">
         <span class="a11y-label">Motion</span>
-        <button type="button" class="a11y-btn" data-motion-toggle aria-pressed="false">Reduce animations</button>
+        <button type="button" class="a11y-btn" data-motion-toggle aria-pressed="false"><svg class="ico ico--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.4 14.6A8.7 8.7 0 0 1 9.4 3.6a8.8 8.8 0 1 0 11 11Z"/></svg> Reduce animations</button>
       </div>
       <div class="country-switch" role="group" aria-label="Filter events by country">
         <button type="button" data-country-btn="all" class="active" aria-pressed="true">All</button>
-        <button type="button" data-country-btn="ug" aria-pressed="false">🇺🇬</button>
-        <button type="button" data-country-btn="ke" aria-pressed="false">🇰🇪</button>
-        <button type="button" data-country-btn="rw" aria-pressed="false">🇷🇼</button>
+        <button type="button" data-country-btn="ug" aria-pressed="false"><svg class="flag flag--ug" viewBox="0 0 21 15" width="21" height="15" role="img" aria-label="Uganda"><rect width="21" height="15" rx="2" fill="#111"/>
+      <path fill="#FCDC04" d="M0 2.5h21V5H0z"/><path fill="#D90000" d="M0 5h21v2.5H0z"/>
+      <path fill="#111" d="M0 7.5h21V10H0z"/><path fill="#FCDC04" d="M0 10h21v2.5H0z"/>
+      <path fill="#D90000" d="M0 12.5h21V15H0z"/>
+      <circle cx="10.5" cy="7.5" r="3" fill="#fff"/>
+      <circle cx="10.5" cy="7.5" r="1.35" fill="#D90000"/></svg></button>
+        <button type="button" data-country-btn="ke" aria-pressed="false"><svg class="flag flag--ke" viewBox="0 0 21 15" width="21" height="15" role="img" aria-label="Kenya"><rect width="21" height="15" rx="2" fill="#fff"/>
+      <path fill="#111" d="M0 2h21v3.6H0z"/><path fill="#B60000" d="M0 6.3h21v2.4H0z"/>
+      <path fill="#006600" d="M0 9.4h21v3.6H0z"/>
+      <ellipse cx="10.5" cy="7.5" rx="2.1" ry="4.1" fill="#B60000" stroke="#fff" stroke-width="0.7"/>
+      <ellipse cx="10.5" cy="7.5" rx="0.62" ry="2.2" fill="#fff"/></svg></button>
+        <button type="button" data-country-btn="rw" aria-pressed="false"><svg class="flag flag--rw" viewBox="0 0 21 15" width="21" height="15" role="img" aria-label="Rwanda"><rect width="21" height="15" rx="2" fill="#20AA46"/>
+      <path fill="#00A1DE" d="M0 2a2 2 0 0 1 2-2h17a2 2 0 0 1 2 2v5.2H0z"/>
+      <path fill="#FAD201" d="M0 7.2h21v3.7H0z"/>
+      <circle cx="15.9" cy="3.8" r="1.5" fill="#FAD201"/>
+      <g stroke="#FAD201" stroke-width=".62" stroke-linecap="round">
+        <path d="M15.9 1.1v.75M15.9 5.75v.75M13.2 3.8h.75M17.85 3.8h.75"/>
+        <path d="m14 1.9.53.53M17.27 5.17l.53.53M14 5.7l.53-.53M17.27 2.43l.53-.53"/>
+      </g></svg></button>
       </div>
-      <a href="events.html" class="btn btn-primary btn-block btn-lg">Get Tickets</a>
+      <a href="events.html" class="btn btn-primary btn-block btn-lg"><svg class="ico ico--ticket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.6 6.2h14.8a2 2 0 0 1 2 2v1.5a2.3 2.3 0 0 0 0 4.6v1.5a2 2 0 0 1-2 2H4.6a2 2 0 0 1-2-2v-1.5a2.3 2.3 0 0 0 0-4.6V8.2a2 2 0 0 1 2-2Z"/>
+      <path class="ic-perf" d="M14.6 6.6v10.8" stroke-dasharray="1.5 2.1"/></svg> Get Tickets</a>
       <p class="drawer-contact">Need help? <a href="mailto:hello@retrowave.ug">hello@retrowave.ug</a></p>
     </div>
   </div>
 </div>
 
 <main id="main">
-<section class="hero grain" style="padding:54px 0 62px;">
-  <div class="hero-sun" aria-hidden="true"></div>
-  <div class="wrap" style="position:relative; z-index:2; max-width:780px;">
+<section class="hero hero--compact grain">
+  <div class="wrap hero-inner">
     <span class="eyebrow intro-fade" style="--i:0">Our Story</span>
-    <h1 style="color:var(--cream-logo); font-size:clamp(2.25rem,5.5vw,3.5rem); margin:14px 0 16px;">
-      <span class="line-mask"><span style="--i:0">The songs raised me.</span></span>
-      <span class="line-mask"><span style="--i:1">So we built a night around <em style="font-style:normal;color:var(--orange);">them.</em></span></span>
+    <h1>
+      <span class="line-mask"><span style="--i:0">The wave</span></span>
+      <span class="line-mask"><span style="--i:1">is <em>calling.</em></span></span>
     </h1>
-    <p class="lede intro-fade" style="--i:1; color:rgba(246,230,195,.8); font-size:1.125rem;">Retro Wave started with a simple idea: play the tracks that actually shaped a generation, in a room full of people who feel the same way about them.</p>
+    <p class="lede intro-fade" style="--i:1">It started at Ark Gardens, Akright City in Entebbe with one question at the door — and it has been the same question every edition since.</p>
   </div>
 </section>
 
 <div class="divider divider-marquee" aria-hidden="true">
-  <div class="mq-track"><span>THE SONGS RAISED ME <i class="mq-star">✦</i> RIDE THE WAVE <i class="mq-star">✦</i> WE LOVE THE 90s <i class="mq-star">✦</i> MELODY HAS NO TIME LIMIT <i class="mq-star">✦</i></span></div>
-  <div class="mq-track"><span>THE SONGS RAISED ME <i class="mq-star">✦</i> RIDE THE WAVE <i class="mq-star">✦</i> WE LOVE THE 90s <i class="mq-star">✦</i> MELODY HAS NO TIME LIMIT <i class="mq-star">✦</i></span></div>
+  <div class="mq-track"><span>THE WAVE IS CALLING <i class="mq-star">✦</i> RIDE THE WAVE <i class="mq-star">✦</i> WE LOVE THE 90s <i class="mq-star">✦</i> MELODY HAS NO TIME LIMIT <i class="mq-star">✦</i></span></div>
+  <div class="mq-track"><span>THE WAVE IS CALLING <i class="mq-star">✦</i> RIDE THE WAVE <i class="mq-star">✦</i> WE LOVE THE 90s <i class="mq-star">✦</i> MELODY HAS NO TIME LIMIT <i class="mq-star">✦</i></span></div>
 </div>
 
 <section>
@@ -123,13 +164,20 @@
     </figure>
     <div data-reveal="right" style="--d:120">
       <span class="eyebrow">Where It Started</span>
-      <h2 style="margin-top:10px; font-size:1.75rem;">Kampala, and one question at the door</h2>
-      <p class="lede" style="margin-top:14px;">Retro Wave began as a Kampala nightlife night built around one question: what is the anthem that made you? Every set since has been a mix of those answers — decade-spanning, unapologetically nostalgic, and loud in all the right places.</p>
-      <p class="lede">Three editions in, the format has not changed. What has changed is the reach — Retro Wave is taking the same night to Nairobi and Kigali, with one platform handling tickets, history and discovery across all three.</p>
+      <h2 style="margin-top:10px; font-size:1.75rem;">Entebbe, and one question at the door</h2>
+      <p class="lede" style="margin-top:14px;">Retro Wave began at Ark Gardens, Akright City in Entebbe on 18 April 2025, built around one question: what is the song that still stops you where you stand? Every set since has been an answer to it — decade-spanning, unapologetically nostalgic, and loud in all the right places.</p>
+      <p class="lede">Three editions in, the format has not changed and neither has the venue. What is changing is the reach: the same night is heading for Nairobi and Kigali, with one platform handling tickets, history and discovery across all three countries.</p>
       <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;">
-        <span class="event-chip">Est. Kampala</span>
-        <span class="event-chip">3 editions staged</span>
-        <span class="event-chip">Expanding to Kenya &amp; Rwanda</span>
+        <span class="event-chip"><svg class="ico ico--pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="ic-bob"><path d="M12 21.4s6.9-6.2 6.9-11.2a6.9 6.9 0 1 0-13.8 0c0 5 6.9 11.2 6.9 11.2Z"/>
+      <circle cx="12" cy="10" r="2.5"/></g></svg> Born in Entebbe</span>
+        <span class="event-chip"><svg class="ico ico--cassette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="5" width="18.8" height="14" rx="2.3"/>
+      <rect x="5.6" y="7.5" width="12.8" height="3.6" rx="1"/>
+      <path d="M10.4 14.8h3.2"/>
+      <g class="ic-reel"><circle cx="8.4" cy="14.8" r="2.1"/><path d="M8.4 12.7v4.2M6.3 14.8h4.2"/></g>
+      <g class="ic-reel ic-reel--b"><circle cx="15.6" cy="14.8" r="2.1"/><path d="M15.6 12.7v4.2M13.5 14.8h4.2"/></g></svg> 3 editions staged</span>
+        <span class="event-chip"><svg class="ico ico--wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="ic-wave" d="M1.6 8.4c1.9-2.4 3.8-2.4 5.7 0s3.8 2.4 5.7 0 3.8-2.4 5.7 0 3.8 2.4 5.7 0"/>
+      <path class="ic-wave ic-wave--2" d="M1.6 13c1.9-2.4 3.8-2.4 5.7 0s3.8 2.4 5.7 0 3.8-2.4 5.7 0 3.8 2.4 5.7 0"/>
+      <path class="ic-wave ic-wave--3" d="M1.6 17.6c1.9-2.4 3.8-2.4 5.7 0s3.8 2.4 5.7 0 3.8-2.4 5.7 0 3.8 2.4 5.7 0"/></svg> Kenya &amp; Rwanda next</span>
       </div>
     </div>
   </div>
@@ -144,25 +192,30 @@
   <div class="wrap">
     <div class="section-head">
       <div>
-        <span class="eyebrow" data-reveal="up">What We Are Building</span>
-        <h2 data-reveal="up" style="--d:80">The songs raised me</h2>
+        <span class="eyebrow" data-reveal="up">The Editions</span>
+        <h2 data-reveal="up" style="--d:80">Three nights, one address</h2>
       </div>
+      <a href="history.html" class="btn btn-ghost btn-sm" data-reveal="up" style="--d:150"><svg class="ico ico--cassette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="5" width="18.8" height="14" rx="2.3"/>
+      <rect x="5.6" y="7.5" width="12.8" height="3.6" rx="1"/>
+      <path d="M10.4 14.8h3.2"/>
+      <g class="ic-reel"><circle cx="8.4" cy="14.8" r="2.1"/><path d="M8.4 12.7v4.2M6.3 14.8h4.2"/></g>
+      <g class="ic-reel ic-reel--b"><circle cx="15.6" cy="14.8" r="2.1"/><path d="M15.6 12.7v4.2M13.5 14.8h4.2"/></g></svg> Full history</a>
     </div>
     <div class="steps-grid" data-stagger="110">
       <div class="stat step-card" data-reveal="up">
         <span class="n">01</span>
-        <h3>One anthem, one story</h3>
-        <p>Every Retro Wave night is anchored in the idea that a song is a memory. The lineup is built to earn that reaction, not just fill a set time.</p>
+        <h3>Retro Wave</h3>
+        <p><b style="color:var(--navy);">18 April 2025</b><br>Ark Gardens, Akright City, Entebbe. The night that started all of this.</p>
       </div>
       <div class="stat step-card" data-reveal="up">
         <span class="n">02</span>
-        <h3>Regional, not just local</h3>
-        <p>The same night, the same standard, landing in Nairobi and Kigali — not a copy-paste tour, a platform built for it from day one.</p>
+        <h3>Retro Wave 2</h3>
+        <p><b style="color:var(--navy);">23 August 2025</b><br>Same venue, bigger room — the edition that proved the first was not a fluke.</p>
       </div>
       <div class="stat step-card" data-reveal="up">
         <span class="n">03</span>
-        <h3>Built to last</h3>
-        <p>The ticketing platform is infrastructure Retro Wave owns outright — built once, used for every event going forward.</p>
+        <h3>Retro Wave³</h3>
+        <p><b style="color:var(--navy);">1 August 2026</b><br>The most recent night, and the one every photo on this site comes from.</p>
       </div>
     </div>
   </div>
@@ -173,7 +226,7 @@
   <svg class="w-front" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,90 C280,48 500,110 780,76 C1060,42 1260,98 1440,66 L1440,120 L0,120 Z"/></svg>
 </div>
 
-<section>
+<section class="section--tight" style="padding-top:56px;">
   <div class="wrap">
     <div class="section-head">
       <div>
@@ -181,42 +234,57 @@
         <h2 data-reveal="up" style="--d:80">A room that already knows the words</h2>
         <p class="lede" data-reveal="up" style="--d:150; margin-top:12px;">Retro Wave is a grown crowd — people who lived these songs the first time round, dressed for it, and out to enjoy the night properly.</p>
       </div>
-      <a href="gallery.html" class="btn btn-outline-navy btn-sm" data-reveal="up" style="--d:200">See the gallery</a>
+      <a href="gallery.html" class="btn btn-outline-navy btn-sm" data-reveal="up" style="--d:200"><svg class="ico ico--camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 9.4a2 2 0 0 1 2-2h1.9l1.5-2.3h8l1.5 2.3h1.9a2 2 0 0 1 2 2v8.4a2 2 0 0 1-2 2H4.6a2 2 0 0 1-2-2Z"/>
+      <circle class="ic-lens" cx="12" cy="13.4" r="3.7" stroke-dasharray="4.6 2.4"/>
+      <circle class="ic-flash" cx="18.4" cy="10.7" r=".85" fill="currentColor" stroke="none"/></svg> See the gallery</a>
     </div>
   </div>
-
-  <div class="gallery-rail" data-reveal-group data-stagger="70">
-    <button type="button" class="g-tile img-holder" data-reveal="zoom" data-lightbox="assets/photos/trio-denim-pose-720.webp" data-caption="Three of a kind">
-      <picture><source type="image/webp" srcset="assets/photos/trio-denim-pose-480.webp 480w, assets/photos/trio-denim-pose-720.webp 720w" sizes="(max-width: 780px) 62vw, 280px"><img src="assets/photos/trio-denim-pose.jpg" alt="Three guests in denim posing together" width="720" height="1080" loading="lazy" decoding="async"></picture>
-      <span class="g-cap">Three of a kind</span>
-    </button>
-    <button type="button" class="g-tile img-holder" data-reveal="zoom" data-lightbox="assets/photos/laughing-pair-720.webp" data-caption="Reunion energy">
-      <picture><source type="image/webp" srcset="assets/photos/laughing-pair-480.webp 480w, assets/photos/laughing-pair-720.webp 720w" sizes="(max-width: 780px) 62vw, 280px"><img src="assets/photos/laughing-pair.jpg" alt="Two guests laughing together at a table" width="720" height="1080" loading="lazy" decoding="async"></picture>
-      <span class="g-cap">Reunion energy</span>
-    </button>
-    <button type="button" class="g-tile img-holder" data-reveal="zoom" data-lightbox="assets/photos/denim-jumpsuit-dance-720.webp" data-caption="No notes">
-      <picture><source type="image/webp" srcset="assets/photos/denim-jumpsuit-dance-480.webp 480w, assets/photos/denim-jumpsuit-dance-720.webp 720w" sizes="(max-width: 780px) 62vw, 280px"><img src="assets/photos/denim-jumpsuit-dance.jpg" alt="A guest dancing in an acid-wash denim jumpsuit" width="720" height="1080" loading="lazy" decoding="async"></picture>
-      <span class="g-cap">No notes</span>
-    </button>
-    <button type="button" class="g-tile img-holder" data-reveal="zoom" data-lightbox="assets/photos/table-greeting-854.webp" data-caption="Everyone knows everyone">
-      <picture><source type="image/webp" srcset="assets/photos/table-greeting-480.webp 480w, assets/photos/table-greeting-854.webp 854w" sizes="(max-width: 780px) 62vw, 280px"><img src="assets/photos/table-greeting.jpg" alt="Guests greeting each other around a table" width="854" height="1280" loading="lazy" decoding="async"></picture>
-      <span class="g-cap">Everyone knows everyone</span>
-    </button>
-    <button type="button" class="g-tile img-holder" data-reveal="zoom" data-lightbox="assets/photos/hands-up-blue-854.webp" data-caption="Hands up">
-      <picture><source type="image/webp" srcset="assets/photos/hands-up-blue-480.webp 480w, assets/photos/hands-up-blue-854.webp 854w" sizes="(max-width: 780px) 62vw, 280px"><img src="assets/photos/hands-up-blue.jpg" alt="A guest with both hands raised under blue light" width="854" height="1280" loading="lazy" decoding="async"></picture>
-      <span class="g-cap">Hands up</span>
-    </button>
-    <button type="button" class="g-tile img-holder" data-reveal="zoom" data-lightbox="assets/photos/slow-dance-dusk-720.webp" data-caption="A slow one at dusk">
-      <picture><source type="image/webp" srcset="assets/photos/slow-dance-dusk-480.webp 480w, assets/photos/slow-dance-dusk-720.webp 720w" sizes="(max-width: 780px) 62vw, 280px"><img src="assets/photos/slow-dance-dusk.jpg" alt="A couple dancing closely at dusk" width="720" height="1080" loading="lazy" decoding="async"></picture>
-      <span class="g-cap">A slow one at dusk</span>
-    </button>
+  <div class="rail-shell" data-reveal-group>
+    <div class="rail-view">
+      <button type="button" class="rail-arrow rail-prev" aria-label="Previous photos"><svg class="ico ico--chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5.6 8.4 12 15 18.4"/></svg></button>
+      <div class="gallery-rail" data-stagger="70">
+      <button type="button" class="g-tile img-holder" data-reveal="zoom"
+              data-lightbox="assets/photos/trio-denim-pose-720.webp" data-caption="Three of a kind">
+        <picture><source type="image/webp" srcset="assets/photos/trio-denim-pose-480.webp 480w, assets/photos/trio-denim-pose-720.webp 720w" sizes="(max-width: 780px) 74vw, 280px"><img src="assets/photos/trio-denim-pose.jpg" alt="Three guests in denim posing together" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Three of a kind</span>
+      </button>
+      <button type="button" class="g-tile img-holder" data-reveal="zoom"
+              data-lightbox="assets/photos/laughing-pair-720.webp" data-caption="Reunion energy">
+        <picture><source type="image/webp" srcset="assets/photos/laughing-pair-480.webp 480w, assets/photos/laughing-pair-720.webp 720w" sizes="(max-width: 780px) 74vw, 280px"><img src="assets/photos/laughing-pair.jpg" alt="Two guests laughing together at a table" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Reunion energy</span>
+      </button>
+      <button type="button" class="g-tile img-holder" data-reveal="zoom"
+              data-lightbox="assets/photos/denim-jumpsuit-dance-720.webp" data-caption="Acid wash, no notes">
+        <picture><source type="image/webp" srcset="assets/photos/denim-jumpsuit-dance-480.webp 480w, assets/photos/denim-jumpsuit-dance-720.webp 720w" sizes="(max-width: 780px) 74vw, 280px"><img src="assets/photos/denim-jumpsuit-dance.jpg" alt="A guest dancing in an acid-wash denim jumpsuit" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Acid wash, no notes</span>
+      </button>
+      <button type="button" class="g-tile img-holder" data-reveal="zoom"
+              data-lightbox="assets/photos/table-greeting-854.webp" data-caption="Everyone knows everyone">
+        <picture><source type="image/webp" srcset="assets/photos/table-greeting-480.webp 480w, assets/photos/table-greeting-854.webp 854w" sizes="(max-width: 780px) 74vw, 280px"><img src="assets/photos/table-greeting.jpg" alt="Guests greeting each other around a table" width="854" height="1280" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Everyone knows everyone</span>
+      </button>
+      <button type="button" class="g-tile img-holder" data-reveal="zoom"
+              data-lightbox="assets/photos/hands-up-blue-854.webp" data-caption="Hands up">
+        <picture><source type="image/webp" srcset="assets/photos/hands-up-blue-480.webp 480w, assets/photos/hands-up-blue-854.webp 854w" sizes="(max-width: 780px) 74vw, 280px"><img src="assets/photos/hands-up-blue.jpg" alt="A guest with both hands raised under blue light" width="854" height="1280" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">Hands up</span>
+      </button>
+      <button type="button" class="g-tile img-holder" data-reveal="zoom"
+              data-lightbox="assets/photos/slow-dance-dusk-720.webp" data-caption="A slow one at dusk">
+        <picture><source type="image/webp" srcset="assets/photos/slow-dance-dusk-480.webp 480w, assets/photos/slow-dance-dusk-720.webp 720w" sizes="(max-width: 780px) 74vw, 280px"><img src="assets/photos/slow-dance-dusk.jpg" alt="A couple dancing closely at dusk" width="720" height="1080" loading="lazy" decoding="async"></picture>
+        <span class="g-cap">A slow one at dusk</span>
+      </button>
+      </div>
+      <button type="button" class="rail-arrow rail-next" aria-label="More photos"><svg class="ico ico--chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.6 15.6 12 9 18.4"/></svg></button>
+    </div>
+    <div class="rail-dots" role="group" aria-label="Photo position"></div>
+    <p class="rail-hint"><svg class="ico ico--chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5.6 8.4 12 15 18.4"/></svg> Swipe to see more <svg class="ico ico--chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5.6 15.6 12 9 18.4"/></svg></p>
   </div>
 </section>
 
 <div class="divider divider-tape" aria-hidden="true">
-  <svg class="reel" viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" fill="none" stroke="#f6e6c3" stroke-width="2.5"/><circle cx="24" cy="24" r="6" fill="#e2521f"/><g stroke="#f6e6c3" stroke-width="2.5" stroke-linecap="round"><line x1="24" y1="6" x2="24" y2="42"/><line x1="6" y1="24" x2="42" y2="24"/><line x1="11" y1="11" x2="37" y2="37"/><line x1="37" y1="11" x2="11" y2="37"/></g></svg>
+  <svg class="reel" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="none" stroke="#f6e6c3" stroke-width="2.5"/><circle cx="24" cy="24" r="6" fill="#e2521f"/><g stroke="#f6e6c3" stroke-width="2.5" stroke-linecap="round"><line x1="24" y1="6" x2="24" y2="42"/><line x1="6" y1="24" x2="42" y2="24"/><line x1="11" y1="11" x2="37" y2="37"/><line x1="37" y1="11" x2="11" y2="37"/></g></svg>
   <span class="tape-band"></span>
-  <svg class="reel" viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" fill="none" stroke="#f6e6c3" stroke-width="2.5"/><circle cx="24" cy="24" r="6" fill="#e2521f"/><g stroke="#f6e6c3" stroke-width="2.5" stroke-linecap="round"><line x1="24" y1="6" x2="24" y2="42"/><line x1="6" y1="24" x2="42" y2="24"/><line x1="11" y1="11" x2="37" y2="37"/><line x1="37" y1="11" x2="11" y2="37"/></g></svg>
+  <svg class="reel" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="none" stroke="#f6e6c3" stroke-width="2.5"/><circle cx="24" cy="24" r="6" fill="#e2521f"/><g stroke="#f6e6c3" stroke-width="2.5" stroke-linecap="round"><line x1="24" y1="6" x2="24" y2="42"/><line x1="6" y1="24" x2="42" y2="24"/><line x1="11" y1="11" x2="37" y2="37"/><line x1="37" y1="11" x2="11" y2="37"/></g></svg>
 </div>
 
 <section>
@@ -228,11 +296,18 @@
       </div>
     </div>
     <div class="stack" style="max-width:820px;" data-stagger="80">
-      <div class="notice" data-reveal="up"><b>Where are events held?</b> Uganda first — Kampala, Entebbe and Jinja — with Nairobi and Kigali dates opening as they are confirmed. Every date is listed on the <a href="events.html" style="color:var(--orange);font-weight:600;">Events page</a>.</div>
-      <div class="notice" data-reveal="up"><b>How do I pay?</b> MTN Mobile Money, Airtel Money, or Visa and Mastercard. You approve mobile money on your own handset — there is nothing to install.</div>
-      <div class="notice" data-reveal="up"><b>Can I bring someone else's ticket?</b> Tickets can be reassigned to a friend from your ticket link, no new purchase needed. Each QR is single-use, so a screenshot of someone else's ticket will not scan twice.</div>
-      <div class="notice" data-reveal="up"><b>Is there an age limit?</b> Retro Wave nights are 18+ and valid ID is required at the door.</div>
-      <div class="notice" data-reveal="up"><b>Is the website hard to use on a small phone?</b> It should not be. There is a text-size control in the menu — tap the menu button, then <b>A</b>, <b>A</b> or <b>A+</b> — and the whole site gets bigger and stays that way on every page.</div>
+      <div class="notice" data-reveal="up"><svg class="ico ico--pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="ic-bob"><path d="M12 21.4s6.9-6.2 6.9-11.2a6.9 6.9 0 1 0-13.8 0c0 5 6.9 11.2 6.9 11.2Z"/>
+      <circle cx="12" cy="10" r="2.5"/></g></svg> <b>Where are events held?</b> Every edition so far has been at Ark Gardens, Akright City in Entebbe, Uganda. Nairobi and Kigali dates open as they are confirmed, and all of them appear on the <a href="events.html" style="color:var(--orange);font-weight:600;">events page</a>.</div>
+      <div class="notice" data-reveal="up"><svg class="ico ico--momo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.4" y="2.6" width="9.6" height="18.8" rx="2.2"/>
+      <path d="M7.2 5.6h4"/>
+      <circle cx="9.2" cy="18.4" r=".85" fill="currentColor" stroke="none"/>
+      <path class="ic-arc" d="M16.8 9.2a3.7 3.7 0 0 1 0 5.6"/>
+      <path class="ic-arc ic-arc--2" d="M19.2 7a6.8 6.8 0 0 1 0 10"/></svg> <b>How do I pay?</b> MTN Mobile Money, Airtel Money, or Visa and Mastercard. You approve mobile money on your own handset — there is nothing to install.</div>
+      <div class="notice" data-reveal="up"><svg class="ico ico--ticket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.6 6.2h14.8a2 2 0 0 1 2 2v1.5a2.3 2.3 0 0 0 0 4.6v1.5a2 2 0 0 1-2 2H4.6a2 2 0 0 1-2-2v-1.5a2.3 2.3 0 0 0 0-4.6V8.2a2 2 0 0 1 2-2Z"/>
+      <path class="ic-perf" d="M14.6 6.6v10.8" stroke-dasharray="1.5 2.1"/></svg> <b>Can I pass my ticket to someone else?</b> Yes. Tickets can be reassigned from your ticket link, no new purchase needed. Each QR is single-use, so a screenshot of someone else's ticket will not scan twice.</div>
+      <div class="notice" data-reveal="up"><svg class="ico ico--shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2.8 7.4 3v5.4c0 4.6-3.1 8.5-7.4 10-4.3-1.5-7.4-5.4-7.4-10V5.8Z"/>
+      <path class="ic-draw" d="m8.8 11.9 2.3 2.3 4.1-4.5" stroke-dasharray="11"/></svg> <b>Is there an age limit?</b> Retro Wave nights are 18+ and valid ID is required at the door.</div>
+      <div class="notice" data-reveal="up"><svg class="ico ico--search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.6"/><path d="m15.6 15.6 4 4"/></svg> <b>The text is too small for me.</b> Tap the menu button, then <b>A</b>, <b>A</b> or <b>A+</b> under "Text size". The whole site grows with it and stays that way on every page and every visit.</div>
     </div>
   </div>
 </section>
@@ -248,7 +323,8 @@
       <span class="eyebrow" style="color:var(--peach);">Come Through</span>
       <h2 style="margin-top:12px;">See what is on near you</h2>
       <p>Uganda, Kenya, Rwanda — one link, every date.</p>
-      <a href="events.html" class="btn btn-primary btn-lg">Browse Events</a>
+      <a href="events.html" class="btn btn-primary btn-lg"><svg class="ico ico--ticket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.6 6.2h14.8a2 2 0 0 1 2 2v1.5a2.3 2.3 0 0 0 0 4.6v1.5a2 2 0 0 1-2 2H4.6a2 2 0 0 1-2-2v-1.5a2.3 2.3 0 0 0 0-4.6V8.2a2 2 0 0 1 2-2Z"/>
+      <path class="ic-perf" d="M14.6 6.6v10.8" stroke-dasharray="1.5 2.1"/></svg> Browse Events</a>
     </div>
   </div>
 </section>
@@ -258,8 +334,8 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <img src="assets/logo.png" alt="Retro Wave" width="115" height="36">
-        <p>Retro nightlife events across East Africa — Uganda, Kenya and Rwanda, one ticket platform.</p>
+        <img src="assets/logo.png" alt="Retro Wave" width="1190" height="531">
+        <p>Retro nightlife events across East Africa — born at Ark Gardens, Akright City, Entebbe, now selling throughout the region.</p>
       </div>
       <div class="footer-col">
         <h5>Explore</h5>
@@ -290,15 +366,24 @@
 
 <nav class="mobile-dock" aria-label="Quick links">
   <ul>
-    <li><a href="index.html" class=""><span class="d-ico" aria-hidden="true">🏠</span>Home</a></li>
-    <li><a href="events.html" class=""><span class="d-ico" aria-hidden="true">🎫</span>Events</a></li>
-    <li><a href="event.html" class="dock-cta"><span class="d-ico" aria-hidden="true">🎟️</span>Tickets</a></li>
-    <li><a href="gallery.html" class=""><span class="d-ico" aria-hidden="true">📸</span>Photos</a></li>
-    <li><a href="about.html" class="active"><span class="d-ico" aria-hidden="true">💬</span>About</a></li>
+    <li><a href="index.html" class=""><span class="d-ico"><svg class="ico ico--home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.4 10.6 12 3.6l8.6 7"/>
+      <path d="M5.7 9.2v10.2a1 1 0 0 0 1 1h10.6a1 1 0 0 0 1-1V9.2"/>
+      <path class="ic-door" d="M9.8 20.4v-5.1a2.2 2.2 0 0 1 4.4 0v5.1"/></svg></span>Home</a></li>
+    <li><a href="events.html" class=""><span class="d-ico"><svg class="ico ico--ticket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.6 6.2h14.8a2 2 0 0 1 2 2v1.5a2.3 2.3 0 0 0 0 4.6v1.5a2 2 0 0 1-2 2H4.6a2 2 0 0 1-2-2v-1.5a2.3 2.3 0 0 0 0-4.6V8.2a2 2 0 0 1 2-2Z"/>
+      <path class="ic-perf" d="M14.6 6.6v10.8" stroke-dasharray="1.5 2.1"/></svg></span>Events</a></li>
+    <li><a href="event.html" class="dock-cta"><span class="d-ico"><svg class="ico ico--ticket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.6 6.2h14.8a2 2 0 0 1 2 2v1.5a2.3 2.3 0 0 0 0 4.6v1.5a2 2 0 0 1-2 2H4.6a2 2 0 0 1-2-2v-1.5a2.3 2.3 0 0 0 0-4.6V8.2a2 2 0 0 1 2-2Z"/>
+      <path class="ic-perf" d="M14.6 6.6v10.8" stroke-dasharray="1.5 2.1"/></svg></span>Tickets</a></li>
+    <li><a href="gallery.html" class=""><span class="d-ico"><svg class="ico ico--camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 9.4a2 2 0 0 1 2-2h1.9l1.5-2.3h8l1.5 2.3h1.9a2 2 0 0 1 2 2v8.4a2 2 0 0 1-2 2H4.6a2 2 0 0 1-2-2Z"/>
+      <circle class="ic-lens" cx="12" cy="13.4" r="3.7" stroke-dasharray="4.6 2.4"/>
+      <circle class="ic-flash" cx="18.4" cy="10.7" r=".85" fill="currentColor" stroke="none"/></svg></span>Photos</a></li>
+    <li><a href="about.html" class="active"><span class="d-ico"><svg class="ico ico--chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.2 5.6h15.6a1.9 1.9 0 0 1 1.9 1.9v7.4a1.9 1.9 0 0 1-1.9 1.9h-6.6l-4.4 3.3v-3.3H4.2a1.9 1.9 0 0 1-1.9-1.9V7.5a1.9 1.9 0 0 1 1.9-1.9Z"/>
+      <circle class="ic-dot" cx="8.4" cy="11.2" r=".95" fill="currentColor" stroke="none"/>
+      <circle class="ic-dot ic-dot--2" cx="12" cy="11.2" r=".95" fill="currentColor" stroke="none"/>
+      <circle class="ic-dot ic-dot--3" cx="15.6" cy="11.2" r=".95" fill="currentColor" stroke="none"/></svg></span>About</a></li>
   </ul>
 </nav>
 
-<button class="to-top" type="button" aria-label="Back to top">↑</button>
+<button class="to-top" type="button" aria-label="Back to top"><svg class="ico ico--arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19.4V5.2"/><path d="M6.4 10.8 12 5.2l5.6 5.6"/></svg></button>
 
 <script src="script.js"></script>
 </body>
