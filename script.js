@@ -146,13 +146,12 @@
 
 
   /* ============================================================
-     3. PRELOADER — logo on cream, rising sea as the progress meter
+     3. PRELOADER — the wave fills the logo; the waterline is the meter
      ============================================================ */
   function initPreloader() {
     var pl = $('.preloader');
     if (!pl) { startIntro(); return; }
 
-    var sea = $('.pl-sea', pl);
     var pct = $('.pl-pct', pl);
 
     // Repeat visits in the same tab get a short version — nobody wants
@@ -182,8 +181,9 @@
 
     function paint(v) {
       progress = v;
-      // --p (0..1) drives how high the sea has risen — that IS the progress bar
-      if (sea) sea.style.setProperty('--p', (v / 100).toFixed(3));
+      // --p (0..1) is read by the logo fill, the crest and the bottom rule —
+      // the waterline rising through the mark IS the progress indicator
+      pl.style.setProperty('--p', (v / 100).toFixed(3));
       if (pct) pct.textContent = Math.round(v) + '%';
     }
 
@@ -216,7 +216,7 @@
       window.setTimeout(function () {
         pl.hidden = true;
         unlockScroll();
-      }, calm ? 60 : 1250);
+      }, calm ? 60 : 1150);
     }
 
     if (document.readyState === 'complete') {

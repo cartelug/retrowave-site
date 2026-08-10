@@ -178,107 +178,144 @@ html[data-motion="calm"] *::after {
 html[data-motion="calm"] [data-reveal] { opacity: 1 !important; transform: none !important; clip-path: none !important; }
 
 /* ============================================================
-   4. PRELOADER — the wave is calling
-   Cream field, the real logo (aspect-locked), and a rising sea
-   whose fill level IS the progress indicator. On completion the
-   sea surges up and carries the whole loader off the screen.
+   4. PRELOADER — "the wave is calling"
+   A title card, not a spinner. The real logo sits ghosted on
+   cream and the wave fills it from the bottom up: the waterline
+   IS the progress. A hairline rule and a tabular percentage sit
+   on the bottom edge like a film slate.
    ============================================================ */
 html:not(.js) .preloader { display: none; }
 
 .preloader {
   position: fixed; inset: 0; z-index: 9999;
   display: grid; place-items: center;
-  background: linear-gradient(180deg, #fffdf6 0%, var(--cream) 62%, var(--cream-alt) 100%);
+  background: var(--cream);
   overflow: hidden;
+  --p: 0;
   transform: translateY(0);
-  transition: transform .62s var(--ease-out) .5s;
+  transition: transform .75s cubic-bezier(.76, 0, .24, 1) .28s;
 }
 .preloader[hidden] { display: none; }
 
-/* faint sunburst behind everything */
+/* soft vignette keeps the cream from reading flat */
 .preloader::before {
-  content:""; position:absolute; top:50%; left:50%;
-  width: 150vmax; height: 150vmax; margin: -75vmax 0 0 -75vmax;
-  background-image: repeating-conic-gradient(rgba(226,82,31,.055) 0deg 6deg, transparent 6deg 12deg);
-  animation: plSpin 50s linear infinite;
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(72% 58% at 50% 42%, #fffdf7 0%, var(--cream) 58%, #f3e7cd 100%);
+}
+/* paper grain */
+.preloader::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
 }
 
 .pl-stage {
-  position: relative; z-index: 4; text-align: center;
-  width: min(420px, 78vw);
-  transition: opacity .3s ease, transform .45s var(--ease-out);
+  position: relative; z-index: 3;
+  width: min(500px, 78vw); text-align: center;
+  transition: opacity .32s ease, transform .5s var(--ease-out);
 }
 
-/* The logo is never given both a width and a height — intrinsic ratio only. */
-.pl-logo {
-  width: 100%; height: auto;
-  filter: drop-shadow(0 10px 26px rgba(22,52,92,.22));
-  animation: plLogoIn 1s var(--ease-spring) both .1s;
+/* ---- the mark ---- */
+.pl-mark { position: relative; }
+.pl-mark img { width: 100%; height: auto; display: block; }
+
+/* ghosted base layer — the logo before the wave reaches it */
+.pl-logo--ghost { opacity: .13; }
+
+/* the filled copy, clipped to the waterline */
+.pl-fill {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: calc(var(--p) * 100%);
+  overflow: hidden;
+  transition: height .35s var(--ease-out);
+  /* Two mask layers: a repeating wave strip pinned to the top edge, and a
+     solid block filling everything beneath it. Both use top/bottom keywords,
+     so no percentage-position maths is involved and the crest stays put. */
+  -webkit-mask-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 18'%3E%3Cpath d='M0,9 C20,0 30,18 50,9 C70,0 80,18 100,9 C113,3 127,15 140,9 L140,18 L0,18 Z' fill='%23000'/%3E%3C/svg%3E"),
+    linear-gradient(#000, #000);
+  mask-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 18'%3E%3Cpath d='M0,9 C20,0 30,18 50,9 C70,0 80,18 100,9 C113,3 127,15 140,9 L140,18 L0,18 Z' fill='%23000'/%3E%3C/svg%3E"),
+    linear-gradient(#000, #000);
+  -webkit-mask-size: 140px 18px, 100% calc(100% - 16px);
+  mask-size: 140px 18px, 100% calc(100% - 16px);
+  -webkit-mask-repeat: repeat-x, repeat-x;
+  mask-repeat: repeat-x, repeat-x;
+  -webkit-mask-position: 0 top, 0 bottom;
+  mask-position: 0 top, 0 bottom;
+  animation: plDrift 3.6s linear infinite;
+}
+.pl-fill img {
+  position: absolute; left: 0; bottom: 0; width: 100%; height: auto;
+  filter: drop-shadow(0 8px 20px rgba(22, 52, 92, .16));
 }
 
+/* The waterline runs right across the screen. A repeating background keeps the
+   wavelength constant at every viewport width — a stretched SVG would flatten
+   out on desktop and bunch up on a phone. */
+.pl-crest {
+  position: absolute; left: -60vw; right: -60vw;
+  bottom: calc(var(--p) * 100%);
+  height: 22px; margin-bottom: -11px;
+  z-index: 4; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 22'%3E%3Cpath d='M0,11 C15,4 25,18 40,11 C55,4 65,18 80,11 C95,4 105,18 120,11' fill='none' stroke='%23e2521f' stroke-width='3.2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 120px 22px;
+  background-position: 0 center;
+  transition: bottom .35s var(--ease-out);
+  animation: plCrest 3s linear infinite;
+}
+
+@keyframes plDrift { to { -webkit-mask-position: -140px top, 0 bottom; mask-position: -140px top, 0 bottom; } }
+@keyframes plCrest { to { background-position-x: -120px; } }
+
+/* ---- tagline ---- */
 .pl-tag {
-  margin: 20px 0 0;
+  margin: 26px 0 0;
   font-family: var(--font-display); font-weight: 600;
-  font-size: clamp(1rem, 3.4vw, 1.25rem);
-  letter-spacing: .06em; color: var(--navy);
-  opacity: 0; animation: plFade .6s var(--ease-out) both .55s;
+  font-size: clamp(1.0625rem, 3.2vw, 1.375rem);
+  letter-spacing: .01em; color: var(--navy);
+}
+.pl-tag span {
+  display: inline-block;
+  opacity: 0;
+  animation: plWord .7s var(--ease-out) both;
+  animation-delay: calc(var(--i) * 130ms + 420ms);
 }
 .pl-tag em { font-style: normal; color: var(--orange); }
+@keyframes plWord { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 
-.pl-meta {
-  margin-top: 14px;
-  display: flex; align-items: center; justify-content: center; gap: 10px;
-  font-size: .75rem; font-weight: 700; letter-spacing: .18em;
-  text-transform: uppercase; color: var(--ink-faint);
-  opacity: 0; animation: plFade .6s var(--ease-out) both .75s;
+/* ---- slate along the bottom edge ---- */
+.pl-foot {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 3;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 clamp(18px, 4vw, 40px) 18px;
+  font-size: .6875rem; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--ink-faint);
+  opacity: 0; animation: plWord .6s var(--ease-out) both .7s;
 }
 .pl-pct {
-  font-family: var(--font-display); font-size: .9375rem; letter-spacing: .04em;
-  color: var(--orange); font-variant-numeric: tabular-nums; min-width: 3.4ch; text-align: left;
+  font-family: var(--font-display); font-size: .875rem; letter-spacing: .06em;
+  color: var(--orange); font-variant-numeric: tabular-nums;
+}
+.pl-rule {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 4;
+  height: 3px; background: rgba(22, 52, 92, .09);
+}
+.pl-rule i {
+  display: block; height: 100%; width: calc(var(--p) * 100%);
+  background: linear-gradient(90deg, var(--orange), var(--sun-1));
+  transition: width .35s var(--ease-out);
 }
 
-/* ---- the sea ---- */
-.pl-sea {
-  position: absolute; left: -5%; right: -5%; bottom: 0; height: 100%;
-  z-index: 2; pointer-events: none;
-  /* --p is 0..1; the sea never climbs past the logo while loading */
-  transform: translateY(calc(100% - var(--p, 0) * 58%));
-  transition: transform .45s var(--ease-out);
-  will-change: transform;
+/* ---- exit ---- */
+.preloader.is-done { pointer-events: none; transform: translateY(-100%); }
+.preloader.is-done .pl-stage {
+  opacity: 0; transform: translateY(-14px) scale(.99);
+  transition-delay: .22s;
 }
-.pl-sea-body {
-  position: absolute; left: 0; right: 0; top: 58px; bottom: -10%;
-  background: linear-gradient(180deg, var(--navy-light), var(--navy-deep) 70%, var(--navy-ink));
-}
-.pl-sea svg { position: absolute; left: 0; top: 0; width: 200%; height: 64px; }
-.pl-sea .s-back {
-  fill: var(--navy-light);
-  animation: plSwell 7s ease-in-out infinite alternate;
-}
-.pl-sea .s-front {
-  fill: var(--navy-light);
-  animation: plSwell 4.6s ease-in-out infinite alternate-reverse;
-}
-.pl-sea .s-crest {
-  fill: none; stroke: var(--orange); stroke-width: 3;
-  animation: plSwell 4.6s ease-in-out infinite alternate-reverse;
-}
-
-@keyframes plSwell { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@keyframes plSpin { to { transform: rotate(360deg); } }
-@keyframes plLogoIn {
-  from { opacity: 0; transform: translateY(20px) scale(.9); }
-  to   { opacity: 1; transform: none; }
-}
-@keyframes plFade { to { opacity: 1; } }
-
-/* ---- exit choreography ---- */
-.preloader.is-done { pointer-events: none; transform: translateY(-102%); }
-.preloader.is-done .pl-stage { opacity: 0; transform: translateY(-18px); transition-delay: 0s; }
-.preloader.is-done .pl-sea {
-  transform: translateY(0);
-  transition: transform .5s var(--ease-out) .08s;
-}
+.preloader.is-done .pl-foot { opacity: 0; transition: opacity .25s ease; animation: none; }
+.preloader.is-done .pl-crest { opacity: 0; transition: opacity .3s ease; }
 
 /* ============================================================
    5. HEADER + NAVIGATION

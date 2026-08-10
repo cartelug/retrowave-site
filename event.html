@@ -76,21 +76,23 @@
 
 <div class="preloader" role="status" aria-live="polite" aria-label="Loading Retro Wave">
   <div class="pl-stage">
-    <img class="pl-logo" src="assets/logo.png" alt="Retro Wave" width="1190" height="531">
-    <p class="pl-tag">The wave is <em>calling</em></p>
-    <div class="pl-meta"><span>Rolling in</span><span class="pl-pct">0%</span></div>
+    <div class="pl-mark">
+      <img class="pl-logo pl-logo--ghost" src="assets/logo.png" alt="Retro Wave" width="1190" height="531">
+      <div class="pl-fill" aria-hidden="true">
+        <img src="assets/logo.png" alt="" width="1190" height="531">
+      </div>
+      <div class="pl-crest" aria-hidden="true"></div>
+    </div>
+    <p class="pl-tag">
+      <span style="--i:0">The</span> <span style="--i:1">wave</span>
+      <span style="--i:2">is</span> <span style="--i:3"><em>calling</em></span>
+    </p>
   </div>
-  <div class="pl-sea" aria-hidden="true">
-    <div class="pl-sea-body"></div>
-    <svg viewBox="0 0 2880 64" preserveAspectRatio="none">
-      <path class="s-back" d="M0,30 C180,2 360,58 720,30 C1080,2 1260,58 1440,30
-                              C1620,2 1800,58 2160,30 C2520,2 2700,58 2880,30 L2880,64 L0,64 Z"/>
-      <path class="s-front" d="M0,42 C240,14 420,70 720,42 C1020,14 1200,70 1440,42
-                               C1680,14 1860,70 2160,42 C2460,14 2640,70 2880,42 L2880,64 L0,64 Z"/>
-      <path class="s-crest" d="M0,42 C240,14 420,70 720,42 C1020,14 1200,70 1440,42
-                               C1680,14 1860,70 2160,42 C2460,14 2640,70 2880,42"/>
-    </svg>
+  <div class="pl-foot">
+    <span>Est. Entebbe · East Africa</span>
+    <span class="pl-pct">0%</span>
   </div>
+  <div class="pl-rule" aria-hidden="true"><i></i></div>
 </div>
 
 <a class="skip-link" href="#main">Skip to main content</a>
