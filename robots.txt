@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cartelug.github.io/retrowave-site/sitemap.xml

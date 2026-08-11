@@ -1,0 +1,24 @@
+{
+  "name": "Retro Wave",
+  "short_name": "Retro Wave",
+  "description": "Retro nightlife events across East Africa.",
+  "start_url": "/retrowave-site/",
+  "scope": "/retrowave-site/",
+  "display": "standalone",
+  "background_color": "#fbf3df",
+  "theme_color": "#fbf3df",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
